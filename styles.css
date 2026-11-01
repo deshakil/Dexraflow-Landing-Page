@@ -180,6 +180,19 @@ h3 { font-size: 18px; letter-spacing: -.01em; }
 .only-sm { display: none; }
 @media (max-width: 640px) { .hide-sm { display: none !important; } .only-sm { display: inline-flex; } }
 
+/* ---------- tool logos ---------- */
+.logo { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 7px; flex: 0 0 auto; background: #fff; border: 1px solid var(--line); overflow: hidden; }
+.logo img { width: 17px; height: 17px; object-fit: contain; display: block; }
+.logo--sm { width: 22px; height: 22px; border-radius: 6px; }
+.logo--sm img { width: 14px; height: 14px; }
+.band--night .logo, .card--night .logo { border-color: transparent; }
+.marquee__track .logo { width: 28px; height: 28px; }
+.marquee__track .logo img { width: 18px; height: 18px; }
+.agentcard .logo { width: 30px; height: 30px; border-radius: 8px; }
+.agentcard .logo img { width: 19px; height: 19px; }
+.agentcard [data-mono] { width: 30px; height: 30px; border-radius: 8px; font-size: 13px; }
+.agent [data-mono] { width: 26px; height: 26px; border-radius: 7px; }
+
 /* ---------- monogram glyph for tool names ---------- */
 [data-mono] {
   display: inline-grid; place-items: center;
