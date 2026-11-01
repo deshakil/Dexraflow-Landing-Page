@@ -260,10 +260,11 @@
       .fromTo(".hero__line .w", { yPercent: 110 }, { yPercent: 0, duration: 1.1, stagger: 0.06 }, 0.05)
       .fromTo("#rotator", { yPercent: 110 }, { yPercent: 0, duration: 1.1 }, 0.4)
       .fromTo("[data-hero='3'], [data-hero='4'], [data-hero='5']", { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, duration: 1, stagger: 0.1 }, 0.55)
+      .fromTo("[data-hero='6']", { autoAlpha: 0, y: 30, scale: 0.96 }, { autoAlpha: 1, y: 0, scale: 1, duration: 1.4 }, 0.5)
       .add(() => { if (!reduce) rotator(); }, 1.2);
     return tl;
   }
-  if (hasGsap) { gsap.set("[data-hero='0'], [data-hero='3'], [data-hero='4'], [data-hero='5']", { autoAlpha: 0 }); gsap.set(".hero__line .w, #rotator", { yPercent: 110 }); }
+  if (hasGsap) { gsap.set("[data-hero='0'], [data-hero='3'], [data-hero='4'], [data-hero='5'], [data-hero='6']", { autoAlpha: 0 }); gsap.set(".hero__line .w, #rotator", { yPercent: 110 }); }
 
   /* ---------------- intro ---------------- */
   function intro() {

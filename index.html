@@ -81,17 +81,24 @@
 <section class="hero band band--night" id="top" aria-labelledby="hero-title">
   <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
   <div class="band__inner hero__inner">
-    <p class="eyebrow eyebrow--night hero__eyebrow" data-hero="0"><span class="pulse"></span>Early access · B2B SaaS revenue teams</p>
-    <h1 class="hero__title" id="hero-title">
-      <span class="hero__line" data-hero="1"><span class="w">Catch</span> <span class="w">the</span> <span class="w">deals</span> <span class="w">your</span></span>
-      <span class="hero__line" data-hero="2"><span class="w">GTM</span> <span class="w">tools</span>
-        <span class="rotator" id="rotator" aria-live="polite"><span class="rotator__word is-in">drop silently</span></span>
-      </span>
-    </h1>
-    <p class="hero__sub" data-hero="3">Dexraflow connects to the tools you already use, catches the leads and deals that slip between them, and tells the right rep in Slack before they go cold.</p>
-    <div class="hero__cta" data-hero="4">
-      <button class="btn btn--light btn--lg magnetic" data-open="founder-conversation">Book a 14-day audit</button>
-      <button class="btn btn--ghost-night btn--lg magnetic" data-open="early-access">Get early access</button>
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow eyebrow--night hero__eyebrow" data-hero="0"><span class="pulse"></span>Early access · B2B SaaS revenue teams</p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="hero__line" data-hero="1"><span class="w">Catch</span> <span class="w">the</span> <span class="w">deals</span></span>
+          <span class="hero__line" data-hero="2"><span class="w">your</span> <span class="w">GTM</span> <span class="w">tools</span></span>
+          <span class="hero__line" data-hero="7"><span class="rotator" id="rotator" aria-live="polite"><span class="rotator__word is-in">drop silently</span></span></span>
+        </h1>
+        <p class="hero__sub" data-hero="3">Dexraflow connects to the tools you already use, catches the leads and deals that slip between them, and tells the right rep in Slack before they go cold.</p>
+        <div class="hero__cta" data-hero="4">
+          <button class="btn btn--light btn--lg magnetic" data-open="founder-conversation">Book a 14-day audit</button>
+          <button class="btn btn--ghost-night btn--lg magnetic" data-open="early-access">Get early access</button>
+        </div>
+      </div>
+      <div class="hero__visual" id="heroVisual" data-hero="6" role="img" aria-label="A stack of GTM tool layers with gaps between them. Leads roll across the layers, slip through the gaps, and a glowing Dexraflow net at the bottom catches them and routes them to Slack.">
+        <canvas class="hero__fallback" id="heroFallback"></canvas>
+        <div class="hero__legend mono" aria-hidden="true"><span><i class="lg lg--lead"></i>lead</span><span><i class="lg lg--gap"></i>gap between tools</span><span><i class="lg lg--net"></i>Dexraflow</span></div>
+      </div>
     </div>
     <div class="hero__stack" data-hero="5">
       <p class="eyebrow eyebrow--night center">Works with your stack →</p>
@@ -232,6 +239,14 @@
         <h2 class="h2" id="cost-title" data-split><span class="line">Every hour a lead waits,</span><span class="line accent">the deal gets colder.</span></h2>
       </div>
     </div>
+    <div class="card card--night curve" id="curve" data-reveal>
+      <div class="curve__text">
+        <p class="eyebrow eyebrow--night">Lead temperature</p>
+        <h3 class="h4">Chance to qualify, by hours since the lead arrived.</h3>
+        <p>Reach out inside the first hour and you're 7× more likely to qualify the lead. The average company takes 42 hours.<a class="cite" href="#sources">[4]</a></p>
+      </div>
+      <div class="curve__chart" id="curveChart"></div>
+    </div>
     <div class="stats" id="stats">
       <div class="stat" data-reveal data-stat>
         <p class="stat__value"><span data-count="42">0</span><span class="stat__unit"> hrs</span></p>
@@ -276,21 +291,25 @@
     <div class="steps" id="steps">
       <div class="steps__rail" aria-hidden="true"><i id="stepsFill"></i></div>
       <article class="card step" data-step>
+        <div class="step__pict" data-pict="connect" aria-hidden="true"></div>
         <span class="step__n mono">01</span>
         <h3>Connect</h3>
         <p>Read-only access to your CRM and GTM tools. Setup takes minutes, not a project.</p>
       </article>
       <article class="card step" data-step>
+        <div class="step__pict" data-pict="match" aria-hidden="true"></div>
         <span class="step__n mono">02</span>
         <h3>Match</h3>
         <p>One record per account and contact across every tool, so signals and owners line up.</p>
       </article>
       <article class="card step" data-step>
+        <div class="step__pict" data-pict="catch" aria-hidden="true"></div>
         <span class="step__n mono">03</span>
         <h3>Catch</h3>
         <p>Leads with no owner, workflows that say success but wrote nothing, and buying signals nobody acted on.</p>
       </article>
       <article class="card step" data-step>
+        <div class="step__pict" data-pict="alert" aria-hidden="true"></div>
         <span class="step__n mono">04</span>
         <h3>Alert &amp; prove</h3>
         <p>The right rep gets it in Slack with the reason and a deadline. You get a weekly report of pipeline recovered.</p>
@@ -431,6 +450,7 @@
         <p class="eyebrow eyebrow--night">The 14-day Missed Pipeline Audit</p>
         <h2 class="h3" id="audit-title">Find <span class="shimmer">$10K</span> of missed pipeline, <span class="accent-night">or you don't pay.</span></h2>
         <p class="sub sub--night">Connect your tools read-only. We look back 90 days and show you the high-intent accounts nobody worked, leads routed to the wrong owner or no owner, and workflows that failed silently, with what each one was worth.</p>
+        <div class="audit__strip" id="auditStrip" aria-hidden="true"></div>
         <button class="btn btn--light magnetic" data-open="founder-conversation">Book my audit →</button>
       </div>
       <div class="card audit__side" data-reveal>
@@ -544,6 +564,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.149.0/three.min.js"></script>
 <script src="main.js"></script>
+<script src="scene.js"></script>
+<script src="illustrations.js"></script>
 </body>
 </html>

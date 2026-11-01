@@ -280,32 +280,51 @@ h3 { font-size: 18px; letter-spacing: -.01em; }
 
 /* ---------- hero ---------- */
 .hero { padding-top: calc(var(--nav-h) + clamp(72px, 12vw, 140px)); padding-bottom: clamp(60px, 7vw, 96px); isolation: isolate; overflow: hidden; }
-.hero__canvas { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; opacity: .9;
+.hero__canvas { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; opacity: .5;
   -webkit-mask-image: radial-gradient(ellipse 70% 65% at 50% 40%, transparent 18%, #000 72%);
   mask-image: radial-gradient(ellipse 70% 65% at 50% 40%, transparent 18%, #000 72%);
 }
 @media (max-width: 640px) { .hero__canvas { -webkit-mask-image: radial-gradient(ellipse 100% 60% at 50% 45%, transparent 30%, #000 85%); mask-image: radial-gradient(ellipse 100% 60% at 50% 45%, transparent 30%, #000 85%); opacity: .6; } }
 .hero__fade { position: absolute; left: 0; right: 0; bottom: 0; height: 120px; background: linear-gradient(to bottom, transparent, var(--night)); z-index: -1; pointer-events: none; }
-.hero__inner { text-align: center; max-width: 1120px; }
-.hero__eyebrow { justify-content: center; display: flex; }
+.hero__inner { max-width: 1160px; }
+.hero__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .95fr); gap: 32px 48px; align-items: center; }
+.hero__copy { min-width: 0; text-align: left; }
+.hero__eyebrow { display: inline-flex; }
+.hero__visual { position: relative; width: 100%; max-width: 100%; aspect-ratio: 1 / 0.96; min-width: 0; }
+.hero__visual canvas { position: absolute; inset: 0; width: 100% !important; height: 100% !important; display: block; }
+.hero__legend { position: absolute; left: 4px; bottom: 0; display: flex; flex-wrap: wrap; gap: 6px 14px; color: var(--night-ink-muted); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+.lg { display: inline-block; width: 8px; height: 8px; margin-right: 7px; vertical-align: middle; border-radius: 50%; }
+.lg--lead { background: var(--brand-night); box-shadow: 0 0 8px var(--brand-night); }
+.lg--gap { background: transparent; border: 1px solid var(--signal); border-radius: 1px; }
+.lg--net { background: rgba(59,191,175,.15); border: 1px solid var(--brand-night); border-radius: 2px; }
+@media (max-width: 960px) {
+  .hero__grid { grid-template-columns: 1fr; }
+  .hero__copy { text-align: center; }
+  .hero__eyebrow { display: inline-flex; }
+  .hero__visual { max-width: 560px; margin-inline: auto; aspect-ratio: 1 / 0.82; }
+  .hero__visual { margin-bottom: 30px; }
+  .hero__legend { top: 100%; bottom: auto; left: 0; right: 0; margin-top: 10px; justify-content: center; }
+}
 .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--brand-night); box-shadow: 0 0 0 0 rgba(59,191,175,.6); animation: pulse 2.2s infinite; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(59,191,175,.55); } 70% { box-shadow: 0 0 0 10px rgba(59,191,175,0); } 100% { box-shadow: 0 0 0 0 rgba(59,191,175,0); } }
 .hero__title {
-  margin: 26px auto 0; max-width: 980px;
-  font-size: clamp(40px, 7.4vw, 78px); line-height: 1.04; font-weight: 600; letter-spacing: -.032em;
+  margin: 26px 0 0; max-width: 980px;
+  font-size: clamp(40px, 5.3vw, 66px); line-height: 1.04; font-weight: 600; letter-spacing: -.032em;
   text-wrap: balance;
 }
+@media (max-width: 960px) { .hero__title { margin-inline: auto; font-size: clamp(40px, 8.5vw, 64px); } }
 .hero__line { display: block; overflow: hidden; padding-bottom: .1em; margin-bottom: -.1em; }
 .hero__line .w { display: inline-block; }
 .rotator {
   display: inline-grid; align-items: center; vertical-align: bottom;
-  margin-left: .1em; padding: 0 .22em; height: 1.12em; overflow: hidden;
+  margin-left: 0; padding: 0 .22em; height: 1.12em; overflow: hidden;
   background: var(--brand); color: #fff; border-radius: .08em;
   white-space: nowrap;
 }
 .rotator__word { grid-area: 1/1; display: block; line-height: 1.12; }
-.hero__sub { margin: 28px auto 0; max-width: 620px; font-size: clamp(17px, 2vw, 19px); line-height: 1.6; color: var(--night-ink-muted); }
-.hero__cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 36px; }
+.hero__sub { margin: 26px 0 0; max-width: 540px; font-size: clamp(17px, 2vw, 19px); line-height: 1.6; color: var(--night-ink-muted); }
+.hero__cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+@media (max-width: 960px) { .hero__sub { margin-inline: auto; } .hero__cta { justify-content: center; } }
 .hero__stack { margin-top: clamp(56px, 8vw, 88px); }
 .marquee { position: relative; margin-top: 22px; overflow: hidden;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
@@ -384,6 +403,39 @@ h3 { font-size: 18px; letter-spacing: -.01em; }
 @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(232,150,46,.6); } 100% { box-shadow: 0 0 0 10px rgba(232,150,46,0); } }
 .scene__meta { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
 .scene__meta b { font-weight: 500; color: var(--danger); }
+
+/* ---------- cost: lead temperature curve ---------- */
+.curve { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.45fr); gap: 28px 40px; align-items: center; padding: 28px; }
+.curve + .stats { margin-top: 16px; }
+.curve__text .h4 { margin-top: 14px; }
+.curve__text p { margin: 12px 0 0; font-size: 14px; line-height: 1.55; color: var(--night-ink-muted); }
+.curve__chart { min-width: 0; }
+.curve__chart svg { width: 100%; height: auto; display: block; overflow: visible; }
+.curve__chart .axis { stroke: var(--night-line); stroke-width: 1; fill: none; }
+.curve__chart .grid { stroke: var(--night-line); stroke-width: 1; stroke-dasharray: 2 4; opacity: .7; }
+.curve__chart text { fill: var(--night-ink-muted); font-family: var(--font-mono); font-size: 11px; }
+.curve__line { fill: none; stroke: var(--signal); stroke-width: 2; stroke-linecap: round; }
+.curve__area { fill: url(#curveFill); }
+.curve__mark circle { fill: var(--night); stroke: var(--brand-night); stroke-width: 2; }
+.curve__mark text { fill: var(--night-ink); }
+.curve__cap { font-size: 10px !important; }
+@media (max-width: 860px) { .curve { grid-template-columns: 1fr; } }
+
+/* ---------- step pictograms ---------- */
+.step__pict { width: 64px; height: 64px; margin-bottom: 4px; }
+.step__pict svg { width: 100%; height: 100%; fill: none; stroke: var(--brand); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; overflow: visible; }
+.step__pict .amber { stroke: var(--signal); }
+.step__pict .fill { fill: var(--brand-soft); stroke: none; }
+.step__pict .dash { stroke-dasharray: 3 3; }
+
+/* ---------- audit lookback strip ---------- */
+.audit__strip { width: 100%; max-width: 560px; margin-top: 4px; }
+.audit__strip svg { width: 100%; height: auto; display: block; overflow: visible; }
+.audit__strip .axis { stroke: var(--night-line); }
+.audit__strip .bar { fill: var(--night-line); }
+.audit__strip .bar--hit { fill: var(--signal); }
+.audit__strip text { font-family: var(--font-mono); font-size: 10px; fill: var(--night-ink-muted); letter-spacing: .04em; }
+.audit__strip text.hit { fill: var(--signal); }
 
 /* ---------- cost ---------- */
 .stats { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
