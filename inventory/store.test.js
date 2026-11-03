@@ -5,15 +5,17 @@ import { STORAGE_KEY } from "./config.js";
 
 const mem = () => { const m = new Map(); return { getItem: (k) => m.get(k) ?? null, setItem: (k, v) => m.set(k, v), m }; };
 
-test("starts with three blank cards and caps at 50", () => {
+test("starts empty, add takes a name, caps at 50", () => {
   let s = initialState();
-  assert.equal(s.workflows.length, 3);
+  assert.equal(s.workflows.length, 0);
+  s = reduce(s, { type: "add", name: "  Demo form → HubSpot  " });
+  assert.equal(s.workflows[0].name, "Demo form → HubSpot");
   for (let i = 0; i < 60; i++) s = reduce(s, { type: "add" });
   assert.equal(s.workflows.length, 50);
 });
 
 test("update, duplicate, remove, restore", () => {
-  let s = initialState();
+  let s = reduce(reduce(reduce(initialState(), { type: "add" }), { type: "add" }), { type: "add" });
   const id = s.workflows[0].id;
   s = reduce(s, { type: "update", id, patch: { name: "Routing", notice: "no" } });
   assert.equal(s.workflows[0].name, "Routing");
@@ -30,9 +32,9 @@ test("update, duplicate, remove, restore", () => {
 test("corrupt or old storage falls back to empty state", () => {
   const st = mem();
   st.setItem(STORAGE_KEY, "{not json");
-  assert.equal(load(st).workflows.length, 3);
+  assert.equal(load(st).workflows.length, 0);
   st.setItem(STORAGE_KEY, JSON.stringify({ version: 0, workflows: [{ name: "old" }] }));
-  assert.equal(load(st).workflows[0].name, "");
+  assert.equal(load(st).workflows.length, 0);
   st.setItem(STORAGE_KEY, JSON.stringify({ version: 1, workflows: [{ name: "ok", notice: "bogus", leadsPerWeek: "12", tool: "Nope", decision: "kill" }] }));
   const w = load(st).workflows[0];
   assert.equal(w.name, "ok"); assert.equal(w.notice, null); assert.equal(w.leadsPerWeek, 12); assert.equal(w.tool, ""); assert.equal(w.decision, "kill");
@@ -42,11 +44,11 @@ test("store persists (debounced) and notifies", async () => {
   const st = mem();
   const store = createStore({ storage: st, debounceMs: 5 });
   let calls = 0; store.subscribe(() => calls++);
-  store.dispatch({ type: "update", id: store.get().workflows[0].id, patch: { name: "A" } });
+  store.dispatch({ type: "add", name: "A" });
   assert.equal(calls, 1);
   await new Promise((r) => setTimeout(r, 20));
   assert.equal(JSON.parse(st.getItem(STORAGE_KEY)).workflows[0].name, "A");
   store.dispatch({ type: "clear" });
   assert.equal(store.get().workflows.every((w) => !w.name), true);
-  assert.equal(blankWorkflow().collapsed, false);
+  assert.equal(blankWorkflow().collapsed, true);
 });

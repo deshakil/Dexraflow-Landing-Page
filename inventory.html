@@ -8,11 +8,11 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Silent Break Score · Free GTM workflow inventory | Dexraflow" />
   <meta property="og:description" content="List your lead workflows in 5 minutes and see how many could break with nobody noticing. Free, no signup." />
-  <meta property="og:url" content="https://www.dexraflow.com/inventory" />
+  <meta property="og:url" content="https://dexraflow.in/inventory" />
   <!-- TODO: og:image (1200×630) for the Silent Break Score page -->
   <meta name="twitter:card" content="summary" />
   <meta name="theme-color" content="#f5f7f6" />
-  <link rel="canonical" href="https://www.dexraflow.com/inventory" />
+  <link rel="canonical" href="https://dexraflow.in/inventory" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -50,24 +50,36 @@
 <main id="main">
 
 <section class="band inv-hero" aria-labelledby="inv-title">
-  <div class="band__inner">
-    <p class="eyebrow">Free tool · 5 minutes</p>
-    <h1 class="h1" id="inv-title">If this workflow broke today, would anyone notice?</h1>
-    <p class="sub">List the workflows that move your leads. See how many could fail silently, and which to fix first.</p>
-    <div class="inv-hero__cta">
-      <button class="btn btn--brand btn--lg" id="startBtn" type="button">Start the inventory</button>
-      <button class="linkbtn" type="button" data-example>See an example</button>
+  <div class="band__inner inv-hero__grid">
+    <div>
+      <p class="eyebrow">Free tool · 5 minutes</p>
+      <h1 class="h1" id="inv-title">If this workflow broke today, would anyone notice?</h1>
+      <p class="sub">List the workflows that move your leads. See how many could fail silently, and which to fix first.</p>
+      <div class="inv-hero__cta">
+        <button class="btn btn--brand btn--lg" id="startBtn" type="button">Start the inventory</button>
+        <button class="linkbtn" type="button" data-example>See an example</button>
+      </div>
+      <p class="inv-trust">No signup to use it. Your workflow details stay in your browser.</p>
     </div>
-    <p class="trust">No signup to use it. Your workflow details stay in your browser.</p>
+    <div class="preview card" aria-label="Example result">
+      <p class="eyebrow">What you get</p>
+      <p class="preview__big"><b class="mono">2</b> of <b class="mono">3</b> workflows could break and nobody would notice</p>
+      <ul class="preview__list">
+        <li><span class="tagpill tagpill--no">No</span><span>Demo form → HubSpot</span><span class="mono muted">40 leads/wk</span></li>
+        <li><span class="tagpill tagpill--no">No</span><span>Old webinar sync</span><span class="mono muted">no owner</span></li>
+        <li><span class="tagpill tagpill--not_sure">Not sure</span><span>Round-robin routing</span><span class="mono muted">40 leads/wk</span></li>
+      </ul>
+      <p class="preview__foot">A score, a fix-first list, and a ready-made spreadsheet of your inventory.</p>
+    </div>
   </div>
 </section>
 
 <section class="band band--tight" aria-label="How it works">
   <div class="band__inner">
-    <ol class="how" style="list-style:none;margin:0;padding:0">
-      <li class="how__step"><b>01</b><span>List your workflows</span></li>
-      <li class="how__step"><b>02</b><span>Answer one honest question each</span></li>
-      <li class="how__step"><b>03</b><span>See your blind spots</span></li>
+    <ol class="how">
+      <li class="how__step"><b>01</b><div><span>List your workflows</span><small>Type a name or tap a common one. Three is enough to start.</small></div></li>
+      <li class="how__step"><b>02</b><div><span>Answer one honest question each</span><small>If it broke today, would anyone notice within a day?</small></div></li>
+      <li class="how__step"><b>03</b><div><span>See your blind spots</span><small>Your score updates as you go, with what to fix first.</small></div></li>
     </ol>
   </div>
 </section>
@@ -75,44 +87,57 @@
 <section class="band tool" id="tool" aria-labelledby="tool-title">
   <div class="band__inner">
     <div class="tool__grid">
-      <div>
-        <div class="tool__head">
-          <h2 id="tool-title">Your lead workflows</h2>
-          <span class="mono muted" id="wfCount">3 of 50</span>
+      <div class="tool__main">
+        <h2 id="tool-title" class="tool__title">Your lead workflows</h2>
+        <div class="card adder">
+          <form class="adder__row" id="addForm" autocomplete="off">
+            <label class="adder__label" for="addInput">Add a workflow that moves your leads</label>
+            <div class="adder__fields">
+              <input id="addInput" name="add" type="text" maxlength="120" placeholder="e.g. Demo form → HubSpot" aria-describedby="addHelp">
+              <button class="btn btn--brand" type="submit">Add</button>
+            </div>
+          </form>
+          <div class="chips" id="chips" aria-label="Common workflows"><span class="chips__label mono">Common ones</span></div>
+          <p class="fine" id="addHelp">Zaps, routing rules, form syncs, enrichment, sequences, AI agents writing to your CRM. Anything that touches a lead on its own.</p>
         </div>
-        <div class="wf-list" id="wfList" aria-live="off"></div>
-        <div class="tool__foot">
-          <button class="btn btn--ghost" id="addWf" type="button">+ Add workflow</button>
-          <div style="display:flex;gap:18px;flex-wrap:wrap">
-            <button class="linkbtn" type="button" data-example>See an example</button>
-            <button class="linkbtn linkbtn--muted" id="clearAll" type="button">Clear all</button>
-          </div>
+
+        <div class="tool__head" id="listHead" hidden>
+          <p class="tool__hint" id="listHint"></p>
+          <span class="mono muted" id="wfCount"></span>
+        </div>
+        <div class="wf-list" id="wfList"></div>
+        <div class="tool__foot" id="listFoot" hidden>
+          <p class="fine">Open a row's <b>Details</b> to add the tool, owner and lead volume. Optional, but it sharpens the fix-first list.</p>
+          <button class="linkbtn linkbtn--muted" id="clearAll" type="button">Clear all</button>
         </div>
       </div>
+
       <aside class="card score is-empty" id="scorePanel" aria-labelledby="score-title">
         <p class="eyebrow" id="score-title">Your Silent Break Score</p>
         <p class="score__headline" id="scoreHeadline">Add your first workflow to see your score.</p>
+        <p class="score__meaning" id="scoreMeaning">A "No" means a broken workflow would quietly drop leads until a rep or a customer complains.</p>
         <div class="score__body">
-          <div class="tiles" aria-label="Breakdown">
-            <div class="tile"><b id="tNotSure">0</b><span>Not sure</span></div>
-            <div class="tile"><b id="tNoOwner">0</b><span>No owner</span></div>
-            <div class="tile"><b id="tFix">0</b><span>To fix</span></div>
-            <div class="tile"><b id="tKill">0</b><span>To kill</span></div>
-            <div class="tile tile--wide"><b id="tLeads">0</b><span>Leads at risk / week</span></div>
+          <p class="verdict" id="verdict"></p>
+          <div class="fixfirst" id="fixFirst" hidden>
+            <h3>Fix first</h3>
+            <ol id="fixFirstList"></ol>
           </div>
-          <div>
+          <details class="score__more">
+            <summary>Full breakdown</summary>
+            <div class="tiles" aria-label="Breakdown">
+              <div class="tile"><b id="tNotSure">0</b><span>Not sure</span></div>
+              <div class="tile"><b id="tNoOwner">0</b><span>No owner</span></div>
+              <div class="tile"><b id="tFix">0</b><span>To fix</span></div>
+              <div class="tile"><b id="tKill">0</b><span>To kill</span></div>
+              <div class="tile tile--wide"><b id="tLeads">0</b><span>Leads at risk / week</span></div>
+            </div>
             <div class="bar" id="bar" role="img" aria-label="Yes 0, Not sure 0, No 0"><i class="bar__yes" id="barYes"></i><i class="bar__ns" id="barNotSure"></i><i class="bar__no" id="barNo"></i></div>
             <ul class="legend">
               <li><i class="bar__yes"></i>Yes <b id="legYes">0</b></li>
               <li><i class="bar__ns"></i>Not sure <b id="legNotSure">0</b></li>
               <li><i class="bar__no"></i>No <b id="legNo">0</b></li>
             </ul>
-          </div>
-          <p class="verdict" id="verdict"></p>
-          <div class="fixfirst" id="fixFirst" hidden>
-            <h3>Fix first</h3>
-            <ol id="fixFirstList"></ol>
-          </div>
+          </details>
         </div>
         <p class="sr-only" id="scoreLive" aria-live="polite" aria-atomic="true"></p>
       </aside>
@@ -123,20 +148,20 @@
 <section class="band results" id="results" hidden aria-labelledby="results-title">
   <div class="band__inner">
     <p class="eyebrow">Results and next step</p>
-    <h2 class="h3" id="results-title" style="margin-top:14px">Take your score with you.</h2>
-    <div class="results__grid" style="margin-top:24px">
+    <h2 class="h3 results__title" id="results-title">Take your score with you.</h2>
+    <div class="results__grid">
       <div class="card">
         <h3>Your inventory</h3>
         <p class="results__summary" id="resultsSummary"></p>
         <div class="results__actions">
-          <button class="btn btn--ghost" id="csvBtn" type="button">Download CSV</button>
+          <button class="btn btn--ghost" id="xlsxBtn" type="button">Download for Excel / Sheets</button>
           <button class="btn btn--ghost" id="copyBtn" type="button">Copy my score</button>
         </div>
-        <p class="fine">The CSV has every field from your cards. No email needed.</p>
+        <p class="fine" id="xlsxNote">A formatted spreadsheet with your score, every row, and dropdowns to keep updating it. No email needed.</p>
       </div>
       <div class="card" id="emailWrap">
         <h3>Email me my report and a checklist for fixing the blind spots</h3>
-        <p class="soon" id="emailSoon" hidden>Email reports are coming soon. Download the CSV above in the meantime.</p>
+        <p class="soon" id="emailSoon" hidden>Email reports are coming soon. Download the spreadsheet above in the meantime.</p>
         <form class="eform" id="emailForm" novalidate>
           <label class="field"><span>Work email</span><input id="email" name="email" type="email" required autocomplete="email" placeholder="you@company.com" maxlength="254"></label>
           <div class="eform__row">
@@ -154,7 +179,7 @@
         <div class="done" id="emailDone" hidden tabindex="-1">
           <div class="done__check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></div>
           <h3>Report on its way.</h3>
-          <p style="margin:0;color:var(--ink-muted);font-size:14.5px;line-height:1.5">Want a second pair of eyes? Book a free 20-minute review of your blind spots.</p>
+          <p class="done__p">Want a second pair of eyes? Book a free 20-minute review of your blind spots.</p>
           <a class="btn btn--brand" id="bookBtn" href="#" target="_blank" rel="noopener noreferrer">Book a free 20-minute review</a>
         </div>
       </div>
@@ -165,8 +190,8 @@
 <section class="band" id="faq" aria-labelledby="faq-title">
   <div class="band__inner band__inner--narrow">
     <p class="eyebrow">FAQ</p>
-    <h2 class="h3" id="faq-title" style="margin-top:14px">Short answers.</h2>
-    <div class="faq card" style="margin-top:24px">
+    <h2 class="h3 results__title" id="faq-title">Short answers.</h2>
+    <div class="faq card">
       <details class="faq__item"><summary>Do you see my workflows?<i></i></summary><div class="faq__a"><p>No. Everything you type stays in your browser unless you download it.</p></div></details>
       <details class="faq__item"><summary>What counts as a workflow?<i></i></summary><div class="faq__a"><p>Anything that moves a lead or deal automatically: form syncs, routing rules, enrichment, Zaps, sequences, AI agents writing to your CRM.</p></div></details>
       <details class="faq__item"><summary>Why 'within a day'?<i></i></summary><div class="faq__a"><p>Most silent breaks are found weeks later, by a rep or a customer. A day is the bar worth aiming for.</p></div></details>

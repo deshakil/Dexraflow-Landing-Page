@@ -11,7 +11,8 @@ const DECISION = new Set(["keep", "fix", "kill"]);
 export const uid = () => (globalThis.crypto?.randomUUID ? crypto.randomUUID() : `w_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`);
 
 export function blankWorkflow(patch = {}) {
-  return { id: uid(), name: "", tool: "", trigger: "", owner: "", notice: null, findOut: null, leadsPerWeek: null, decision: null, collapsed: false, ...patch };
+  // collapsed: true means the optional details panel is closed.
+  return { id: uid(), name: "", tool: "", trigger: "", owner: "", notice: null, findOut: null, leadsPerWeek: null, decision: null, collapsed: true, ...patch };
 }
 
 export const EXAMPLE = () => [
@@ -20,7 +21,7 @@ export const EXAMPLE = () => [
   blankWorkflow({ name: "Old webinar sync", tool: "Zapier", trigger: "New webinar registrant", owner: "", notice: "no", findOut: "wouldnt", leadsPerWeek: 0, decision: "kill", collapsed: true }),
 ];
 
-export const initialState = () => ({ version: VERSION, workflows: [blankWorkflow(), blankWorkflow(), blankWorkflow()] });
+export const initialState = () => ({ version: VERSION, workflows: [] });
 
 /** Accepts anything from storage; returns a valid workflow or null. */
 export function sanitizeWorkflow(x) {
@@ -34,7 +35,7 @@ export function sanitizeWorkflow(x) {
     findOut: FINDOUT.has(x.findOut) ? x.findOut : null,
     leadsPerWeek: Number.isFinite(n) && x.leadsPerWeek !== null && x.leadsPerWeek !== "" && n >= 0 ? Math.floor(n) : null,
     decision: DECISION.has(x.decision) ? x.decision : null,
-    collapsed: x.collapsed === true,
+    collapsed: x.collapsed !== false,
   });
 }
 
@@ -44,7 +45,7 @@ export function reduce(state, action) {
   switch (action.type) {
     case "add": {
       if (ws.length >= MAX_WORKFLOWS) return state;
-      return { ...state, workflows: [...ws, blankWorkflow()] };
+      return { ...state, workflows: [...ws, blankWorkflow({ name: typeof action.name === "string" ? action.name.trim().slice(0, 120) : "", collapsed: true })] };
     }
     case "update": {
       const i = at(action.id);
@@ -61,7 +62,7 @@ export function reduce(state, action) {
     case "duplicate": {
       const i = at(action.id);
       if (i < 0 || ws.length >= MAX_WORKFLOWS) return state;
-      const copy = { ...ws[i], id: uid(), collapsed: false };
+      const copy = { ...ws[i], id: uid(), collapsed: true };
       return { ...state, workflows: [...ws.slice(0, i + 1), copy, ...ws.slice(i + 1)] };
     }
     case "remove": {
@@ -87,7 +88,7 @@ export function load(storage) {
     const data = JSON.parse(raw);
     if (!data || data.version !== VERSION || !Array.isArray(data.workflows)) return initialState();
     const workflows = data.workflows.map(sanitizeWorkflow).filter(Boolean).slice(0, MAX_WORKFLOWS);
-    return { version: VERSION, workflows: workflows.length ? workflows : initialState().workflows };
+    return { version: VERSION, workflows };
   } catch { return initialState(); }
 }
 
