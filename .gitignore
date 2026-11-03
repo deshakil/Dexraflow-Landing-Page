@@ -1,0 +1,9 @@
+# Local secrets / environment
+.env
+.env.local
+.env.*.local
+inventory/env.js
+
+# OS / tooling
+.DS_Store
+node_modules/
