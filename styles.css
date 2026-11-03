@@ -645,6 +645,13 @@ h3 { font-size: 18px; letter-spacing: -.01em; }
 .form input.is-bad { border-color: var(--danger); }
 .form__err { margin: 0; font-size: 13px; color: var(--danger); }
 .form__foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-top: 8px; }
+.form__mail { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--line-strong); }
+.form__mail:hover { color: var(--brand); }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form__fallback { display: flex; flex-direction: column; gap: 12px; }
+.form__fallback .h3 { margin-top: 2px; }
+.form__fbtext { width: 100%; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.6; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 12px; resize: vertical; }
+.form__fbactions { display: flex; flex-wrap: wrap; gap: 10px; }
 .form__done { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
 .form__check { width: 48px; height: 48px; border-radius: 50%; background: var(--brand-soft); display: grid; place-items: center; }
 .form__check svg { width: 24px; height: 24px; fill: none; stroke: var(--brand); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 30; stroke-dashoffset: 30; animation: check .6s var(--ease) .15s forwards; }

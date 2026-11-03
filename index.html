@@ -547,12 +547,26 @@
         <label class="span2"><span>LinkedIn <em>optional</em></span><input id="f-linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/…"></label>
         <label class="span2"><span id="modalNoteLabel">What are you hoping to solve? <em>optional</em></span><textarea id="f-note" name="note" rows="3" placeholder="Optional"></textarea></label>
       </div>
+      <label class="hp" aria-hidden="true"><input id="f-botcheck" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off"></label>
       <p class="form__err" id="formErr" hidden></p>
       <div class="form__foot">
-        <p class="fine">Read-only by default. We'll reply from support@dexraflow.com.</p>
+        <p class="fine">Prefer email? Write to <a class="form__mail" href="mailto:shakil@dexraflow.com">shakil@dexraflow.com</a>.</p>
         <button class="btn btn--brand" type="submit" id="formSubmit">Request access</button>
       </div>
     </form>
+    <div class="form__fallback" id="formFallback" hidden>
+      <p class="eyebrow">Send it by email instead</p>
+      <h2 class="h3">We couldn't send that automatically.</h2>
+      <p class="sub"><span id="fbWhy">Our form service didn't respond.</span> Your request is ready below, addressed to <b>shakil@dexraflow.com</b>. Open it in your mail app, or copy it.</p>
+      <textarea class="form__fbtext" id="fbText" rows="9" readonly></textarea>
+      <div class="form__foot">
+        <button class="btn btn--ghost" type="button" id="fbBack">Back</button>
+        <div class="form__fbactions">
+          <button class="btn btn--ghost" type="button" id="fbCopy">Copy request</button>
+          <a class="btn btn--brand" id="fbMail" href="mailto:shakil@dexraflow.com">Open in mail app</a>
+        </div>
+      </div>
+    </div>
     <div class="form__done" id="formDone" hidden>
       <div class="form__check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></div>
       <h2 class="h3">Got it.</h2>

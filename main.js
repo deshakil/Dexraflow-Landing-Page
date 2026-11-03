@@ -587,19 +587,28 @@
 
   /* ---------------- modal + form ---------------- */
   const COPY = {
-    "early-access": { eyebrow: "Early access", title: "Request early access", desc: "We're working with a small group of revenue teams. Tell us a little about yours.", note: "What are you hoping to solve?", submit: "Request access" },
-    "founder-conversation": { eyebrow: "Founder conversation", title: "Talk to the founder", desc: "Share a little context and we'll set up a conversation.", note: "What would you like to talk about?", submit: "Request a conversation" },
+    "early-access": { eyebrow: "Early access", title: "Request early access", desc: "We're working with a small group of revenue teams. Tell us a little about yours.", note: "What are you hoping to solve?", submit: "Request access", label: "Early access" },
+    "founder-conversation": { eyebrow: "Founder conversation", title: "Talk to the founder", desc: "Share a little context and we'll set up a conversation.", note: "What would you like to talk about?", submit: "Request a conversation", label: "Founder conversation" },
   };
-  const API = "https://dexraflow-poster-pipeline-e7behqgjfqfresgf.canadacentral-01.azurewebsites.net/demo/request";
+  /* Delivery. Requests go to shakil@dexraflow.com.
+     1. Web3Forms (https://web3forms.com): create a free access key for shakil@dexraflow.com and paste it below. No backend needed.
+     2. The Dexraflow demo API on Azure (the live site's endpoint), used when no Web3Forms key is set.
+     3. If both fail, the visitor gets a prefilled email to CONTACT plus a copy button. */
+  const DELIVERY = {
+    contact: "shakil@dexraflow.com",
+    web3formsKey: "",
+    api: "https://dexraflow-poster-pipeline-e7behqgjfqfresgf.canadacentral-01.azurewebsites.net/demo/request",
+  };
   function modal() {
-    const m = $("#modal"), panel = $(".modal__panel", m), form = $("#leadForm"), done = $("#formDone"), err = $("#formErr"), submit = $("#formSubmit");
+    const m = $("#modal"), panel = $(".modal__panel", m), form = $("#leadForm"), done = $("#formDone"), fb = $("#formFallback"), err = $("#formErr"), submit = $("#formSubmit");
     let intent = "early-access", lastFocus = null;
+    const show = (which) => { form.hidden = which !== "form"; done.hidden = which !== "done"; fb.hidden = which !== "fallback"; };
     const open = (i) => {
       intent = COPY[i] ? i : "early-access";
       const c = COPY[intent];
       $("#modalEyebrow").textContent = c.eyebrow; $("#modalTitle").textContent = c.title; $("#modalDesc").textContent = c.desc;
       $("#modalNoteLabel").innerHTML = `${c.note} <em>optional</em>`; submit.textContent = c.submit;
-      form.hidden = false; done.hidden = true; err.hidden = true;
+      show("form"); err.hidden = true;
       lastFocus = document.activeElement;
       m.hidden = false; document.body.classList.add("is-locked"); if (lenis) lenis.stop();
       closeSheet();
@@ -614,24 +623,49 @@
     $$("[data-close]", m).forEach((b) => b.addEventListener("click", close));
     document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !m.hidden) close(); });
 
+    const compose = (p) => {
+      const subject = `[${p.label}] ${p.name} · ${p.company}`;
+      const body = [`Request: ${p.label}`, `Name: ${p.name}`, `Work email: ${p.email}`, `Company: ${p.company}`, `Role: ${p.role}`, p.linkedin ? `LinkedIn: ${p.linkedin}` : "", p.note ? `Note: ${p.note}` : "", "", "Sent from dexraflow.com"].filter((l) => l !== "").join("\n");
+      return { subject, body, text: `To: ${DELIVERY.contact}\nSubject: ${subject}\n\n${body}` };
+    };
+    async function deliver(p) {
+      if (DELIVERY.web3formsKey) {
+        const r = await fetch("https://api.web3forms.com/submit", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ access_key: DELIVERY.web3formsKey, subject: compose(p).subject, from_name: p.name, email: p.email, name: p.name, company: p.company, role: p.role, linkedin: p.linkedin, note: p.note, intent: p.intent, botcheck: p.botcheck }) });
+        const j = await r.json().catch(() => ({}));
+        if (r.ok && j.success !== false) return;
+        throw new Error(j && j.message ? String(j.message) : "");
+      }
+      const position = [`[${p.label}] ${p.role}`, p.linkedin ? `LinkedIn: ${p.linkedin}` : "", p.note ? `Note: ${p.note}` : ""].filter(Boolean).join(" — ");
+      const r = await fetch(DELIVERY.api, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: p.name, company: p.company, businessEmail: p.email, position, phone: "", intent: p.intent, role: p.role, linkedin: p.linkedin, note: p.note }) });
+      if (!r.ok) { const j = await r.json().catch(() => ({})); throw new Error(j && j.detail ? String(j.detail) : ""); }
+    }
+
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       err.hidden = true;
       const data = Object.fromEntries(new FormData(form).entries());
-      const bad = ["name", "email", "company", "role"].filter((k) => !String(data[k] || "").trim());
-      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email || "")) bad.push("email");
+      const clean = (k) => String(data[k] || "").trim();
+      const bad = ["name", "email", "company", "role"].filter((k) => !clean(k));
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(clean("email"))) bad.push("email");
       $$("input", form).forEach((i) => i.classList.toggle("is-bad", bad.includes(i.name)));
       if (bad.length) { err.textContent = "Please fill in your name, a valid work email, company and role."; err.hidden = false; return; }
+      if (clean("botcheck")) { show("done"); return; }
+      const p = { intent, label: COPY[intent].label, name: clean("name"), email: clean("email"), company: clean("company"), role: clean("role"), linkedin: clean("linkedin"), note: clean("note"), botcheck: "" };
       submit.disabled = true; submit.textContent = "Sending…";
-      try {
-        const res = await fetch(API, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...data, intent }) });
-        if (!res.ok) throw new Error("bad");
-        form.hidden = true; done.hidden = false;
-      } catch {
-        err.innerHTML = "Couldn't send right now. Email <b>support@dexraflow.com</b> and we'll pick it up from there.";
-        err.hidden = false;
+      try { await deliver(p); show("done"); }
+      catch (ex) {
+        const { subject, body, text } = compose(p);
+        const link = $("#fbMail"); link.href = `mailto:${DELIVERY.contact}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        $("#fbText").value = text; $("#fbWhy").textContent = ex instanceof Error && !(ex instanceof TypeError) && ex.message ? ex.message : "Our form service didn't respond.";
+        show("fallback");
       } finally { submit.disabled = false; submit.textContent = COPY[intent].submit; }
     });
+    $("#fbCopy").addEventListener("click", async () => {
+      const btn = $("#fbCopy"), ta = $("#fbText");
+      const ok = () => { btn.textContent = "Copied"; setTimeout(() => (btn.textContent = "Copy request"), 1600); };
+      try { await navigator.clipboard.writeText(ta.value); ok(); } catch { ta.focus(); ta.select(); }
+    });
+    $("#fbBack").addEventListener("click", () => show("form"));
   }
   modal();
 
