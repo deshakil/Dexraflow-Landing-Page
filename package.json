@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test inventory/",
-    "serve": "python3 -m http.server 8787 --bind 127.0.0.1"
+    "serve": "python3 -m http.server 8787 --bind 127.0.0.1",
+    "build": "node scripts/write-env.mjs"
   }
 }
