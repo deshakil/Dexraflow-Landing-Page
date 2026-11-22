@@ -1,496 +1,827 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Second Ring – You missed the call. We didn't. | HVAC answering for Columbus shops</title>
-  <meta name="description" content="Second Ring answers your missed calls and web leads within a minute and books the visit straight into your Jobber or Housecall Pro calendar. Free two-week audit first." />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Second Ring – You missed the call. We didn't. | HVAC answering for Columbus shops" />
-  <meta property="og:description" content="We answer your missed calls and web leads within a minute and book the visit straight into your calendar. Free two-week audit first." />
-  <meta property="og:url" content="https://secondring.dexraflow.in/" />
-  <meta property="og:site_name" content="Second Ring" />
-  <meta property="og:image" content="https://secondring.dexraflow.in/og.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#0F1B2D" />
-  <link rel="canonical" href="https://secondring.dexraflow.in/" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Second Ring – You missed the call. We didn't. | HVAC call answering in Columbus, OH</title>
+<meta name="description" content="We answer missed calls and web leads for Columbus HVAC shops within a minute, book jobs into Jobber or Housecall Pro, and prove it every Monday.">
+<link rel="canonical" href="https://secondring.dexraflow.in/">
+<meta name="theme-color" content="#0F2A44">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Second Ring">
+<meta property="og:url" content="https://secondring.dexraflow.in/">
+<meta property="og:title" content="You missed the call. We didn't.">
+<meta property="og:description" content="We answer missed calls and web leads for Columbus HVAC shops within a minute, book jobs into Jobber or Housecall Pro, and prove it every Monday.">
+<meta property="og:image" content="{{OG_IMAGE_URL}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="You missed the call. We didn't.">
+<meta name="twitter:description" content="We answer missed calls and web leads for Columbus HVAC shops within a minute, book jobs into Jobber or Housecall Pro, and prove it every Monday.">
+<meta name="twitter:image" content="{{OG_IMAGE_URL}}">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js");</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Second Ring",
+  "alternateName": "Second Ring by Dexraflow",
+  "description": "A missed-call and speed-to-lead desk for residential HVAC shops. Answers missed calls and web leads within a minute, books visits into Jobber or Housecall Pro, and sends a weekly report.",
+  "url": "https://secondring.dexraflow.in/",
+  "email": "shakil@dexraflow.in",
+  "telephone": "{{US_PHONE}}",
+  "areaServed": "Columbus, OH",
+  "founder": { "@type": "Person", "name": "Sayyad Shakil" },
+  "parentOrganization": { "@type": "Organization", "name": "Dexraflow" },
+  "address": { "@type": "PostalAddress", "streetAddress": "1-25-104, Santoshpuri Colony, Sitarampuram, Bowenpally, Tirumalagiri", "addressLocality": "Hyderabad", "postalCode": "500011", "addressCountry": "IN" }
+}
+</script>
+<style>
+/* ---------- tokens ---------- */
+:root {
+  --navy-900: #0F2A44; --navy-700: #1D3D5F;
+  --orange-700: #C2410C; --orange-500: #F97316; --orange-50: #FFF4EC;
+  --blue-600: #2563EB; --blue-50: #EEF4FF;
+  --green-600: #15803D; --green-50: #ECFDF3;
+  --ink: #1A1F2B; --muted: #5B6472; --line: #E6E1DA; --bg: #FFFFFF; --bg-warm: #FAF7F2;
+  --red-600: #B91C1C;
+  --s1: 8px; --s2: 16px; --s3: 24px; --s4: 32px; --s5: 40px; --s6: 48px; --s8: 64px; --s9: 72px; --s14: 112px;
+  --r-card: 14px; --r-btn: 12px; --r-pill: 999px;
+  --shadow: 0 1px 2px rgba(15,42,68,.06), 0 8px 24px rgba(15,42,68,.08);
+  --shadow-lg: 0 2px 4px rgba(15,42,68,.06), 0 16px 40px rgba(15,42,68,.12);
+  --font-h: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  --font-b: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ease: cubic-bezier(.2,.7,.2,1);
+  --hdr: 80px;
+  --gl: max(20px, env(safe-area-inset-left, 0px)); --gr: max(20px, env(safe-area-inset-right, 0px));
+  color-scheme: light;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-b); font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+img, svg { display: block; max-width: 100%; }
+h1, h2, h3 { margin: 0; font-family: var(--font-h); font-weight: 800; letter-spacing: -.02em; line-height: 1.15; color: var(--navy-900); text-wrap: balance; }
+h1 { font-size: clamp(40px, 3.2vw + 28px, 60px); }
+h2 { font-size: clamp(30px, 1.6vw + 24px, 42px); }
+h3 { font-size: clamp(20px, .5vw + 18px, 24px); font-weight: 700; }
+p { margin: 0; }
+a { color: var(--blue-600); }
+:focus-visible { outline: 3px solid var(--blue-600); outline-offset: 2px; border-radius: 4px; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.skip { position: absolute; left: 12px; top: -64px; z-index: 200; background: var(--navy-900); color: #fff; padding: 12px 16px; border-radius: var(--r-btn); font-weight: 600; }
+.skip:focus { top: 12px; }
+.wrap { max-width: 1160px; margin-inline: auto; padding-left: var(--gl); padding-right: var(--gr); min-width: 0; }
+.wrap--narrow { max-width: 820px; }
+.sec { padding-block: var(--s9); scroll-margin-top: calc(var(--hdr) + 8px); }
+.sec--warm { background: var(--bg-warm); }
+@media (min-width: 900px) { .sec { padding-block: var(--s14); } }
+.sec__head { max-width: 720px; margin: 0 auto var(--s5); text-align: center; }
+.sec__head--left { margin-inline: 0; text-align: left; }
+.sec__sub { margin-top: var(--s2); font-size: 18px; color: var(--muted); max-width: 62ch; margin-inline: auto; }
+.sec__head--left .sec__sub { margin-inline: 0; }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; margin-bottom: var(--s2); font-size: 15px; font-weight: 600; color: var(--orange-700); letter-spacing: .01em; }
+.eyebrow svg { width: 18px; height: 18px; }
+.mono { font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+
+/* ---------- buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: var(--r-btn); background: var(--orange-700); color: #fff; font-weight: 600; font-size: 17px; text-decoration: none; border: 1.5px solid var(--orange-700); cursor: pointer; font-family: inherit; box-shadow: var(--shadow); transition: transform .15s var(--ease), box-shadow .15s var(--ease), background-color .15s; }
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-lg); background: #A8370A; border-color: #A8370A; }
+.btn:active { transform: none; }
+.btn--secondary { background: #fff; color: var(--navy-900); border-color: var(--navy-900); }
+.btn--secondary:hover { background: var(--bg-warm); border-color: var(--navy-900); }
+.btn--lg { min-height: 58px; padding: 0 28px; font-size: 18px; }
+.btn--block { width: 100%; }
+.btn[disabled] { opacity: .7; cursor: progress; transform: none; }
+.btn svg { width: 20px; height: 20px; flex: 0 0 auto; }
+.spin { width: 18px; height: 18px; border: 2.5px solid rgba(255,255,255,.45); border-top-color: #fff; border-radius: 50%; animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.ico { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- header ---------- */
+.hdr { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; z-index: 90; height: var(--hdr); display: flex; align-items: center; background: transparent; transition: height .25s var(--ease), background-color .25s, box-shadow .25s, border-color .25s; border-bottom: 1px solid transparent; }
+.hdr.is-scrolled { height: 64px; background: rgba(255,255,255,.96); border-color: var(--line); box-shadow: var(--shadow); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 91; background: #fff; }
+.hdr__row { display: flex; align-items: center; justify-content: space-between; gap: var(--s2); width: 100%; }
+.logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--navy-900); min-height: 48px; }
+.logo__mark { width: 40px; height: 40px; flex: 0 0 auto; }
+.logo__text { display: flex; flex-direction: column; line-height: 1.05; }
+.logo__name { font-family: var(--font-h); font-weight: 800; font-size: 19px; letter-spacing: -.02em; }
+.logo__by { font-size: 12px; color: var(--muted); font-weight: 500; margin-top: 2px; }
+.nav { display: none; gap: 4px; }
+.nav a { display: inline-flex; align-items: center; min-height: 48px; padding: 0 14px; border-radius: var(--r-btn); color: var(--navy-900); text-decoration: none; font-weight: 500; font-size: 16px; }
+.nav a:hover { background: var(--bg-warm); }
+.nav a.is-active { color: var(--orange-700); font-weight: 600; }
+.hdr__right { display: flex; align-items: center; gap: 10px; }
+.hdr__call { display: none; align-items: center; gap: 8px; min-height: 48px; padding: 0 12px; border-radius: var(--r-btn); color: var(--navy-900); text-decoration: none; font-weight: 600; font-size: 16px; }
+.hdr__call:hover { background: var(--bg-warm); }
+.iconbtn { display: inline-grid; place-items: center; width: 48px; height: 48px; border-radius: var(--r-btn); background: #fff; border: 1.5px solid var(--line); color: var(--navy-900); cursor: pointer; }
+.iconbtn:hover { background: var(--bg-warm); }
+.hdr__cta { display: none; }
+@media (min-width: 640px) { .hdr__cta { display: inline-flex; min-height: 48px; } }
+@media (min-width: 900px) { .nav { display: flex; } .hdr__call { display: inline-flex; } .iconbtn--phone, .iconbtn--menu { display: none; } }
+
+/* mobile panel */
+.panel { position: fixed; inset: 0; z-index: 120; display: none; }
+.panel.is-open { display: block; }
+.panel__bg { position: absolute; inset: 0; background: rgba(15,42,68,.45); }
+.panel__box { position: absolute; top: 0; right: 0; bottom: 0; width: min(88vw, 380px); background: #fff; padding: var(--s3) var(--s3) calc(var(--s3) + env(safe-area-inset-bottom, 0px)); display: flex; flex-direction: column; gap: var(--s2); box-shadow: var(--shadow-lg); transform: translateX(100%); transition: transform .3s var(--ease); }
+.panel.is-open .panel__box { transform: none; }
+.panel__top { display: flex; justify-content: space-between; align-items: center; }
+.panel__links { display: flex; flex-direction: column; gap: 4px; margin-top: var(--s2); }
+.panel__links a { display: flex; align-items: center; min-height: 52px; padding: 0 14px; border-radius: var(--r-btn); color: var(--navy-900); text-decoration: none; font-weight: 600; font-size: 19px; }
+.panel__links a:hover { background: var(--bg-warm); }
+.panel__foot { margin-top: auto; display: grid; gap: 10px; }
+
+/* ---------- hero ---------- */
+.hero { background: var(--bg-warm); padding: calc(var(--hdr) + var(--s5)) 0 var(--s9); }
+@media (min-width: 900px) { .hero { padding: calc(var(--hdr) + var(--s8)) 0 var(--s14); } }
+.hero__grid { display: grid; gap: var(--s6); align-items: center; }
+@media (min-width: 900px) { .hero__grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: var(--s8); } }
+.pill { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 14px; border-radius: var(--r-pill); background: var(--blue-50); color: var(--navy-900); font-weight: 600; font-size: 15px; }
+.pill svg { width: 16px; height: 16px; }
+.hero h1 { margin-top: var(--s3); max-width: 14ch; }
+.hero__sub { margin-top: var(--s3); font-size: clamp(18px, .4vw + 17px, 21px); color: var(--ink); max-width: 56ch; }
+.hero__cta { display: flex; flex-direction: column; gap: 12px; margin-top: var(--s4); }
+@media (min-width: 640px) { .hero__cta { flex-direction: row; flex-wrap: wrap; } }
+.trust { list-style: none; margin: var(--s3) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 16px; color: var(--muted); }
+.trust li { display: inline-flex; align-items: center; gap: 8px; }
+.trust svg { width: 18px; height: 18px; color: var(--green-600); flex: 0 0 auto; }
+
+/* phone mockup */
+.mock { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.phone { position: relative; width: min(100%, 340px); height: 600px; border-radius: 40px; background: var(--navy-900); padding: 12px; box-shadow: var(--shadow-lg); }
+.phone__screen { position: relative; height: 100%; border-radius: 30px; background: #fff; padding: 56px 14px 16px; overflow: hidden; display: flex; flex-direction: column; gap: 10px; }
+.phone__notch { position: absolute; top: 12px; left: 50%; width: 110px; height: 26px; translate: -50% 0; background: var(--navy-900); border-radius: 0 0 16px 16px; z-index: 2; }
+.phone__status { position: absolute; top: 16px; left: 22px; right: 22px; display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; color: var(--navy-900); }
+.msg { max-width: 84%; padding: 10px 12px; border-radius: 16px; font-size: 15px; line-height: 1.4; }
+.msg--notif { max-width: 100%; display: flex; gap: 10px; align-items: flex-start; background: var(--bg-warm); border: 1px solid var(--line); border-radius: 14px; }
+.msg--notif .dot { flex: 0 0 auto; width: 10px; height: 10px; margin-top: 6px; border-radius: 50%; background: var(--orange-500); }
+.msg--notif b { display: block; color: var(--navy-900); } .msg--notif span { color: var(--muted); font-size: 14px; }
+.msg--out { align-self: flex-end; background: var(--navy-900); color: #fff; border-bottom-right-radius: 4px; }
+.msg--in { align-self: flex-start; background: #EDEAE4; color: var(--ink); border-bottom-left-radius: 4px; }
+.msg--booked { max-width: 100%; display: flex; gap: 10px; align-items: center; background: var(--green-50); border: 1px solid #BBE5C8; border-radius: 14px; color: var(--green-600); }
+.msg--booked svg { width: 24px; height: 24px; flex: 0 0 auto; }
+.msg--booked b { display: block; color: var(--green-600); } .msg--booked span { color: var(--ink); font-size: 14px; }
+.typing { position: absolute; left: 14px; bottom: 16px; display: none; gap: 5px; padding: 12px 14px; background: #EDEAE4; border-radius: 16px; border-bottom-left-radius: 4px; }
+.typing i { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); animation: bounce .9s infinite; }
+.typing i:nth-child(2) { animation-delay: .15s; } .typing i:nth-child(3) { animation-delay: .3s; }
+@keyframes bounce { 0%, 60%, 100% { transform: translateY(0); opacity: .6; } 30% { transform: translateY(-5px); opacity: 1; } }
+.js .mock.is-armed .msg { opacity: 0; transform: translateY(8px); transition: opacity .35s var(--ease), transform .35s var(--ease); }
+.js .mock.is-armed .msg.on { opacity: 1; transform: none; }
+.js .mock.is-armed .typing.on { display: flex; }
+.mock__cap { font-size: 15px; color: var(--muted); text-align: center; }
+
+/* photo placeholders */
+.ph { position: relative; display: grid; place-items: center; width: 100%; background: #EDE8E0; color: var(--muted); border-radius: var(--r-card); overflow: hidden; }
+.ph::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,.35), transparent 60%); }
+.ph span { position: relative; font-size: 14px; font-weight: 600; letter-spacing: .02em; text-align: center; padding: 8px; }
+.ph svg { position: relative; width: 36px; height: 36px; }
+
+/* ---------- photo band + problem intro ---------- */
+.band { padding-top: var(--s5); }
+.ph--wide { aspect-ratio: 21 / 9; max-width: 100%; }
+.intro { display: grid; gap: var(--s4); align-items: center; margin-bottom: var(--s5); }
+@media (min-width: 900px) { .intro { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: var(--s8); } .intro .sec__head { margin-bottom: 0; } }
+.ph--tech { aspect-ratio: 4 / 3; max-width: 100%; }
+/* ---------- problem ---------- */
+.cards { display: grid; gap: var(--s2); }
+@media (min-width: 900px) { .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s3); } }
+.card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-card); padding: var(--s3); box-shadow: var(--shadow); min-width: 0; }
+.card__ico { width: 48px; height: 48px; border-radius: 12px; background: var(--orange-50); color: var(--orange-700); display: grid; place-items: center; margin-bottom: var(--s2); }
+.card__ico svg { width: 24px; height: 24px; }
+.card h3 { margin-bottom: 8px; }
+.card p { color: var(--muted); font-size: 17px; }
+.stat { margin-top: var(--s4); padding: var(--s2) var(--s3); border-radius: var(--r-card); background: var(--blue-50); color: var(--navy-900); font-size: 16px; display: flex; gap: 12px; align-items: flex-start; }
+.stat svg { width: 22px; height: 22px; flex: 0 0 auto; color: var(--blue-600); margin-top: 2px; }
+.stat a { font-weight: 600; }
+
+/* ---------- how it works ---------- */
+.steps { position: relative; display: grid; gap: var(--s3); padding-left: 44px; }
+.steps__line { position: absolute; left: 15px; top: 8px; bottom: 8px; width: 4px; background: var(--line); border-radius: 4px; overflow: hidden; }
+.steps__line i { display: block; height: 100%; width: 100%; background: var(--orange-700); transform: scaleY(0); transform-origin: top; }
+.step { position: relative; }
+.step__n { position: absolute; left: -44px; top: 0; width: 34px; height: 34px; border-radius: 50%; background: #fff; border: 3px solid var(--line); color: var(--navy-900); font-family: var(--font-h); font-weight: 800; font-size: 15px; display: grid; place-items: center; transition: border-color .3s, background-color .3s, color .3s; }
+.step.is-on .step__n { border-color: var(--orange-700); background: var(--orange-700); color: #fff; }
+.step h3 { margin-bottom: 6px; }
+.step p { color: var(--muted); font-size: 17px; }
+@media (min-width: 900px) {
+  .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s3); padding: 56px 0 0; }
+  .steps__line { left: 17px; right: 17px; top: 15px; bottom: auto; width: auto; height: 4px; }
+  .steps__line i { transform: scaleX(0); transform-origin: left; }
+  .step__n { left: 0; top: -56px; }
+}
+
+/* ---------- report ---------- */
+.report { display: grid; gap: var(--s5); align-items: start; }
+@media (min-width: 900px) { .report { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: var(--s8); } }
+.mail { background: #fff; border: 1px solid var(--line); border-radius: var(--r-card); box-shadow: var(--shadow-lg); overflow: hidden; min-width: 0; }
+.mail__bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 20px; background: var(--bg-warm); border-bottom: 1px solid var(--line); font-size: 15px; color: var(--muted); }
+.mail__bar b { color: var(--navy-900); display: block; font-size: 16px; }
+.mail__body { padding: 20px; }
+.mail__title { font-family: var(--font-h); font-weight: 800; font-size: 20px; color: var(--navy-900); }
+.nums { list-style: none; margin: var(--s2) 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+@media (min-width: 640px) { .nums { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.nums li { background: var(--bg-warm); border-radius: 12px; padding: 12px 14px; min-width: 0; }
+.nums small { display: block; font-size: 14px; color: var(--muted); line-height: 1.3; }
+.nums b { display: block; margin-top: 4px; font-family: var(--font-h); font-weight: 800; font-size: 28px; color: var(--navy-900); line-height: 1.1; }
+.nums b.is-green { color: var(--green-600); }
+.nums .cap { display: block; margin-top: 4px; font-size: 13px; color: var(--muted); }
+.nums li.wide { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; align-items: baseline; }
+.nums li.wide b { font-size: 20px; margin: 0; }
+.mail__h3 { margin: var(--s3) 0 8px; font-family: var(--font-b); font-size: 15px; color: var(--muted); font-weight: 600; letter-spacing: 0; }
+.tbl { width: 100%; border-collapse: collapse; font-size: 15px; }
+.tbl th { text-align: left; font-size: 13px; color: var(--muted); font-weight: 600; padding: 6px 4px; border-bottom: 1px solid var(--line); }
+.tbl td { padding: 9px 4px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.tbl .ok { color: var(--green-600); font-weight: 600; white-space: nowrap; }
+.mail__note { margin-top: var(--s2); font-size: 15px; color: var(--muted); }
+.ticks { list-style: none; margin: var(--s3) 0 0; padding: 0; display: grid; gap: 10px; font-size: 17px; }
+.ticks li { display: flex; gap: 10px; align-items: flex-start; }
+.ticks svg { width: 22px; height: 22px; color: var(--green-600); flex: 0 0 auto; margin-top: 2px; }
+
+/* ---------- emergencies ---------- */
+.emg { display: grid; gap: var(--s4); align-items: center; }
+@media (min-width: 900px) { .emg { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s8); } }
+.flow { display: grid; gap: 20px; }
+@media (min-width: 640px) { .flow { grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; gap: 0; } }
+.node { background: #fff; border: 1px solid var(--line); border-radius: var(--r-card); padding: var(--s2); box-shadow: var(--shadow); text-align: center; min-width: 0; }
+.node__ico { width: 48px; height: 48px; margin: 0 auto 10px; border-radius: 50%; background: var(--blue-50); color: var(--navy-900); display: grid; place-items: center; }
+.node--tech .node__ico { background: var(--green-50); color: var(--green-600); }
+.node--sr .node__ico { background: var(--orange-50); color: var(--orange-700); }
+.node__ico svg { width: 24px; height: 24px; }
+.node b { display: block; color: var(--navy-900); font-size: 16px; }
+.node span { font-size: 14px; color: var(--muted); }
+.link { position: relative; height: 34px; overflow: hidden; }
+.link::after { content: ""; position: absolute; left: 50%; top: 0; width: 4px; height: 200%; translate: -50% 0; background: repeating-linear-gradient(180deg, var(--orange-500) 0 8px, transparent 8px 16px); }
+.emg.is-play .link::after { animation: dashV 1.2s linear infinite; }
+@keyframes dashV { to { transform: translateY(16px); } }
+@media (min-width: 640px) {
+  .link { width: 56px; height: 4px; }
+  .link::after { left: 0; top: 50%; width: 200%; height: 4px; translate: 0 -50%; background: repeating-linear-gradient(90deg, var(--orange-500) 0 8px, transparent 8px 16px); }
+  .emg.is-play .link::after { animation: dashH 1.2s linear infinite; }
+  @keyframes dashH { to { transform: translateX(-16px); } }
+}
+.emg__copy p { color: var(--muted); font-size: 18px; margin-top: var(--s2); }
+
+/* ---------- promises ---------- */
+.prom { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2); }
+@media (min-width: 640px) { .prom { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1200px) { .prom { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.prom li { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--line); border-radius: var(--r-card); padding: var(--s3); box-shadow: var(--shadow); font-size: 17px; color: var(--ink); font-weight: 500; }
+.prom svg { width: 26px; height: 26px; color: var(--green-600); flex: 0 0 auto; }
+
+/* ---------- pricing ---------- */
+.price { display: grid; gap: var(--s3); align-items: start; }
+@media (min-width: 900px) { .price { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: var(--s4); } }
+.price__card { background: var(--orange-50); border: 1px solid #F6D9C7; border-top: 5px solid var(--orange-700); border-radius: var(--r-card); padding: var(--s4) var(--s3); box-shadow: var(--shadow); }
+.price__amt { font-family: var(--font-h); font-weight: 800; font-size: clamp(40px, 3vw + 28px, 56px); color: var(--navy-900); letter-spacing: -.03em; line-height: 1; }
+.price__amt small { font-family: var(--font-b); font-weight: 500; font-size: 18px; color: var(--muted); letter-spacing: 0; margin-left: 6px; }
+.price__plus { margin-top: 10px; font-size: 17px; color: var(--ink); }
+.price__plus code { font-family: inherit; background: #fff; padding: 2px 6px; border-radius: 6px; border: 1px dashed var(--orange-700); color: var(--orange-700); font-weight: 600; }
+.price__inc { list-style: none; margin: var(--s3) 0 0; padding: 0; display: grid; gap: 10px; font-size: 16px; }
+.price__inc li { display: flex; gap: 10px; align-items: flex-start; }
+.price__inc svg { width: 20px; height: 20px; color: var(--green-600); flex: 0 0 auto; margin-top: 3px; }
+.price__card .btn { margin-top: var(--s3); }
+.price__fine { margin-top: 12px; font-size: 15px; color: var(--muted); }
+.box { background: #fff; border: 1px solid var(--line); border-radius: var(--r-card); padding: var(--s3); box-shadow: var(--shadow); }
+.box h3 { margin-bottom: 8px; }
+.box p { color: var(--muted); font-size: 17px; }
+.box + .box { margin-top: var(--s2); }
+.box--found { background: var(--blue-50); border-color: #CFDCF8; }
+.box--found p { color: var(--navy-900); }
+
+/* ---------- about ---------- */
+.about { display: grid; gap: var(--s3); align-items: center; justify-items: center; text-align: center; }
+@media (min-width: 640px) { .about { grid-template-columns: 120px minmax(0, 1fr); justify-items: start; text-align: left; } }
+.about .ph { width: 120px; height: 120px; border-radius: 50%; }
+.about .ph span { font-size: 11px; }
+.about__name { font-family: var(--font-h); font-weight: 800; font-size: 22px; color: var(--navy-900); }
+.about__role { font-size: 16px; color: var(--muted); margin-bottom: 10px; }
+.about__p { font-size: 18px; max-width: 62ch; }
+
+/* ---------- faq ---------- */
+.faq { display: grid; gap: 10px; }
+.faq__item { background: #fff; border: 1px solid var(--line); border-radius: var(--r-card); box-shadow: var(--shadow); }
+.faq__q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 20px; background: none; border: 0; cursor: pointer; text-align: left; font-family: var(--font-h); font-weight: 700; font-size: 18px; color: var(--navy-900); min-height: 56px; border-radius: var(--r-card); }
+.faq__q svg { width: 22px; height: 22px; flex: 0 0 auto; color: var(--orange-700); transition: transform .25s var(--ease); }
+.faq__q[aria-expanded="true"] svg { transform: rotate(45deg); }
+.faq__a { display: grid; grid-template-rows: 1fr; transition: grid-template-rows .3s var(--ease); }
+.js .faq__a[hidden] { display: grid; grid-template-rows: 0fr; }
+.faq__a > div { overflow: hidden; }
+.faq__a p { padding: 0 20px 20px; color: var(--muted); font-size: 17px; }
+
+/* ---------- form ---------- */
+.form { display: grid; gap: var(--s2); background: #fff; border: 1px solid var(--line); border-radius: var(--r-card); padding: var(--s3); box-shadow: var(--shadow-lg); }
+.form__row { display: grid; gap: var(--s2); }
+@media (min-width: 640px) { .form__row { grid-template-columns: 1fr 1fr; } }
+.field { display: grid; gap: 6px; min-width: 0; }
+.field label { font-weight: 600; font-size: 16px; color: var(--navy-900); }
+.field label small { font-weight: 500; color: var(--muted); font-size: 15px; }
+.field input, .field select { width: 100%; min-height: 52px; font: inherit; font-size: 17px; color: var(--ink); background: #fff; border: 1.5px solid #C9C3BA; border-radius: var(--r-btn); padding: 10px 14px; }
+.field select { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235B6472' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 44px; }
+.field input:focus-visible, .field select:focus-visible { outline: 3px solid var(--blue-600); outline-offset: 2px; border-color: var(--blue-600); }
+.field input[aria-invalid="true"], .field select[aria-invalid="true"] { border-color: var(--red-600); }
+.field__err { font-size: 15px; color: var(--red-600); }
+.trap { position: absolute !important; left: -10000px !important; top: auto !important; width: 1px !important; height: 1px !important; overflow: hidden !important; opacity: 0; pointer-events: none; }
+.form__msg { font-size: 16px; padding: 12px 14px; border-radius: var(--r-btn); background: #FEF2F2; color: var(--red-600); }
+.form__fine { font-size: 15px; color: var(--muted); }
+.done { background: var(--green-50); border: 1px solid #BBE5C8; border-radius: var(--r-card); padding: var(--s3); display: flex; gap: 14px; align-items: flex-start; }
+.done svg { width: 32px; height: 32px; color: var(--green-600); flex: 0 0 auto; }
+.done h3 { color: var(--green-600); margin-bottom: 6px; }
+.done p { color: var(--ink); }
+
+/* ---------- footer ---------- */
+.ftr { background: var(--navy-900); color: #D6DEE8; padding: var(--s8) 0 calc(var(--s4) + 72px); font-size: 16px; }
+@media (min-width: 900px) { .ftr { padding-bottom: var(--s4); } }
+.ftr a { color: #fff; }
+.ftr__grid { display: grid; gap: var(--s4); }
+@media (min-width: 900px) { .ftr__grid { grid-template-columns: 1.3fr 1fr 1.2fr; } }
+.ftr .logo { color: #fff; } .ftr .logo__by { color: #B7C3D1; }
+.ftr__p { margin-top: 12px; max-width: 36ch; }
+.ftr__links { display: grid; gap: 2px; }
+.ftr__links a { display: inline-flex; align-items: center; min-height: 48px; text-decoration: none; }
+.ftr__links a:hover { text-decoration: underline; }
+.ftr address { font-style: normal; line-height: 1.7; }
+.ftr__copy { margin-top: var(--s4); font-size: 15px; color: #B7C3D1; }
+
+/* ---------- sticky mobile bar ---------- */
+.bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 80; display: grid; grid-template-columns: 1fr 1.4fr; gap: 10px; padding: 10px var(--gr) max(10px, env(safe-area-inset-bottom, 0px)) var(--gl); background: rgba(255,255,255,.97); border-top: 1px solid var(--line); box-shadow: 0 -8px 24px rgba(15,42,68,.08); transform: translateY(110%); transition: transform .25s var(--ease); }
+.bar.is-on { transform: none; }
+.bar .btn { min-height: 48px; }
+@media (min-width: 900px) { .bar { display: none; } }
+
+/* ---------- reveal ---------- */
+.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .5s var(--ease), transform .5s var(--ease); }
+.js .reveal.in { opacity: 1; transform: none; }
+.js .stagger > * { opacity: 0; transform: translateY(16px); transition: opacity .5s var(--ease), transform .5s var(--ease); }
+.js .stagger.in > * { opacity: 1; transform: none; }
+.js .stagger.in > :nth-child(2) { transition-delay: 80ms; } .js .stagger.in > :nth-child(3) { transition-delay: 160ms; } .js .stagger.in > :nth-child(4) { transition-delay: 240ms; } .js .stagger.in > :nth-child(5) { transition-delay: 320ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .reveal, .js .stagger > * { opacity: 1; transform: none; }
+  .js .mock.is-armed .msg { opacity: 1; transform: none; } .typing { display: none !important; }
+  .steps__line i { transform: none !important; } .step .step__n { border-color: var(--orange-700); background: var(--orange-700); color: #fff; }
+  .btn:hover { transform: none; }
+}
+</style>
 </head>
-<body data-zone="night">
+<body>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="hdr" id="hdr">
   <div class="wrap hdr__row">
-    <a class="logo" href="/" aria-label="Second Ring home">
-      <svg class="logo__mark" viewBox="0 0 48 48" width="36" height="36" aria-hidden="true">
-        <rect x="9" y="26" width="10" height="16" rx="3" fill="currentColor"/>
-        <path d="M22 30a8 8 0 0 0-8-8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-        <path d="M32 30a18 18 0 0 0-18-18" fill="none" stroke="#FF6A2B" stroke-width="3.5" stroke-linecap="round"/>
-      </svg>
-      <span>Second Ring</span>
+    <a class="logo" href="/">
+      <svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="26" width="10" height="16" rx="3" fill="#0F2A44"/><path d="M22 30a8 8 0 0 0-8-8" fill="none" stroke="#F97316" stroke-width="3.5" stroke-linecap="round"/><path d="M32 30a18 18 0 0 0-18-18" fill="none" stroke="#C2410C" stroke-width="3.5" stroke-linecap="round"/></svg>
+      <span class="logo__text"><span class="logo__name">Second Ring</span><span class="logo__by">by Dexraflow</span></span>
     </a>
-    <nav class="hdr__nav" aria-label="Page sections">
-      <a href="#how">How it works</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
+    <nav class="nav" aria-label="Page sections">
+      <a href="#how" data-nav>How it works</a>
+      <a href="#report" data-nav>Weekly report</a>
+      <a href="#pricing" data-nav>Pricing</a>
+      <a href="#faq" data-nav>FAQ</a>
     </nav>
-    <a class="btn btn--sm" href="#audit">Free audit</a>
+    <div class="hdr__right">
+      <a class="hdr__call" href="tel:{{US_PHONE}}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>{{US_PHONE}}</a>
+      <a class="iconbtn iconbtn--phone" href="tel:{{US_PHONE}}" aria-label="Call Second Ring"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
+      <a class="btn hdr__cta" href="#audit">Get my free audit</a>
+      <button class="iconbtn iconbtn--menu" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="panel"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
   </div>
 </header>
 
+<div class="panel" id="panel" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="panel__bg" data-close></div>
+  <div class="panel__box">
+    <div class="panel__top">
+      <span class="logo__name" style="color:var(--navy-900)">Menu</span>
+      <button class="iconbtn" type="button" data-close aria-label="Close menu"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <nav class="panel__links" aria-label="Menu links">
+      <a href="#how">How it works</a>
+      <a href="#report">Weekly report</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="panel__foot">
+      <a class="btn btn--lg btn--block" href="#audit">Get my free audit</a>
+      <a class="btn btn--secondary btn--block" href="tel:{{US_PHONE}}">Call {{US_PHONE}}</a>
+    </div>
+  </div>
+</div>
+
 <main id="main">
 
-<!-- 1. HERO (Night) -->
-<section class="hero grain" id="hero">
+<!-- 6.2 Hero -->
+<section class="hero" id="top" aria-labelledby="h1">
   <div class="wrap hero__grid">
-    <div class="hero__copy">
-      <h1 class="hero__h1">You missed the call. We didn't.</h1>
-      <p class="hero__p">Second Ring answers your missed calls and web leads within a minute and books the visit straight into your calendar.</p>
+    <div>
+      <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.5 7-11.5a7 7 0 0 0-14 0C5 14.5 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>For HVAC shops in Columbus, Ohio</span>
+      <h1 id="h1">You missed the call. We didn't.</h1>
+      <p class="hero__sub">We answer your missed calls and website leads within a minute, book the visit straight into Jobber or Housecall Pro, and show you every Monday what it was worth.</p>
       <div class="hero__cta">
-        <a class="btn btn--lg" href="#audit">Get a free missed-call audit</a>
-        <a class="tlink tlink--onDark" href="#how">See how it works</a>
+        <a class="btn btn--lg" href="#audit">Get my free missed-call audit</a>
+        <a class="btn btn--secondary btn--lg" href="tel:{{US_PHONE}}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Hear it answer: call {{US_PHONE}}</a>
       </div>
-      <p class="hero__note">Two weeks, free. See your own numbers before you pay.</p>
-    </div>
-
-    <div class="scene" id="scene" data-phase="incoming" role="img" aria-label="Animated example: a missed call on a workbench phone is answered by Second Ring and booked onto a calendar">
-      <span class="scene__tag mono" aria-hidden="true">Example</span>
-      <svg class="scene__svg" viewBox="0 0 560 420" aria-hidden="true">
-        <defs>
-          <radialGradient id="glowO" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FF6A2B" stop-opacity=".55"/><stop offset=".6" stop-color="#FFB347" stop-opacity=".12"/><stop offset="1" stop-color="#FFB347" stop-opacity="0"/></radialGradient>
-          <linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#FFB347" stop-opacity=".35"/><stop offset="1" stop-color="#FFB347" stop-opacity="0"/></linearGradient>
-        </defs>
-        <!-- workbench -->
-        <g class="bench">
-          <rect x="30" y="300" width="500" height="34" rx="8" fill="#16202E" stroke="#FFFFFF" stroke-width="2"/>
-          <rect x="60" y="334" width="18" height="60" rx="4" fill="#16202E" stroke="#FFFFFF" stroke-width="2"/>
-          <rect x="482" y="334" width="18" height="60" rx="4" fill="#16202E" stroke="#FFFFFF" stroke-width="2"/>
-          <line x1="30" y1="317" x2="530" y2="317" stroke="#5B6878" stroke-width="2" stroke-dasharray="6 10" stroke-linecap="round"/>
-        </g>
-        <!-- wrench -->
-        <g class="wrench" transform="rotate(-28 120 240)">
-          <rect x="88" y="232" width="110" height="16" rx="8" fill="#5B6878" stroke="#FFFFFF" stroke-width="2"/>
-          <path d="M78 212a26 26 0 1 0 0 56l18-6v-44z" fill="#5B6878" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M60 228h16v24H60z" fill="#0F1B2D"/>
-          <path d="M214 214a26 26 0 1 1 0 52l-18-6v-40z" fill="#5B6878" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M216 228h16v24h-16z" fill="#0F1B2D"/>
-        </g>
-        <!-- flashlight -->
-        <g class="torch">
-          <path d="M330 300 L450 272 L450 310 Z" fill="url(#beam)"/>
-          <rect x="356" y="266" width="96" height="30" rx="10" fill="#5B6878" stroke="#FFFFFF" stroke-width="2"/>
-          <rect x="436" y="258" width="34" height="46" rx="8" fill="#16202E" stroke="#FFFFFF" stroke-width="2"/>
-          <circle cx="470" cy="281" r="12" fill="#FFB347" stroke="#FFFFFF" stroke-width="2"/>
-          <rect x="372" y="272" width="22" height="18" rx="4" fill="#0F1B2D" stroke="#FFFFFF" stroke-width="2"/>
-        </g>
-        <!-- glow + rings around the phone -->
-        <circle class="glow" cx="280" cy="170" r="170" fill="url(#glowO)"/>
-        <g class="rings rings--frost">
-          <circle class="ring r1" cx="280" cy="170" r="90" fill="none" stroke="#EAF2F8" stroke-width="2"/>
-          <circle class="ring r2" cx="280" cy="170" r="90" fill="none" stroke="#EAF2F8" stroke-width="2"/>
-          <circle class="ring r3" cx="280" cy="170" r="90" fill="none" stroke="#EAF2F8" stroke-width="2"/>
-        </g>
-        <g class="rings rings--furnace">
-          <circle class="ring r1" cx="280" cy="170" r="90" fill="none" stroke="#FF6A2B" stroke-width="3"/>
-          <circle class="ring r2" cx="280" cy="170" r="90" fill="none" stroke="#FF6A2B" stroke-width="3"/>
-          <circle class="ring r3" cx="280" cy="170" r="90" fill="none" stroke="#FFB347" stroke-width="2"/>
-        </g>
-        <!-- phone -->
-        <g class="phone">
-          <rect x="216" y="56" width="128" height="236" rx="20" fill="#16202E" stroke="#FFFFFF" stroke-width="2"/>
-          <rect x="226" y="72" width="108" height="204" rx="12" fill="#0F1B2D"/>
-          <rect x="262" y="62" width="36" height="5" rx="2.5" fill="#5B6878"/>
-          <rect x="348" y="110" width="4" height="30" rx="2" fill="#FFFFFF"/>
-        </g>
-      </svg>
-      <!-- phone screen overlay -->
-      <div class="screen" aria-hidden="true">
-        <div class="screen__state screen__state--incoming"><span class="mono screen__time">7:42 PM</span><b>Incoming call</b><span class="screen__sub">Unknown caller</span><span class="screen__dots"><i></i><i></i><i></i></span></div>
-        <div class="screen__state screen__state--missed"><span class="mono screen__time">7:42 PM</span><b class="screen__missed">Missed call</b><span class="screen__sub mono">7:42 PM</span></div>
-        <div class="screen__state screen__state--second"><span class="mono screen__time">7:43 PM</span><b class="screen__sr">Second Ring</b><span class="screen__sub">answering…</span></div>
-      </div>
-      <div class="bubble" aria-hidden="true">
-        <span class="bubble__who mono">Second Ring · 7:43 PM</span>
-        <p>Hi, this is Second Ring answering for Miller Heating. I'm an automated assistant. Can I book you a visit?</p>
-      </div>
-      <div class="cal" aria-hidden="true">
-        <span class="cal__tick"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <div><b>Booked: Furnace check</b><span class="mono">Tue 9:00 AM · Miller Heating</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 2. PROBLEM (Frost) -->
-<section class="sec sec--problem" id="problem">
-  <video class="sec__video" id="problemVideo" muted loop playsinline preload="none" poster="media/problem-poster.jpg" aria-hidden="true" tabindex="-1" data-webm="media/problem.webm" data-mp4="media/problem.mp4"></video>
-  <div class="wrap">
-    <div class="sec__head" data-reveal>
-      <h2>Every call you miss is a job the next shop gets.</h2>
-      <p class="sec__p">You can't answer while you're working. Nobody can. But the caller doesn't wait.</p>
-    </div>
-    <div class="cards" data-reveal data-stagger>
-      <article class="card">
-        <svg class="ill" viewBox="0 0 240 160" aria-hidden="true">
-          <rect x="20" y="18" width="150" height="124" rx="10" fill="#5B6878" stroke="#16202E" stroke-width="2"/>
-          <rect x="34" y="32" width="122" height="96" rx="6" fill="#16202E"/>
-          <path d="M46 44h98M46 56h98M46 68h98" stroke="#5B6878" stroke-width="3" stroke-linecap="round"/>
-          <circle cx="146" cy="118" r="5" fill="#FF6A2B"/>
-          <path d="M62 160V118c0-9 6-15 15-15h2c8 0 13 6 13 14v9l4-12c2-5 9-5 10 1l-3 15v30" fill="#EAF2F8" stroke="#16202E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-          <path d="M70 118l-3-18c-1-6 7-7 8-1l3 16" fill="#EAF2F8" stroke="#16202E" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M106 160v-36c0-8 6-14 14-14h4c8 0 13 6 13 14v6l6-12c2-5 9-4 9 2l-5 16v24" fill="#EAF2F8" stroke="#16202E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-          <path d="M62 150h36M106 150h40" stroke="#16202E" stroke-width="2" stroke-linecap="round"/>
-          <rect x="188" y="88" width="34" height="58" rx="7" fill="#16202E" stroke="#16202E" stroke-width="2"/>
-          <rect x="192" y="94" width="26" height="44" rx="4" fill="#FFB347"/>
-          <path d="M205 102v10M205 118v3" stroke="#16202E" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M184 80a26 26 0 0 0-8 20M178 66a40 40 0 0 0-12 34" fill="none" stroke="#FF6A2B" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
-        <h3>Hands full</h3>
-        <p>You're inside a furnace panel with both hands busy. The phone lights up on the floor. It rings twice and stops.</p>
-      </article>
-      <article class="card">
-        <svg class="ill" viewBox="0 0 240 160" aria-hidden="true">
-          <rect x="22" y="22" width="68" height="118" rx="10" fill="#16202E"/>
-          <rect x="28" y="30" width="56" height="100" rx="6" fill="#EAF2F8"/>
-          <circle cx="56" cy="62" r="13" fill="#E5484D"/>
-          <path d="M50 56l12 12M62 56L50 68" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M40 90h32M40 102h22" stroke="#5B6878" stroke-width="2" stroke-linecap="round"/>
-          <rect x="38" y="112" width="36" height="8" rx="4" fill="#E5484D"/>
-          <path d="M100 80c24 0 30-30 58-30" fill="none" stroke="#16202E" stroke-width="2" stroke-dasharray="5 6" stroke-linecap="round"/>
-          <path d="M150 42l12 8-12 8" fill="none" stroke="#16202E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M160 72h58v62h-58z" fill="#FBF7F2" stroke="#16202E" stroke-width="2"/>
-          <path d="M152 74l10-18h54l10 18z" fill="#5B6878" stroke="#16202E" stroke-width="2" stroke-linejoin="round"/>
-          <rect x="178" y="98" width="22" height="36" fill="#EAF2F8" stroke="#16202E" stroke-width="2"/>
-          <rect x="166" y="82" width="46" height="10" rx="2" fill="#FFB347" stroke="#16202E" stroke-width="2"/>
-          <circle cx="206" cy="118" r="2" fill="#16202E"/>
-        </svg>
-        <h3>No voicemail</h3>
-        <p>The caller doesn't leave a message. They go back to the search results and ring the next shop on the list.</p>
-      </article>
-      <article class="card">
-        <svg class="ill" viewBox="0 0 240 160" aria-hidden="true">
-          <path d="M40 106h132v12a6 6 0 0 1-6 6H46a6 6 0 0 1-6-6z" fill="#5B6878" stroke="#16202E" stroke-width="2"/>
-          <rect x="52" y="36" width="108" height="70" rx="6" fill="#16202E" stroke="#16202E" stroke-width="2"/>
-          <rect x="58" y="42" width="96" height="58" rx="3" fill="#EAF2F8"/>
-          <rect x="68" y="52" width="76" height="8" rx="3" fill="#fff" stroke="#5B6878" stroke-width="1.5"/>
-          <rect x="68" y="66" width="76" height="8" rx="3" fill="#fff" stroke="#5B6878" stroke-width="1.5"/>
-          <rect x="68" y="80" width="40" height="10" rx="5" fill="#FF6A2B"/>
-          <path d="M202 36a22 22 0 1 0 14 38 18 18 0 0 1-14-38z" fill="#FFB347" stroke="#16202E" stroke-width="2" stroke-linejoin="round"/>
-          <circle cx="206" cy="112" r="22" fill="#FBF7F2" stroke="#16202E" stroke-width="2"/>
-          <path d="M206 112V98M206 112l9 5" stroke="#16202E" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="206" cy="112" r="2.5" fill="#16202E"/>
-          <path d="M22 54l3 3M20 76l4-1M32 40l1 4" stroke="#EAF2F8" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        <h3>The late web form</h3>
-        <p>A request comes in at 9 pm. You see it at 7 the next morning. They booked with someone else at 9:15.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- 3. HOW IT WORKS (Paper) -->
-<section class="sec" id="how">
-  <div class="wrap">
-    <div class="sec__head" data-reveal>
-      <h2>How it works</h2>
-      <p class="sec__p">Four things happen, and you don't touch any of them.</p>
-    </div>
-    <div class="how" id="howTrack">
-      <div class="how__line" aria-hidden="true"><i id="howFill"></i></div>
-      <ol class="how__steps" data-reveal data-stagger>
-        <li class="how__step" data-step>
-          <div class="how__ico">
-            <svg viewBox="0 0 120 120" aria-hidden="true">
-              <rect x="42" y="22" width="36" height="76" rx="8" fill="#16202E"/>
-              <rect x="46" y="28" width="28" height="60" rx="4" fill="#EAF2F8"/>
-              <path class="how__ring" d="M30 40a30 30 0 0 0 0 40M22 32a42 42 0 0 0 0 56M90 40a30 30 0 0 1 0 40M98 32a42 42 0 0 1 0 56" fill="none" stroke="#5B6878" stroke-width="2.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>Your phone rings. Nobody can get it.</h3>
-          <p>Missed call or web form, it comes to us within a minute.</p>
-        </li>
-        <li class="how__step" data-step>
-          <div class="how__ico">
-            <svg viewBox="0 0 120 120" aria-hidden="true">
-              <rect x="24" y="40" width="72" height="44" rx="12" fill="#FBF7F2" stroke="#16202E" stroke-width="2.5"/>
-              <path d="M36 84l-6 12 18-12" fill="#FBF7F2" stroke="#16202E" stroke-width="2.5" stroke-linejoin="round"/>
-              <path d="M38 54h44M38 64h30" stroke="#5B6878" stroke-width="2.5" stroke-linecap="round"/>
-              <path class="how__ring" d="M58 24a14 14 0 0 1 14 14" fill="none" stroke="#FF6A2B" stroke-width="3" stroke-linecap="round"/>
-              <path class="how__ring" d="M62 12a26 26 0 0 1 26 26" fill="none" stroke="#FF6A2B" stroke-width="3" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>Second Ring answers</h3>
-          <p>Scripts written for heating and cooling work. It says it's an assistant, asks what's wrong, and offers a person.</p>
-        </li>
-        <li class="how__step" data-step>
-          <div class="how__ico">
-            <svg viewBox="0 0 120 120" aria-hidden="true">
-              <rect x="22" y="28" width="76" height="68" rx="10" fill="#FBF7F2" stroke="#16202E" stroke-width="2.5"/>
-              <path d="M22 46h76" stroke="#16202E" stroke-width="2.5"/>
-              <path d="M38 22v12M82 22v12" stroke="#16202E" stroke-width="2.5" stroke-linecap="round"/>
-              <rect x="34" y="56" width="12" height="10" rx="2" fill="#EAF2F8"/><rect x="54" y="56" width="12" height="10" rx="2" fill="#EAF2F8"/><rect x="74" y="56" width="12" height="10" rx="2" fill="#EAF2F8"/>
-              <rect x="34" y="72" width="12" height="10" rx="2" fill="#EAF2F8"/>
-              <rect class="how__ring" x="54" y="72" width="32" height="12" rx="3" fill="#1FA971"/>
-            </svg>
-          </div>
-          <h3>The job lands on your calendar</h3>
-          <p>Straight into Jobber or Housecall Pro, with the caller's details and the problem.</p>
-        </li>
-        <li class="how__step" data-step>
-          <div class="how__ico">
-            <svg viewBox="0 0 120 120" aria-hidden="true">
-              <path d="M30 20h44l16 16v64H30z" fill="#FBF7F2" stroke="#16202E" stroke-width="2.5" stroke-linejoin="round"/>
-              <path d="M74 20v16h16" fill="none" stroke="#16202E" stroke-width="2.5" stroke-linejoin="round"/>
-              <path d="M40 50h40M40 62h40" stroke="#5B6878" stroke-width="2.5" stroke-linecap="round"/>
-              <rect class="how__ring" x="40" y="72" width="12" height="18" fill="#FF6A2B"/><rect class="how__ring" x="56" y="66" width="12" height="24" fill="#FF6A2B"/><rect class="how__ring" x="72" y="76" width="12" height="14" fill="#FFB347"/>
-            </svg>
-          </div>
-          <h3>Every Monday, a report</h3>
-          <p>Jobs booked, money recovered, emergencies passed on, and whether the desk stayed up. A person checks every call the morning after.</p>
-        </li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<!-- 4. WEEKLY REPORT -->
-<section class="sec" id="report">
-  <div class="wrap report__grid">
-    <div class="sec__head sec__head--left" data-reveal>
-      <h2>What you get each week</h2>
-      <p class="sec__p">One short email, every Monday. No dashboard to log into.</p>
-      <ul class="ticks">
-        <li>Calls and web leads we handled for you</li>
-        <li>Visits booked, with names and times</li>
-        <li>Money recovered, from your own average job value</li>
-        <li>Emergencies passed to your on-call tech</li>
-        <li>Fixes made after the daily review</li>
-        <li>Uptime, including any fallback to voicemail</li>
+      <ul class="trust">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Free 2-week audit</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Month to month, cancel anytime</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Works with Jobber &amp; Housecall Pro</li>
       </ul>
     </div>
-    <figure class="rep" data-reveal id="rep">
-      <figcaption class="rep__tag mono">Sample report · made-up numbers</figcaption>
-      <div class="rep__head"><div><b>Weekly report</b><span>Miller Heating · week of Nov 3</span></div><span class="rep__up"><i></i>Desk up all week</span></div>
-      <dl class="rep__stats">
-        <div><dt>Calls answered</dt><dd class="mono" data-count="14">14</dd></div>
-        <div><dt>Web leads</dt><dd class="mono" data-count="6">6</dd></div>
-        <div><dt>Visits booked</dt><dd class="mono rep__booked" data-count="7">7</dd></div>
-        <div><dt>Recovered</dt><dd><span class="mono" data-count="2660" data-prefix="$">$2,660</span> <small>7 visits × $380 avg</small></dd></div>
-      </dl>
-      <table class="rep__table">
-        <caption class="sr-only">All 7 sample booked visits</caption>
-        <thead><tr><th scope="col">Call</th><th scope="col">Job</th><th scope="col">Booked for</th></tr></thead>
-        <tbody>
-          <tr><td class="mono">Mon 6:40 PM</td><td>No heat, upstairs</td><td class="mono">Tue 8:00 AM</td></tr>
-          <tr><td class="mono">Tue 7:15 AM</td><td>Furnace short-cycling</td><td class="mono">Tue 1:30 PM</td></tr>
-          <tr><td class="mono">Wed 12:10 PM</td><td>Furnace tune-up</td><td class="mono">Thu 1:00 PM</td></tr>
-          <tr><td class="mono">Wed 8:52 PM</td><td>Pilot light out</td><td class="mono">Thu 8:00 AM</td></tr>
-          <tr><td class="mono">Thu 5:30 PM</td><td>Heat pump noise</td><td class="mono">Fri 10:00 AM</td></tr>
-          <tr><td class="mono">Fri 11:05 AM</td><td>Filter and duct check</td><td class="mono">Mon 9:00 AM</td></tr>
-          <tr><td class="mono">Sat 9:05 AM</td><td>Thermostat replace</td><td class="mono">Mon 10:30 AM</td></tr>
-        </tbody>
-      </table>
-      <ul class="rep__foot"><li>Emergencies passed to on-call tech: <b class="mono">1</b></li><li>Fixes after daily review: <b class="mono">2</b></li><li>Fallback to voicemail: <b class="mono">0 min</b></li></ul>
+    <div class="mock" id="mock">
+      <div class="phone" role="img" aria-label="Example text conversation: a missed call at 7:42 PM, the assistant texts back, the caller says the furnace is blowing cold air, and a visit is booked in Jobber for Tuesday 9:00 AM">
+        <div class="phone__notch" aria-hidden="true"></div>
+        <div class="phone__status mono" aria-hidden="true"><span>7:42 PM</span><span>Miller Heating</span></div>
+        <div class="phone__screen">
+          <div class="msg msg--notif" data-step="1"><span class="dot"></span><div><b>Missed call</b><span class="mono">(614) 555-0142 · 7:42 PM</span></div></div>
+          <div class="msg msg--out" data-step="2">Hi, this is the after-hours assistant for Miller Heating (I'm an AI). Sorry we missed you! Is this about no heat, or something that can wait till morning?</div>
+          <div class="msg msg--in" data-step="3">Furnace is blowing cold air</div>
+          <div class="msg msg--out" data-step="4">Got it. I can book a technician for Tuesday 9:00 AM, or text the on-call tech now if it's urgent. Which works?</div>
+          <div class="msg msg--in" data-step="5">Tuesday 9 is fine</div>
+          <div class="msg msg--booked" data-step="6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><div><b>Booked in Jobber</b><span>Furnace check · Tue 9:00 AM</span></div></div>
+          <div class="typing" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+      </div>
+      <p class="mock__cap">Example conversation. Miller Heating is a made-up shop.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap band reveal">
+  <div class="ph ph--wide" role="img" aria-label="A heating and cooling service van parked outside a house on a frosty morning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg><span>{{PHOTO_HERO}}</span></div>
+</div>
+
+<!-- 6.3 Problem -->
+<section class="sec" id="problem" aria-labelledby="problem-title">
+  <div class="wrap">
+    <div class="intro reveal">
+      <div class="sec__head sec__head--left">
+        <h2 id="problem-title">Every missed call is a job the next shop gets.</h2>
+        <p class="sec__sub">Your phone rings while your hands are in a furnace. By the time you call back, they've booked someone else.</p>
+      </div>
+      <div class="ph ph--tech" role="img" aria-label="A technician kneeling at an open furnace with a phone ringing on the floor beside the toolbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg><span>{{PHOTO_TECH}}</span></div>
+    </div>
+    <div class="cards stagger">
+      <article class="card">
+        <div class="card__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 10V5a2 2 0 0 0-4 0v8M10 11V7a2 2 0 0 0-4 0v9a6 6 0 0 0 12 0v-5a2 2 0 0 0-4 0"/><path d="M14 12a2 2 0 0 1 4 0v4"/></svg></div>
+        <h3>Hands full.</h3>
+        <p>You're on a job, the phone rings, nobody picks up.</p>
+      </article>
+      <article class="card">
+        <div class="card__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/><path d="M15 3l6 6M21 3l-6 6"/></svg></div>
+        <h3>No voicemail.</h3>
+        <p>Most callers with no heat don't leave a message. They call the next shop on Google.</p>
+      </article>
+      <article class="card">
+        <div class="card__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M2 20h20M7 9h10M7 13h6"/></svg></div>
+        <h3>The late web form.</h3>
+        <p>A request comes in at 9 PM. You see it at 7 AM. They booked elsewhere at 9:15 last night.</p>
+      </article>
+    </div>
+    <p class="stat reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg><span>In a 2026 secret-shopper study of 3,211 home-service locations, 72% of inquiries got no follow-up. Source: <a href="{{PIED_PIPER_URL}}" rel="noopener">Pied Piper PSI</a></span></p>
+  </div>
+</section>
+
+<!-- 6.4 How it works -->
+<section class="sec sec--warm" id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="sec__head reveal"><h2 id="how-title">How it works</h2></div>
+    <div class="steps" id="steps">
+      <div class="steps__line" aria-hidden="true"><i id="stepsFill"></i></div>
+      <div class="step" data-step><span class="step__n" aria-hidden="true">1</span><h3>We catch it.</h3><p>Missed calls and web forms reach us within a minute, day or night.</p></div>
+      <div class="step" data-step><span class="step__n" aria-hidden="true">2</span><h3>We answer honestly.</h3><p>The assistant says it's an AI, asks what's wrong, and always offers a real person.</p></div>
+      <div class="step" data-step><span class="step__n" aria-hidden="true">3</span><h3>We book it.</h3><p>The visit lands straight in your Jobber or Housecall Pro calendar. No double entry.</p></div>
+      <div class="step" data-step><span class="step__n" aria-hidden="true">4</span><h3>We prove it.</h3><p>Every Monday you get a report: calls answered, visits booked, money recovered.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6.5 Weekly report -->
+<section class="sec" id="report" aria-labelledby="report-title">
+  <div class="wrap report">
+    <div class="sec__head sec__head--left reveal">
+      <p class="eyebrow"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M22 30a8 8 0 0 0-8-8" fill="none" stroke="#F97316" stroke-width="4" stroke-linecap="round"/><path d="M32 30a18 18 0 0 0-18-18" fill="none" stroke="#C2410C" stroke-width="4" stroke-linecap="round"/></svg>Weekly report</p>
+      <h2 id="report-title">Every Monday, proof in plain numbers.</h2>
+      <p class="sec__sub">No dashboards to log into. One email, five numbers, every call listed.</p>
+      <ul class="ticks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Every call and web lead we handled, with the outcome</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Money recovered, worked out from your own average ticket</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Uptime and any minute we fell back to voicemail</li>
+      </ul>
+    </div>
+    <figure class="mail reveal" id="mail" aria-label="Sample weekly report email">
+      <div class="mail__bar"><div><b>Weekly report: Miller Heating</b>Mon, Nov 10 · 7:00 AM</div><span>from Second Ring</span></div>
+      <div class="mail__body">
+        <p class="mail__title">Last week, in five numbers</p>
+        <ul class="nums">
+          <li><small>Calls answered</small><b class="mono" data-count="14">14</b></li>
+          <li><small>Web leads replied to</small><b class="mono" data-count="6">6</b></li>
+          <li><small>Visits booked</small><b class="mono is-green" data-count="7">7</b></li>
+          <li><small>Estimated recovered</small><b class="mono" data-count="2660" data-prefix="$">$2,660</b><span class="cap">7 visits × $380 average ticket</span></li>
+          <li><small>Emergencies passed to your tech</small><b class="mono" data-count="1">1</b></li>
+          <li><small>Uptime</small><b class="mono">99.9%</b><span class="cap">Voicemail fallback used: 0 min</span></li>
+        </ul>
+        <h3 class="mail__h3">Visits booked this week (3 of 7 shown)</h3>
+        <table class="tbl">
+          <caption class="sr-only">Three of the seven sample visits booked</caption>
+          <thead><tr><th scope="col">Call</th><th scope="col">Problem</th><th scope="col">Booked</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">Mon 7:42 PM</td><td>Furnace blowing cold</td><td class="ok mono">Tue 9:00 AM</td></tr>
+            <tr><td class="mono">Wed 12:15 PM</td><td>No heat upstairs</td><td class="ok mono">Wed 3:30 PM</td></tr>
+            <tr><td class="mono">Sat 10:05 PM</td><td>Thermostat not responding</td><td class="ok mono">Mon 8:00 AM</td></tr>
+          </tbody>
+        </table>
+        <figcaption class="mail__note">Sample report with made-up numbers. Yours will show your real ones.</figcaption>
+      </div>
     </figure>
   </div>
 </section>
 
-<!-- 5. EMERGENCIES -->
-<section class="sec" id="emergency">
-  <div class="wrap">
-    <div class="sec__head" data-reveal>
-      <h2>Emergencies go to your tech, not to a queue.</h2>
-      <p class="sec__p">A no-heat call at midnight is transferred to your own on-call tech. If nobody picks up, the tech gets a text with the caller's number and the problem.</p>
+<!-- 6.6 Emergencies -->
+<section class="sec sec--warm" id="emergencies" aria-labelledby="emg-title">
+  <div class="wrap emg" id="emg">
+    <div class="emg__copy reveal">
+      <h2 id="emg-title">No heat at midnight? It goes straight to your on-call tech.</h2>
+      <p>Emergency calls are transferred to the technician you choose. If nobody answers, your tech gets a text with the caller's number and problem within seconds. Nothing urgent waits until morning.</p>
     </div>
-    <figure class="emg" id="emg" data-reveal aria-label="Diagram: caller, then Second Ring, then the on-call tech's phone">
-      <svg class="emg__svg" viewBox="0 0 720 220" aria-hidden="true">
-        <path id="emgPath" class="emg__path" d="M120 110 C 220 110, 260 110, 360 110 S 500 110, 600 110" fill="none" stroke="#5B6878" stroke-width="2.5" stroke-dasharray="8 10" stroke-linecap="round"/>
-        <circle class="emg__dot" r="7" fill="#FF6A2B"/>
-        <!-- caller -->
-        <g class="emg__node">
-          <circle cx="120" cy="110" r="46" fill="#FBF7F2" stroke="#16202E" stroke-width="2.5"/>
-          <rect x="104" y="84" width="32" height="56" rx="7" fill="#16202E"/>
-          <rect x="108" y="90" width="24" height="40" rx="3" fill="#EAF2F8"/>
-          <path d="M114 100l12 12M126 100l-12 12" stroke="#E5484D" stroke-width="2.5" stroke-linecap="round"/>
-          <text x="120" y="186" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#16202E">Caller, 11:52 PM</text>
-        </g>
-        <!-- second ring -->
-        <g class="emg__node">
-          <circle cx="360" cy="110" r="46" fill="#FBF7F2" stroke="#16202E" stroke-width="2.5"/>
-          <rect x="344" y="112" width="10" height="18" rx="3" fill="#16202E"/>
-          <path d="M358 116a9 9 0 0 0-9-9" fill="none" stroke="#16202E" stroke-width="3" stroke-linecap="round"/>
-          <path d="M370 116a21 21 0 0 0-21-21" fill="none" stroke="#FF6A2B" stroke-width="3.5" stroke-linecap="round"/>
-          <text x="360" y="186" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#16202E">Second Ring</text>
-        </g>
-        <!-- tech -->
-        <g class="emg__node emg__tech">
-          <circle cx="600" cy="110" r="46" fill="#FBF7F2" stroke="#16202E" stroke-width="2.5"/>
-          <g class="emg__phone">
-            <rect x="584" y="84" width="32" height="56" rx="7" fill="#16202E"/>
-            <rect x="588" y="90" width="24" height="40" rx="3" fill="#EAF2F8"/>
-            <circle cx="600" cy="110" r="7" fill="#1FA971"/>
-          </g>
-          <path class="emg__ringline" d="M640 90a30 30 0 0 1 0 40M560 90a30 30 0 0 0 0 40" fill="none" stroke="#FF6A2B" stroke-width="3" stroke-linecap="round"/>
-          <text x="600" y="186" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#16202E">Your on-call tech</text>
-        </g>
-      </svg>
-      <figcaption class="emg__cap">If the tech doesn't pick up: a text with the caller's number and the problem.<br>The assistant answers 24/7. No-heat emergencies go straight to your own on-call tech, and our team reviews every call the next morning.</figcaption>
-    </figure>
+    <div class="flow reveal" role="img" aria-label="Diagram: the caller reaches Second Ring, which transfers the call to your on-call technician">
+      <div class="node"><div class="node__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div><b>Caller</b><span>11:52 PM, no heat</span></div>
+      <div class="link" aria-hidden="true"></div>
+      <div class="node node--sr"><div class="node__ico"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="26" width="8" height="12" rx="2.5" fill="currentColor"/><path d="M25 30a7 7 0 0 0-7-7" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/><path d="M33 30a15 15 0 0 0-15-15" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg></div><b>Second Ring</b><span>answers, transfers</span></div>
+      <div class="link" aria-hidden="true"></div>
+      <div class="node node--tech"><div class="node__ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><b>Your on-call tech</b><span>call, or a text in seconds</span></div>
+    </div>
   </div>
 </section>
 
-<!-- 6. PROMISES -->
-<section class="sec" id="promises">
+<!-- 6.7 Promises -->
+<section class="sec" id="promises" aria-labelledby="prom-title">
   <div class="wrap">
-    <div class="sec__head" data-reveal>
-      <h2>Our promises</h2>
-    </div>
-    <ul class="prom" data-reveal data-stagger>
-      <li class="prom__item">
-        <svg class="prom__ico" viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="10" width="28" height="44" rx="6" fill="#FBF7F2" stroke="#16202E" stroke-width="2"/><rect x="22" y="16" width="20" height="30" rx="3" fill="#EAF2F8"/><path d="M26 26h12M26 32h8" stroke="#5B6878" stroke-width="2" stroke-linecap="round"/><rect x="26" y="38" width="12" height="4" rx="2" fill="#FF6A2B"/><path d="M50 20a10 10 0 0 1 0 14" fill="none" stroke="#FF6A2B" stroke-width="2.5" stroke-linecap="round"/></svg>
-        <h3>Never pretends to be a person</h3><p>Callers are told it's an assistant. Every time.</p>
-      </li>
-      <li class="prom__item">
-        <svg class="prom__ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M14 34L34 14h16v16L30 50a4 4 0 0 1-6 0L14 40a4 4 0 0 1 0-6z" fill="#FBF7F2" stroke="#16202E" stroke-width="2" stroke-linejoin="round"/><circle cx="42" cy="22" r="3" fill="#16202E"/><path d="M12 52L52 12" stroke="#E5484D" stroke-width="3" stroke-linecap="round"/></svg>
-        <h3>Never quotes prices</h3><p>It books the visit. Pricing stays with you.</p>
-      </li>
-      <li class="prom__item">
-        <svg class="prom__ico" viewBox="0 0 64 64" aria-hidden="true"><circle cx="24" cy="24" r="9" fill="#FBF7F2" stroke="#16202E" stroke-width="2"/><path d="M8 50c2-10 8-15 16-15s14 5 16 15" fill="#FBF7F2" stroke="#16202E" stroke-width="2" stroke-linejoin="round"/><rect x="40" y="22" width="14" height="24" rx="4" fill="#16202E"/><rect x="42" y="25" width="10" height="16" rx="2" fill="#FFB347"/><path d="M34 30l6 0" stroke="#FF6A2B" stroke-width="2.5" stroke-linecap="round"/></svg>
-        <h3>Always offers a real person</h3><p>A transfer to your team, or a text to you. Caller's choice.</p>
-      </li>
-      <li class="prom__item">
-        <svg class="prom__ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 10l22 38H10z" fill="#FFB347" stroke="#16202E" stroke-width="2" stroke-linejoin="round"/><path d="M32 24v12" stroke="#16202E" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="42" r="2" fill="#16202E"/><path d="M44 14a8 8 0 0 1 8 8" fill="none" stroke="#FF6A2B" stroke-width="2.5" stroke-linecap="round"/></svg>
-        <h3>Tells you first if something breaks</h3><p>Calls fall back to voicemail, you get an instant text, and you hear it from us before anyone else.</p>
-      </li>
+    <div class="sec__head reveal"><h2 id="prom-title">Our promises</h2></div>
+    <ul class="prom stagger">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><span>Never pretends to be a person.</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><span>Never quotes prices. It books the visit, you set the price.</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><span>Always offers a real person: a transfer or a text, the caller's choice.</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg><span>Tells you first if anything breaks, and shows uptime in every report.</span></li>
     </ul>
   </div>
 </section>
 
-<!-- 7. PRICING -->
-<!-- PRICING START -->
-<section class="sec" id="pricing">
-  <div class="wrap wrap--narrow">
-    <div class="sec__head" data-reveal>
-      <h2>Pricing</h2>
-    </div>
-    <div class="price" data-reveal>
-      <p class="price__big"><span class="mono price__num">$249</span> <span class="price__per">a month, base</span></p>
-      <p class="price__plus">plus a per-job fee for each job booked above your audited baseline. <b>Per-job fee agreed after your audit, with a monthly cap, so there is never a surprise bill.</b></p>
-      <p class="price__base"><b>What "baseline" means:</b> for two weeks we count how many calls and web leads you miss today. We only charge per job for bookings above that number.</p>
-      <ul class="price__inc">
-        <li>The desk, set up and run for you</li>
-        <li>HVAC call scripts</li>
-        <li>Daily human review</li>
-        <li>Weekly report</li>
-      </ul>
-      <p class="price__cancel">Month to month. Cancel any time with one email. No setup fee during the pilot.</p>
-      <p class="price__founding"><b>Founding shops:</b> the first 3 Columbus shops get pilot pricing in exchange for honest feedback.</p>
-      <p class="price__note">The audit comes first and costs nothing. You see your own missed-call numbers before you decide.</p>
-    </div>
-  </div>
-</section>
-<!-- PRICING END -->
-
-<!-- 8. FAQ -->
-<section class="sec" id="faq">
-  <div class="wrap wrap--narrow">
-    <div class="sec__head" data-reveal><h2>Questions owners ask</h2></div>
-    <p class="about" data-reveal><span class="about__mark" aria-hidden="true"><svg viewBox="0 0 48 48" width="22" height="22"><rect x="9" y="26" width="10" height="16" rx="3" fill="currentColor"/><path d="M22 30a8 8 0 0 0-8-8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M32 30a18 18 0 0 0-18-18" fill="none" stroke="#FF6A2B" stroke-width="3.5" stroke-linecap="round"/></svg></span><span class="about__text"><b>Run by Sayyad Shakil.</b> I build and check every setup myself. Email me at <a href="mailto:shakil@dexraflow.in">shakil@dexraflow.in</a>.</span></p>
-    <div class="faq" data-reveal>
-      <details class="faq__i"><summary>Is this a robot answering my phone?</summary><div class="faq__a"><p>Yes, and it says so. The assistant tells callers it's an assistant for your shop. It asks the few questions needed to book a visit, and every caller is offered a transfer to a person or a text to you. The next morning, a person on our team reads the calls and fixes anything it got wrong.</p></div></details>
-      <details class="faq__i"><summary>Does it work with Jobber or Housecall Pro?</summary><div class="faq__a"><p>Yes. Visits are booked straight into your Jobber or Housecall Pro calendar, so your schedule stays in one place. If you use something else, say so on the audit form and we'll tell you honestly whether we can connect to it.</p></div></details>
-      <details class="faq__i"><summary>What happens in an emergency?</summary><div class="faq__a"><p>The assistant answers 24/7. No-heat emergencies go straight to your own on-call tech, and if nobody picks up, the tech gets a text with the caller's name, number and the problem. Our team reviews every call the next morning.</p></div></details>
-      <details class="faq__i"><summary>What if it goes down?</summary><div class="faq__a"><p>Calls fall back to your normal voicemail and you get an instant text. We tell you before you find out yourself, and any downtime shows on your weekly report.</p></div></details>
-      <details class="faq__i"><summary>Is there a contract?</summary><div class="faq__a"><p>No long-term contract. It runs month to month after the free audit, and you can stop at any time.</p></div></details>
-      <details class="faq__i"><summary>Where are you based?</summary><div class="faq__a"><p>We're a small team in Hyderabad, India, working with heating and cooling shops in the US, starting with Columbus, Ohio. You'll deal with the same people throughout, and you can email the founder directly at shakil@dexraflow.in.</p></div></details>
+<!-- 6.8 Pricing -->
+<section class="sec sec--warm" id="pricing" aria-labelledby="pricing-title">
+  <div class="wrap">
+    <div class="sec__head reveal"><h2 id="pricing-title">Simple pricing. Pay more only when we book more.</h2></div>
+    <div class="price">
+      <div class="price__card reveal">
+        <p class="price__amt"><span class="mono">$249</span> <small>a month</small></p>
+        <p class="price__plus">+ <code>{{PER_JOB_FEE}}</code> per booked job <strong>above your measured baseline</strong>, capped at <code>{{MONTHLY_CAP}}</code> a month</p>
+        <ul class="price__inc">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Setup and running it for you</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>HVAC-specific call scripts</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>A person reviews every call the next morning</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Jobber / Housecall Pro booking</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Weekly Monday report</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Emergency transfer to your tech</li>
+        </ul>
+        <a class="btn btn--lg btn--block" href="#audit">Start with a free 2-week audit</a>
+        <p class="price__fine">Month to month. Cancel anytime with one email. No setup fee for founding shops.</p>
+      </div>
+      <div class="reveal">
+        <div class="box">
+          <h3>How the baseline works</h3>
+          <p>For two weeks we measure how many calls and web leads you miss today. That's your baseline. We only charge the per-job fee for bookings above it, so you never pay for jobs you'd have got anyway.</p>
+        </div>
+        <div class="box box--found">
+          <h3>Founding shops</h3>
+          <p>The first 3 Columbus shops get pilot pricing in exchange for honest feedback.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 9. AUDIT FORM -->
-<section class="sec sec--form" id="audit">
-  <div class="wrap wrap--narrow">
-    <div class="sec__head" data-reveal>
-      <h2>Get a free missed-call audit</h2>
-      <p class="sec__p">Tell us about your shop. We'll reply within one business day with your audit start date. Nothing is charged, and nothing to install.</p>
+<!-- 6.9 About -->
+<section class="sec" id="about" aria-labelledby="about-title">
+  <div class="wrap wrap--narrow about reveal">
+    <div class="ph" role="img" aria-label="Portrait of Sayyad Shakil, founder of Dexraflow"><span>{{PHOTO_FOUNDER}}</span></div>
+    <div>
+      <h2 id="about-title" class="about__name">Sayyad Shakil</h2>
+      <p class="about__role">Founder, Dexraflow</p>
+      <p class="about__p">I build and check every setup myself. We're a small team in Hyderabad, India, working US hours for US shops. Every call your assistant takes is reviewed by a person the next morning, and anything it got wrong is fixed within 24 hours.</p>
     </div>
-    <form class="form" id="auditForm" novalidate data-reveal>
+  </div>
+</section>
+
+<!-- 6.10 FAQ -->
+<section class="sec sec--warm" id="faq" aria-labelledby="faq-title">
+  <div class="wrap wrap--narrow">
+    <div class="sec__head reveal"><h2 id="faq-title">Questions owners ask</h2></div>
+    <div class="faq reveal" id="faqList">
+      <div class="faq__item"><h3><button class="faq__q" type="button" aria-expanded="true" aria-controls="faq1">Is it a robot?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></h3><div class="faq__a" id="faq1"><div><p>Yes, and it says so at the start of every call. Callers can always ask for a real person, and we'll transfer them or text your team.</p></div></div></div>
+      <div class="faq__item"><h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq2">Does it work with Jobber and Housecall Pro?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></h3><div class="faq__a" id="faq2"><div><p>Yes. Visits are booked straight into your calendar. Using something else? Tell us in the form and we'll check.</p></div></div></div>
+      <div class="faq__item"><h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq3">What happens with emergencies?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></h3><div class="faq__a" id="faq3"><div><p>They're transferred to your on-call tech. If nobody answers, your tech gets a text with the caller's details right away.</p></div></div></div>
+      <div class="faq__item"><h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq4">What if your system goes down?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></h3><div class="faq__a" id="faq4"><div><p>Calls fall back to your voicemail plus an instant text-back to the caller, which is what you have today plus a text. We tell you first, and uptime is in every weekly report.</p></div></div></div>
+      <div class="faq__item"><h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq5">Is there a contract?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></h3><div class="faq__a" id="faq5"><div><p>No. Month to month, cancel anytime with one email.</p></div></div></div>
+      <div class="faq__item"><h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq6">Who answers at night if you're in India?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></h3><div class="faq__a" id="faq6"><div><p>The assistant answers 24/7 and emergencies go straight to your own tech. Our team reviews every call each morning and fixes anything within 24 hours.</p></div></div></div>
+      <div class="faq__item"><h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq7">Will it quote my prices?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></h3><div class="faq__a" id="faq7"><div><p>No. It books the visit and leaves pricing to you.</p></div></div></div>
+      <div class="faq__item"><h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq8">Is call recording legal?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></h3><div class="faq__a" id="faq8"><div><p>The assistant announces at the start of every call that it's an AI and that the call is recorded.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6.11 Audit form -->
+<section class="sec" id="audit" aria-labelledby="audit-title">
+  <div class="wrap wrap--narrow">
+    <div class="sec__head reveal">
+      <h2 id="audit-title">Get your free missed-call audit</h2>
+      <p class="sec__sub">We'll measure how fast your shop answers calls and web leads for two weeks, then show you your own numbers. No charge, no commitment.</p>
+    </div>
+    <form class="form reveal" id="auditForm" method="post" action="{{FORM_ENDPOINT}}" novalidate>
       <div class="form__row">
-        <label for="f-name">Your name<input id="f-name" name="name" type="text" required autocomplete="name"></label>
-        <label for="f-shop">Shop name<input id="f-shop" name="shop" type="text" required autocomplete="organization"></label>
+        <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" required autocomplete="name" aria-describedby="e-name"><p class="field__err" id="e-name" hidden></p></div>
+        <div class="field"><label for="f-shop">Shop name</label><input id="f-shop" name="shop" type="text" required autocomplete="organization" aria-describedby="e-shop"><p class="field__err" id="e-shop" hidden></p></div>
       </div>
       <div class="form__row">
-        <label for="f-email">Email<input id="f-email" name="email" type="email" required autocomplete="email" inputmode="email"></label>
-        <label for="f-phone">Phone <span class="form__opt">optional, only to send your audit results</span><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></label>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" required autocomplete="email" inputmode="email" aria-describedby="e-email"><p class="field__err" id="e-email" hidden></p></div>
+        <div class="field"><label for="f-phone">Phone <small>(optional, only to send your results)</small></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="e-phone"><p class="field__err" id="e-phone" hidden></p></div>
       </div>
-      <label for="f-tool">Which booking tool do you use?
-        <select id="f-tool" name="tool" required>
-          <option value="">Choose one</option>
-          <option>Jobber</option>
-          <option>Housecall Pro</option>
-          <option>Something else</option>
-          <option>None yet</option>
-        </select>
-      </label>
-      <div class="hp" aria-hidden="true"><label for="f-website">Website</label><input id="f-website" name="botcheck" type="text" tabindex="-1" autocomplete="off"></div>
-      <p class="form__msg" id="formMsg" role="status" hidden></p>
+      <div class="form__row">
+        <div class="field"><label for="f-tool">Booking tool</label><select id="f-tool" name="tool" required aria-describedby="e-tool"><option value="">Choose one</option><option>Jobber</option><option>Housecall Pro</option><option>Something else</option><option>None yet</option></select><p class="field__err" id="e-tool" hidden></p></div>
+        <div class="field"><label for="f-techs">Number of technicians</label><select id="f-techs" name="technicians" required aria-describedby="e-techs"><option value="">Choose one</option><option value="1-3">1–3</option><option value="4-6">4–6</option><option value="7-10">7–10</option><option value="10+">10+</option></select><p class="field__err" id="e-techs" hidden></p></div>
+      </div>
+      <div class="trap" aria-hidden="true"><label for="f-cw">Company website</label><input id="f-cw" name="company_website" type="text" tabindex="-1" autocomplete="off"></div>
+      <p class="form__msg" id="formMsg" role="alert" hidden></p>
       <button class="btn btn--lg" type="submit" id="formSubmit">Request my free audit</button>
-      <p class="form__note">We use these details only to reply and run your audit. <a href="/privacy">Privacy policy</a>.</p>
+      <p class="form__fine">We'll reply within one business day with your audit start date. Nothing is charged. <a href="/privacy">Privacy policy</a>.</p>
     </form>
-    <div class="form__done" id="formDone" hidden tabindex="-1">
-      <h3>Thanks, your request is in.</h3>
-      <p>We'll reply within one business day with your audit start date. Nothing is charged. If you don't hear from us, email <a href="mailto:shakil@dexraflow.in">shakil@dexraflow.in</a>.</p>
-    </div>
-    <div class="form__done" id="formFallback" hidden>
-      <h3>We couldn't send that automatically.</h3>
-      <p>Your request is ready below. Open it in your mail app, or copy it and send it to <strong>shakil@dexraflow.in</strong>.</p>
-      <textarea id="fbText" rows="8" readonly aria-label="Your request, ready to email"></textarea>
-      <div class="form__fbactions">
-        <a class="btn" id="fbMail" href="mailto:shakil@dexraflow.in">Open in mail app</a>
-        <button class="btn btn--ghost" type="button" id="fbCopy">Copy request</button>
-      </div>
+    <div class="done" id="formDone" hidden tabindex="-1">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
+      <div><h3 id="doneTitle">Thanks! We'll email you within one business day to start your audit.</h3><p>Nothing is charged. If you don't hear from us, email <a href="mailto:shakil@dexraflow.in">shakil@dexraflow.in</a>.</p></div>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- 10. FOOTER (Night) -->
-<footer class="ftr grain" id="ftr">
-  <svg class="ftr__sky" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0 160V120h60V90h30V120h50V70h40V120h30V100h40V40h20V20h20V40h20V100h40V120h50V80h40V120h40V60h30V120h60V95h40V120h50V50h20V30h20V50h20V120h50V100h40V120h60V85h30V120h50V70h40V120h40V95h40V120h60V160z" fill="#16202E"/>
-    <g class="ftr__win" fill="#FFB347">
-      <rect x="70" y="100" width="6" height="8"/><rect x="100" y="100" width="6" height="8"/><rect x="150" y="80" width="6" height="8"/><rect x="170" y="95" width="6" height="8"/><rect x="258" y="60" width="6" height="8"/><rect x="258" y="80" width="6" height="8"/><rect x="330" y="95" width="6" height="8"/><rect x="420" y="90" width="6" height="8"/><rect x="465" y="75" width="6" height="8"/><rect x="560" y="105" width="6" height="8"/><rect x="618" y="70" width="6" height="8"/><rect x="618" y="90" width="6" height="8"/><rect x="705" y="110" width="6" height="8"/><rect x="800" y="95" width="6" height="8"/><rect x="865" y="85" width="6" height="8"/><rect x="960" y="100" width="6" height="8"/><rect x="1045" y="105" width="6" height="8"/><rect x="1120" y="100" width="6" height="8"/>
-    </g>
-  </svg>
+<!-- 6.12 Footer -->
+<footer class="ftr">
   <div class="wrap ftr__grid">
     <div>
-      <p class="ftr__brand"><svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><rect x="9" y="26" width="10" height="16" rx="3" fill="#fff"/><path d="M22 30a8 8 0 0 0-8-8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M32 30a18 18 0 0 0-18-18" fill="none" stroke="#FF6A2B" stroke-width="3.5" stroke-linecap="round"/></svg>Second Ring</p>
-      <p class="ftr__p">A missed-call and web-lead booking desk for heating and cooling shops in Columbus, Ohio.</p>
+      <a class="logo" href="/"><svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="26" width="10" height="16" rx="3" fill="#fff"/><path d="M22 30a8 8 0 0 0-8-8" fill="none" stroke="#F97316" stroke-width="3.5" stroke-linecap="round"/><path d="M32 30a18 18 0 0 0-18-18" fill="none" stroke="#F97316" stroke-width="3.5" stroke-linecap="round"/></svg><span class="logo__text"><span class="logo__name">Second Ring</span><span class="logo__by">by Dexraflow</span></span></a>
+      <p class="ftr__p">A booking desk for heating and cooling shops in Columbus, Ohio.</p>
     </div>
-    <address class="ftr__contact">
-      <strong>Sayyad Shakil</strong><br>
+    <nav class="ftr__links" aria-label="Footer">
+      <a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#audit">Free audit</a><a href="/privacy">Privacy policy</a>
+    </nav>
+    <address>
+      <strong style="color:#fff">Sayyad Shakil</strong><br>
       <a href="mailto:shakil@dexraflow.in">shakil@dexraflow.in</a><br>
+      <a href="tel:{{US_PHONE}}">{{US_PHONE}}</a><br>
       1-25-104, Santoshpuri Colony, Sitarampuram,<br>Bowenpally, Tirumalagiri, Hyderabad 500011, India
     </address>
-    <nav class="ftr__links" aria-label="Footer">
-      <a href="#how">How it works</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="#audit">Free audit</a>
-      <a href="/privacy">Privacy policy</a>
-    </nav>
   </div>
-  <div class="wrap"><p class="ftr__copy">Second Ring, by Dexraflow · © <span id="year">2026</span></p></div>
+  <div class="wrap"><p class="ftr__copy">Second Ring, by Dexraflow · © 2026</p></div>
 </footer>
 
-<script src="site.js" defer></script>
+<!-- 6.13 Sticky mobile bar -->
+<div class="bar" id="bar" aria-hidden="true">
+  <a class="btn btn--secondary" href="tel:{{US_PHONE}}" tabindex="-1"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Call</a>
+  <a class="btn" href="#audit" tabindex="-1">Free audit</a>
+</div>
+
+<script>
+(() => {
+  "use strict";
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches || new URLSearchParams(location.search).has("static");
+
+  /* header */
+  const hdr = $("#hdr");
+  const onScroll = () => hdr.classList.toggle("is-scrolled", scrollY > 40);
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  /* mobile panel: focus trap, Esc, scroll lock */
+  const panel = $("#panel"), menuBtn = $("#menuBtn");
+  let lastFocus = null;
+  const focusables = () => $$("a[href], button:not([disabled])", panel.querySelector(".panel__box"));
+  const openPanel = () => { lastFocus = document.activeElement; panel.hidden = false; requestAnimationFrame(() => panel.classList.add("is-open")); document.body.style.overflow = "hidden"; menuBtn.setAttribute("aria-expanded", "true"); setTimeout(() => focusables()[0]?.focus(), 50); };
+  const closePanel = () => { panel.classList.remove("is-open"); document.body.style.overflow = ""; menuBtn.setAttribute("aria-expanded", "false"); setTimeout(() => { panel.hidden = true; }, reduce ? 0 : 300); lastFocus?.focus(); };
+  menuBtn.addEventListener("click", openPanel);
+  $$("[data-close], .panel__links a, .panel__foot a", panel).forEach((el) => el.addEventListener("click", closePanel));
+  panel.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") { e.preventDefault(); closePanel(); return; }
+    if (e.key !== "Tab") return;
+    const f = focusables(), first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+
+  /* active nav link */
+  const navLinks = $$("[data-nav]");
+  if ("IntersectionObserver" in window) {
+    const secObs = new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) navLinks.forEach((a) => a.classList.toggle("is-active", a.getAttribute("href") === "#" + e.target.id)); }), { rootMargin: "-40% 0px -55% 0px" });
+    navLinks.forEach((a) => { const s = $(a.getAttribute("href")); if (s) secObs.observe(s); });
+  }
+
+  /* reveal */
+  const rev = new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); rev.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px", threshold: 0.1 });
+  $$(".reveal, .stagger").forEach((el) => rev.observe(el));
+
+  /* hero conversation: plays once */
+  const mock = $("#mock");
+  if (mock && !reduce) {
+    mock.classList.add("is-armed");
+    const msgs = $$(".msg", mock), typing = $(".typing", mock);
+    const show = (n) => msgs.find((m) => m.dataset.step === String(n))?.classList.add("on");
+    const seq = [[0, () => show(1)], [800, () => typing.classList.add("on")], [1700, () => { typing.classList.remove("on"); show(2); }], [2600, () => show(3)], [3100, () => typing.classList.add("on")], [4000, () => { typing.classList.remove("on"); show(4); }], [4900, () => show(5)], [5600, () => show(6)]];
+    new IntersectionObserver(([e], obs) => { if (!e.isIntersecting) return; obs.disconnect(); seq.forEach(([at, fn]) => setTimeout(fn, at)); }, { threshold: 0.35 }).observe(mock);
+  }
+
+  /* how-it-works line */
+  const steps = $("#steps"), fill = $("#stepsFill"), stepEls = $$("[data-step]", steps);
+  const clamp01 = (v) => Math.max(0, Math.min(1, v));
+  if (steps && fill && !reduce) {
+    let t = false;
+    const draw = () => { t = false; const r = steps.getBoundingClientRect(), vh = innerHeight; const p = clamp01((vh * 0.7 - r.top) / (r.height * 0.9)); fill.style.transform = innerWidth >= 900 ? `scaleX(${p})` : `scaleY(${p})`; stepEls.forEach((s, i) => s.classList.toggle("is-on", p >= (i + 0.3) / stepEls.length)); };
+    const req = () => { if (!t) { t = true; requestAnimationFrame(draw); } };
+    addEventListener("scroll", req, { passive: true }); addEventListener("resize", req); draw();
+  } else stepEls.forEach((s) => s.classList.add("is-on"));
+
+  /* report count-up: final values already in HTML */
+  const mail = $("#mail");
+  if (mail && !reduce) {
+    const cs = $$("[data-count]", mail), fmt = (c, v) => (c.dataset.prefix || "") + Math.round(v).toLocaleString("en-US");
+    new IntersectionObserver(([e], obs) => {
+      if (!e.isIntersecting) return; obs.disconnect();
+      cs.forEach((c) => (c.textContent = fmt(c, 0)));
+      const t0 = performance.now();
+      const tick = (now) => { const p = Math.min(1, (now - t0) / 1200), ease = 1 - Math.pow(1 - p, 3); cs.forEach((c) => (c.textContent = fmt(c, Number(c.dataset.count) * ease))); if (p < 1) requestAnimationFrame(tick); else cs.forEach((c) => (c.textContent = fmt(c, Number(c.dataset.count)))); };
+      requestAnimationFrame(tick);
+    }, { threshold: 0.4 }).observe(mail);
+  }
+
+  /* emergency flow */
+  const emg = $("#emg");
+  if (emg && !reduce) new IntersectionObserver(([e]) => emg.classList.toggle("is-play", e.isIntersecting), { threshold: 0.3 }).observe(emg);
+
+  /* FAQ accordion: one open at a time */
+  const items = $$(".faq__q");
+  const setOpen = (btn, open) => { btn.setAttribute("aria-expanded", String(open)); const p = $("#" + btn.getAttribute("aria-controls")); if (open) { p.hidden = false; } else { p.hidden = true; } };
+  items.forEach((b) => setOpen(b, b.getAttribute("aria-expanded") === "true"));
+  items.forEach((b) => b.addEventListener("click", () => { const open = b.getAttribute("aria-expanded") === "true"; items.forEach((o) => setOpen(o, false)); if (!open) setOpen(b, true); }));
+
+  /* sticky mobile bar */
+  const bar = $("#bar"), hero = $("#top"), audit = $("#audit");
+  if (bar && hero && audit) {
+    let heroGone = false, formOn = false;
+    const upd = () => { const on = heroGone && !formOn; bar.classList.toggle("is-on", on); bar.setAttribute("aria-hidden", String(!on)); $$("a", bar).forEach((a) => (a.tabIndex = on ? 0 : -1)); };
+    new IntersectionObserver(([e]) => { heroGone = !e.isIntersecting && e.boundingClientRect.bottom < 0; upd(); }).observe(hero);
+    new IntersectionObserver(([e]) => { formOn = e.isIntersecting; upd(); }, { threshold: 0.15 }).observe(audit);
+  }
+
+  /* form */
+  const SUPABASE_URL = "https://smerteqnuoqzawmdwlod.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_pH-YD_cbbDqJIJh03OA0Cw_xyzddxLc"; /* publishable key; row level security allows insert only */
+  const form = $("#auditForm"); if (!form) return;
+  const msg = $("#formMsg"), done = $("#formDone"), submit = $("#formSubmit");
+  const rules = {
+    name: (v) => (v.trim() ? "" : "Please enter your name."),
+    shop: (v) => (v.trim() ? "" : "Please enter your shop's name."),
+    email: (v) => (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v.trim()) ? "" : "Please enter a valid email, like you@yourshop.com."),
+    phone: (v) => (!v.trim() || v.replace(/\D/g, "").length >= 7 ? "" : "Please enter a phone number with at least 7 digits, or leave it blank."),
+    tool: (v) => (v ? "" : "Please choose the tool you book with."),
+    technicians: (v) => (v ? "" : "Please choose how many technicians you have."),
+  };
+  const fieldEl = (n) => form.elements[n];
+  const errEl = (n) => $("#" + fieldEl(n).getAttribute("aria-describedby"));
+  const validate = (n) => { const el = fieldEl(n), err = rules[n](el.value); errEl(n).textContent = err; errEl(n).hidden = !err; el.setAttribute("aria-invalid", err ? "true" : "false"); return !err; };
+  Object.keys(rules).forEach((n) => { fieldEl(n).addEventListener("blur", () => validate(n)); fieldEl(n).addEventListener("input", () => { if (fieldEl(n).getAttribute("aria-invalid") === "true") validate(n); }); });
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    msg.hidden = true;
+    const ok = Object.keys(rules).map(validate).every(Boolean);
+    if (!ok) { form.querySelector("[aria-invalid='true']")?.focus(); return; }
+    const trap = fieldEl("company_website").value.trim();
+    const p = { name: fieldEl("name").value.trim(), shop: fieldEl("shop").value.trim(), email: fieldEl("email").value.trim().toLowerCase(), phone: fieldEl("phone").value.trim() || null, booking_tool: fieldEl("tool").value, technicians: fieldEl("technicians").value, source: location.hostname, referrer: (document.referrer || "").slice(0, 500), botcheck: trap };
+    const finish = () => { $("#doneTitle").textContent = `Thanks, ${p.name.split(" ")[0]}! We'll email you within one business day to start your audit.`; form.hidden = true; done.hidden = false; done.focus(); };
+    if (trap) { finish(); return; }
+    submit.disabled = true; submit.innerHTML = '<span class="spin" aria-hidden="true"></span>Sending…';
+    try {
+      const r = await fetch(`${SUPABASE_URL}/rest/v1/audit_requests`, { method: "POST", headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`, "Content-Type": "application/json", Prefer: "return=minimal" }, body: JSON.stringify(p) });
+      if (!r.ok) throw new Error(String(r.status));
+      finish();
+    } catch {
+      msg.innerHTML = 'That didn\'t send. Please try again in a moment, or email us directly at <a href="mailto:shakil@dexraflow.in">shakil@dexraflow.in</a>.'; msg.hidden = false;
+    } finally { submit.disabled = false; submit.textContent = "Request my free audit"; }
+  });
+})();
+</script>
 </body>
 </html>
