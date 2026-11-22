@@ -115,10 +115,12 @@
   }
 
   /* ---------- audit form ---------- */
-  /* Form delivery. Create a free access key at https://web3forms.com for
-     shakil@dexraflow.in and paste it here. While it is empty, the form shows
-     the visitor a prefilled email instead of failing. */
-  const WEB3FORMS_KEY = "";
+  /* Submissions are written to the Second Ring Supabase project. The key below is
+     the project's publishable key: it is designed to ship in a browser, and row
+     level security lets it insert a request and nothing else (no reads, no
+     updates, no deletes). If the insert fails, the visitor gets a prefilled email. */
+  const SUPABASE_URL = "https://smerteqnuoqzawmdwlod.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_pH-YD_cbbDqJIJh03OA0Cw_xyzddxLc";
   const CONTACT = "shakil@dexraflow.in";
   const form = $("#auditForm"); if (!form) return;
   const msg = $("#formMsg"), done = $("#formDone"), fb = $("#formFallback"), submit = $("#formSubmit");
@@ -136,11 +138,12 @@
     if ((data.botcheck || "").trim()) { show("done"); return; }
     say(""); submit.disabled = true; submit.textContent = "Sending…";
     try {
-      if (!WEB3FORMS_KEY) throw new Error("no-key");
-      const { subject } = compose(p);
-      const r = await fetch("https://api.web3forms.com/submit", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ access_key: WEB3FORMS_KEY, subject, from_name: p.name, email: p.email, name: p.name, shop: p.shop, phone: p.phone, booking_tool: p.tool, botcheck: "" }) });
-      const j = await r.json().catch(() => ({}));
-      if (!r.ok || j.success === false) throw new Error(j.message || "send-failed");
+      const r = await fetch(`${SUPABASE_URL}/rest/v1/audit_requests`, {
+        method: "POST",
+        headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`, "Content-Type": "application/json", Prefer: "return=minimal" },
+        body: JSON.stringify({ name: p.name, shop: p.shop, email: p.email.toLowerCase(), phone: p.phone, booking_tool: p.tool, source: location.hostname, referrer: (document.referrer || "").slice(0, 500) }),
+      });
+      if (!r.ok) throw new Error(`insert failed: ${r.status}`);
       show("done"); done.focus();
     } catch {
       const { subject, body } = compose(p);
