@@ -185,7 +185,9 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
 /* ---------- photo band + problem intro ---------- */
 .band { padding-top: var(--s5); }
-.ph--wide { aspect-ratio: 21 / 9; max-width: 100%; }
+.pic { width: 100%; height: auto; border-radius: var(--r-card); box-shadow: var(--shadow); display: block; }
+.pic--wide { aspect-ratio: 1680 / 720; }
+.pic--tech { aspect-ratio: 4 / 3; }
 .intro { display: grid; gap: var(--s4); align-items: center; margin-bottom: var(--s5); }
 @media (min-width: 900px) { .intro { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: var(--s8); } .intro .sec__head { margin-bottom: 0; } }
 .ph--tech { aspect-ratio: 4 / 3; max-width: 100%; }
@@ -455,7 +457,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 </section>
 
 <div class="wrap band reveal">
-  <div class="ph ph--wide" role="img" aria-label="A heating and cooling service van parked outside a house on a frosty morning"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg><span>{{PHOTO_HERO}}</span></div>
+  <img class="pic pic--wide" src="img/hero-van.svg" width="1680" height="720" alt="A Second Ring heating and cooling van parked outside a house on a frosty morning, chimney smoking and windows lit" fetchpriority="high">
 </div>
 
 <!-- 6.3 Problem -->
@@ -466,7 +468,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
         <h2 id="problem-title">Every missed call is a job the next shop gets.</h2>
         <p class="sec__sub">Your phone rings while your hands are in a furnace. By the time you call back, they've booked someone else.</p>
       </div>
-      <div class="ph ph--tech" role="img" aria-label="A technician kneeling at an open furnace with a phone ringing on the floor beside the toolbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg><span>{{PHOTO_TECH}}</span></div>
+      <img class="pic pic--tech" src="img/tech-furnace.svg" width="1200" height="900" alt="A technician kneeling with both hands inside an open furnace panel while a phone rings on the floor beside the toolbox" loading="lazy">
     </div>
     <div class="cards stagger">
       <article class="card">

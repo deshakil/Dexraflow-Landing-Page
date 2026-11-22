@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A heating and cooling service van parked outside a house on a frosty morning, chimney smoking, windows lit" viewBox="0 0 1680 720">
+  <rect x="0" y="0" width="1680" height="720" fill="#EEF4FF"/>
+  <circle cx="1390" cy="150" r="92" fill="#FFF4EC"/>
+  <circle cx="1390" cy="150" r="58" fill="#F97316"/>
+  <path d="M0 430 C 180 380, 340 380, 520 430 S 860 470, 1060 420 S 1400 380, 1680 440 V 720 H 0 Z" fill="#E6E1DA" opacity="0.6"/>
+  <path d="M0 470 C 300 450, 600 470, 900 455 S 1400 460, 1680 445 V 720 H 0 Z" fill="#FFFFFF"/>
+  <path d="M0 520 C 400 505, 800 525, 1200 510 S 1500 515, 1680 505" fill="none" stroke="#E6E1DA" stroke-width="3" stroke-linecap="round"/>
+  <path d="M60 600 C 300 588, 500 604, 760 592" fill="none" stroke="#E6E1DA" stroke-width="3" stroke-linecap="round"/>
+  <path d="M1150 640 C 1300 628, 1500 644, 1680 634" fill="none" stroke="#E6E1DA" stroke-width="3" stroke-linecap="round"/>
+  <g fill="none" stroke="#1D3D5F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1560 470 V 300"/>
+    <path d="M1560 400 L 1500 330 M1500 330 L 1470 300 M1500 330 L 1520 285"/>
+    <path d="M1560 360 L 1620 300 M1620 300 L 1650 270 M1620 300 L 1605 260"/>
+    <path d="M1560 320 L 1535 270 M1560 300 L 1585 250"/>
+  </g>
+  <path d="M1500 476 C 1520 462, 1600 462, 1620 476 Z" fill="#FFFFFF" stroke="#E6E1DA" stroke-width="3"/>
+  <g>
+    <rect x="265" y="262" width="36" height="110" fill="#0F2A44"/>
+    <rect x="256" y="252" width="54" height="18" rx="3" fill="#0F2A44"/>
+    <circle cx="283" cy="226" r="16" fill="#FFFFFF" stroke="#E6E1DA" stroke-width="3"/>
+    <circle cx="300" cy="196" r="22" fill="#FFFFFF" stroke="#E6E1DA" stroke-width="3"/>
+    <circle cx="332" cy="160" r="28" fill="#FFFFFF" stroke="#E6E1DA" stroke-width="3"/>
+    <rect x="190" y="330" width="480" height="150" fill="#FAF7F2" stroke="#0F2A44" stroke-width="4"/>
+    <polygon points="160,335 430,165 700,335" fill="#1D3D5F" stroke="#0F2A44" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M176 318 L 430 158 L 684 318 C 660 322, 640 304, 612 300 C 560 294, 540 322, 500 318 C 460 314, 450 286, 430 286 C 410 286, 400 314, 360 318 C 320 322, 300 296, 258 302 C 226 306, 206 320, 176 318 Z" fill="#FFFFFF"/>
+    <rect x="228" y="362" width="78" height="72" rx="4" fill="#FFF4EC" stroke="#0F2A44" stroke-width="4"/>
+    <rect x="240" y="374" width="54" height="48" rx="2" fill="#F97316" opacity="0.55"/>
+    <path d="M267 362 V 434 M228 398 H 306" stroke="#0F2A44" stroke-width="4"/>
+    <rect x="552" y="362" width="78" height="72" rx="4" fill="#FFF4EC" stroke="#0F2A44" stroke-width="4"/>
+    <rect x="564" y="374" width="54" height="48" rx="2" fill="#F97316" opacity="0.55"/>
+    <path d="M591 362 V 434 M552 398 H 630" stroke="#0F2A44" stroke-width="4"/>
+    <rect x="392" y="372" width="76" height="108" rx="6" fill="#1D3D5F" stroke="#0F2A44" stroke-width="4"/>
+    <circle cx="452" cy="428" r="5" fill="#F97316"/>
+    <rect x="372" y="480" width="116" height="14" rx="3" fill="#E6E1DA" stroke="#0F2A44" stroke-width="3"/>
+    <circle cx="430" cy="352" r="9" fill="#F97316"/>
+  </g>
+  <g fill="none" stroke="#0F2A44" stroke-width="4" stroke-linecap="round">
+    <path d="M120 480 V 400"/>
+    <rect x="96" y="370" width="52" height="32" rx="10" fill="#FAF7F2"/>
+    <path d="M140 362 V 378" stroke="#C2410C" stroke-width="5"/>
+  </g>
+  <g>
+    <ellipse cx="1130" cy="612" rx="320" ry="14" fill="#E6E1DA"/>
+    <path d="M838 560 V 430 C 838 416, 848 406, 862 406 H 1300 L 1392 470 H 1430 C 1442 470, 1450 478, 1450 490 V 560 Z" fill="#FFFFFF" stroke="#0F2A44" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M1300 406 L 1392 470" stroke="#0F2A44" stroke-width="4"/>
+    <path d="M1318 420 H 1366 L 1414 470 H 1318 Z" fill="#EEF4FF" stroke="#0F2A44" stroke-width="4" stroke-linejoin="round"/>
+    <rect x="1240" y="420" width="62" height="50" rx="4" fill="#EEF4FF" stroke="#0F2A44" stroke-width="4"/>
+    <rect x="838" y="522" width="612" height="16" fill="#0F2A44"/>
+    <rect x="838" y="538" width="612" height="6" fill="#C2410C"/>
+    <rect x="880" y="392" width="330" height="10" rx="3" fill="#0F2A44"/>
+    <path d="M900 392 V 372 H 1190 V 392 M940 372 V 392 M990 372 V 392 M1040 372 V 392 M1090 372 V 392 M1140 372 V 392" fill="none" stroke="#0F2A44" stroke-width="4"/>
+    <g transform="translate(1000 430)">
+      <rect x="20" y="40" width="20" height="36" rx="6" fill="#0F2A44"/>
+      <path d="M48 50 a 16 16 0 0 0 -16 -16" fill="none" stroke="#F97316" stroke-width="7" stroke-linecap="round"/>
+      <path d="M70 50 a 38 38 0 0 0 -38 -38" fill="none" stroke="#C2410C" stroke-width="7" stroke-linecap="round"/>
+      <text x="92" y="66" font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-weight="800" font-size="30" fill="#0F2A44" letter-spacing="-0.5">Second Ring</text>
+      <text x="92" y="92" font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-weight="800" font-size="16" fill="#5B6472" letter-spacing="2">HEATING · COOLING</text>
+    </g>
+    <circle cx="930" cy="564" r="44" fill="#0F2A44"/><circle cx="930" cy="564" r="20" fill="#FAF7F2"/>
+    <circle cx="1356" cy="564" r="44" fill="#0F2A44"/><circle cx="1356" cy="564" r="20" fill="#FAF7F2"/>
+    <rect x="1438" y="500" width="14" height="24" rx="4" fill="#F97316"/>
+    <rect x="836" y="500" width="12" height="24" rx="4" fill="#C2410C"/>
+    <circle cx="820" cy="590" r="10" fill="#FFFFFF" stroke="#E6E1DA" stroke-width="3"/>
+    <circle cx="796" cy="582" r="14" fill="#FFFFFF" stroke="#E6E1DA" stroke-width="3"/>
+  </g>
+  <g stroke="#2563EB" stroke-width="3" stroke-linecap="round" opacity="0.5">
+    <path d="M110 560 v 16 M102 568 h 16"/>
+    <path d="M700 660 v 16 M692 668 h 16"/>
+    <path d="M1500 580 v 16 M1492 588 h 16"/>
+    <path d="M1600 660 v 16 M1592 668 h 16"/>
+  </g>
+</svg>
