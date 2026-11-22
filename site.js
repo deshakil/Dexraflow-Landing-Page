@@ -83,6 +83,7 @@
     if (reduce) finish();
     else new IntersectionObserver(([e], obs) => {
       if (!e.isIntersecting) return; obs.disconnect();
+      counters.forEach((c) => (c.textContent = (c.dataset.prefix || "") + "0"));
       const t0 = performance.now(), dur = 1400;
       const tick = (now) => {
         const p = Math.min(1, (now - t0) / dur), ease = 1 - Math.pow(1 - p, 3);
@@ -126,12 +127,12 @@
   const msg = $("#formMsg"), done = $("#formDone"), fb = $("#formFallback"), submit = $("#formSubmit");
   const show = (which) => { form.hidden = which !== "form"; done.hidden = which !== "done"; fb.hidden = which !== "fallback"; };
   const say = (text) => { msg.textContent = text; msg.hidden = !text; };
-  const compose = (p) => ({ subject: `Free missed-call audit: ${p.shop}`, body: [`Name: ${p.name}`, `Shop: ${p.shop}`, `Email: ${p.email}`, `Phone: ${p.phone}`, `Booking tool: ${p.tool}`, "", "Sent from secondring.dexraflow.in"].join("\n") });
+  const compose = (p) => ({ subject: `Free missed-call audit: ${p.shop}`, body: [`Name: ${p.name}`, `Shop: ${p.shop}`, `Email: ${p.email}`, `Phone: ${p.phone || "(not given)"}`, `Booking tool: ${p.tool}`, "", "Sent from secondring.dexraflow.in"].join("\n") });
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(form).entries());
     const p = { name: (data.name || "").trim(), shop: (data.shop || "").trim(), email: (data.email || "").trim(), phone: (data.phone || "").trim(), tool: (data.tool || "").trim() };
-    const bad = Object.keys(p).filter((k) => !p[k]);
+    const bad = Object.keys(p).filter((k) => k !== "phone" && !p[k]);
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(p.email)) bad.push("email");
     form.querySelectorAll("input, select").forEach((el) => el.classList.toggle("is-bad", bad.includes(el.name)));
     if (bad.length) { say("Please fill in every field, including a valid email address."); form.querySelector(".is-bad")?.focus(); return; }
@@ -141,7 +142,7 @@
       const r = await fetch(`${SUPABASE_URL}/rest/v1/audit_requests`, {
         method: "POST",
         headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`, "Content-Type": "application/json", Prefer: "return=minimal" },
-        body: JSON.stringify({ name: p.name, shop: p.shop, email: p.email.toLowerCase(), phone: p.phone, booking_tool: p.tool, source: location.hostname, referrer: (document.referrer || "").slice(0, 500) }),
+        body: JSON.stringify({ name: p.name, shop: p.shop, email: p.email.toLowerCase(), phone: p.phone || null, booking_tool: p.tool, source: location.hostname, referrer: (document.referrer || "").slice(0, 500), botcheck: (data.botcheck || "").trim() }),
       });
       if (!r.ok) throw new Error(`insert failed: ${r.status}`);
       show("done"); done.focus();

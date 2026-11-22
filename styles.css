@@ -223,7 +223,15 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .price__plus b { color: var(--ink); font-weight: 600; }
 .price__inc { list-style: none; margin: 22px auto 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
 .price__inc li { background: var(--frost); border-radius: 999px; padding: 8px 14px; font-size: 15px; font-weight: 500; }
+.price__base { margin: 16px auto 0; font-size: 16px; color: var(--slate); max-width: 52ch; }
+.price__base b, .price__founding b { color: var(--ink); font-weight: 600; }
+.price__cancel { margin-top: 18px; font-size: 17px; font-weight: 600; color: var(--ink); }
+.price__founding { margin-top: 8px; font-size: 16px; color: var(--slate); max-width: 52ch; margin-inline: auto; }
 .price__note { margin-top: 20px; font-size: 15px; color: var(--slate); }
+.about { display: flex; align-items: flex-start; gap: 12px; max-width: 60ch; margin: 0 auto 22px; padding: 16px 18px; background: #fff; border-radius: var(--r); box-shadow: 0 2px 6px -2px rgba(22,32,46,.08); font-size: 17px; color: var(--slate); }
+.about b { color: var(--ink); font-weight: 600; }
+.about__mark { flex: 0 0 auto; width: 40px; height: 40px; border-radius: 50%; background: var(--night); color: #fff; display: grid; place-items: center; }
+.form__opt { display: block; font-weight: 400; font-size: 14px; color: var(--slate); }
 
 /* faq */
 .faq { display: grid; gap: 10px; }
@@ -246,7 +254,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .form input.is-bad, .form select.is-bad { border-color: var(--missed); }
 .form__msg { font-size: 16px; padding: 12px 14px; border-radius: 10px; background: #FBE7E8; color: #8E2B2F; }
 .form__note { font-size: 15px; color: var(--slate); }
-.hp { position: absolute !important; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.hp { position: absolute !important; left: -10000px !important; top: auto !important; width: 1px !important; height: 1px !important; overflow: hidden !important; opacity: 0; pointer-events: none; }
 .form__done { margin-top: 24px; background: #fff; border-radius: var(--r); padding: 24px; display: grid; gap: 12px; outline: none; box-shadow: 0 2px 6px -2px rgba(22,32,46,.08); }
 .form__done p { color: var(--slate); }
 .form__done textarea { width: 100%; font: inherit; font-size: 15px; border: 2px solid var(--line); border-radius: 12px; padding: 12px; resize: vertical; }

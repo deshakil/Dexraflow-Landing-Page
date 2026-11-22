@@ -1,4 +1,8 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/:path*", "has": [{ "type": "host", "value": "dexraflow.in" }], "destination": "https://secondring.dexraflow.in/:path*", "permanent": true },
+    { "source": "/:path*", "has": [{ "type": "host", "value": "www.dexraflow.in" }], "destination": "https://secondring.dexraflow.in/:path*", "permanent": true }
+  ]
 }
