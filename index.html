@@ -3,233 +3,417 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Dexraflow — Missed-call booking desk for HVAC shops</title>
-  <meta name="description" content="When your HVAC shop can't pick up, Dexraflow answers the call or web lead within a minute and books the visit into your Jobber or Housecall Pro calendar. Starts with a free two-week audit." />
+  <title>Second Ring — We answer the calls your HVAC shop misses</title>
+  <meta name="description" content="Second Ring answers your missed calls and web leads within a minute and books the visit straight into your Jobber or Housecall Pro calendar. Free two-week audit first." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Dexraflow — Missed-call booking desk for HVAC shops" />
-  <meta property="og:description" content="We answer the calls and web leads you can't get to and book the visit into Jobber or Housecall Pro. Free two-week audit first." />
-  <meta property="og:url" content="https://dexraflow.in/" />
-  <meta property="og:site_name" content="Dexraflow" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="theme-color" content="#f5f7f6" />
-  <link rel="canonical" href="https://dexraflow.in/" />
+  <meta property="og:title" content="Second Ring — You missed the call. We didn't." />
+  <meta property="og:description" content="We answer your missed calls and web leads within a minute and book the visit straight into your calendar. Free two-week audit first." />
+  <meta property="og:url" content="https://secondring.dexraflow.in/" />
+  <meta property="og:site_name" content="Second Ring" />
+  <meta property="og:image" content="https://secondring.dexraflow.in/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0F1B2D" />
+  <link rel="canonical" href="https://secondring.dexraflow.in/" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body data-zone="night">
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="top">
-  <div class="wrap top__row">
-    <a class="brand" href="/" aria-label="Dexraflow home">
-      <svg viewBox="0 0 48 48" width="32" height="32" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#0b6e69"></rect><g transform="translate(7 7) scale(0.708)" fill="#fff"><rect x="6" y="6" width="8" height="36" rx="2"></rect><path fill-rule="evenodd" d="M18 6H24A18 18 0 0 1 24 42H18Z M18 14H24A10 10 0 0 1 24 34H18Z"></path><rect x="14" y="21.5" width="10" height="5"></rect><circle cx="27.5" cy="24" r="4" fill="#e8962e"></circle></g></svg>
-      <span>Dexraflow</span>
+<header class="hdr" id="hdr">
+  <div class="wrap hdr__row">
+    <a class="logo" href="/" aria-label="Second Ring home">
+      <svg class="logo__mark" viewBox="0 0 48 48" width="36" height="36" aria-hidden="true">
+        <rect x="9" y="26" width="10" height="16" rx="3" fill="currentColor"/>
+        <path d="M22 30a8 8 0 0 0-8-8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        <path d="M32 30a18 18 0 0 0-18-18" fill="none" stroke="#FF6A2B" stroke-width="3.5" stroke-linecap="round"/>
+      </svg>
+      <span>Second Ring</span>
     </a>
-    <nav class="top__nav" aria-label="Page sections">
+    <nav class="hdr__nav" aria-label="Page sections">
       <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="btn btn--small" href="#audit">Free audit</a>
+    <a class="btn btn--sm" href="#audit">Free audit</a>
   </div>
 </header>
 
 <main id="main">
 
-<!-- 1. Hero -->
-<section class="hero">
-  <div class="wrap">
-    <p class="eyebrow">Missed-call booking desk for HVAC shops · Columbus, Ohio</p>
-    <h1>You're on a job. The phone rings. The caller tries the next shop.</h1>
-    <p class="lead">When your shop can't pick up, or a web form comes in, Dexraflow answers within a minute and books the visit straight into your Jobber or Housecall Pro calendar. We set it up, and we run it.</p>
-    <div class="hero__cta">
-      <a class="btn btn--big" href="#audit">Get a free missed-call audit</a>
-      <a class="textlink" href="#how">See how it works</a>
+<!-- 1. HERO (Night) -->
+<section class="hero grain" id="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <h1 class="hero__h1">You missed the call. We didn't.</h1>
+      <p class="hero__p">Second Ring answers your missed calls and web leads within a minute and books the visit straight into your calendar.</p>
+      <div class="hero__cta">
+        <a class="btn btn--lg" href="#audit">Get a free missed-call audit</a>
+        <a class="tlink tlink--onDark" href="#how">See how it works</a>
+      </div>
+      <p class="hero__note">Two weeks, free. See your own numbers before you pay.</p>
     </div>
-    <p class="note">Two weeks, free. You see how many calls you actually miss before you pay anything.</p>
+
+    <div class="scene" id="scene" data-phase="incoming" role="img" aria-label="Animated example: a missed call on a workbench phone is answered by Second Ring and booked onto a calendar">
+      <span class="scene__tag mono" aria-hidden="true">Example</span>
+      <svg class="scene__svg" viewBox="0 0 560 420" aria-hidden="true">
+        <defs>
+          <radialGradient id="glowO" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FF6A2B" stop-opacity=".55"/><stop offset=".6" stop-color="#FFB347" stop-opacity=".12"/><stop offset="1" stop-color="#FFB347" stop-opacity="0"/></radialGradient>
+          <linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#FFB347" stop-opacity=".35"/><stop offset="1" stop-color="#FFB347" stop-opacity="0"/></linearGradient>
+        </defs>
+        <!-- workbench -->
+        <g class="bench">
+          <rect x="30" y="300" width="500" height="34" rx="8" fill="#16202E" stroke="#FFFFFF" stroke-width="2"/>
+          <rect x="60" y="334" width="18" height="60" rx="4" fill="#16202E" stroke="#FFFFFF" stroke-width="2"/>
+          <rect x="482" y="334" width="18" height="60" rx="4" fill="#16202E" stroke="#FFFFFF" stroke-width="2"/>
+          <line x1="30" y1="317" x2="530" y2="317" stroke="#5B6878" stroke-width="2" stroke-dasharray="6 10" stroke-linecap="round"/>
+        </g>
+        <!-- wrench -->
+        <g class="wrench" transform="rotate(-28 120 240)">
+          <rect x="88" y="232" width="110" height="16" rx="8" fill="#5B6878" stroke="#FFFFFF" stroke-width="2"/>
+          <path d="M78 212a26 26 0 1 0 0 56l18-6v-44z" fill="#5B6878" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M60 228h16v24H60z" fill="#0F1B2D"/>
+          <path d="M214 214a26 26 0 1 1 0 52l-18-6v-40z" fill="#5B6878" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M216 228h16v24h-16z" fill="#0F1B2D"/>
+        </g>
+        <!-- flashlight -->
+        <g class="torch">
+          <path d="M330 300 L450 272 L450 310 Z" fill="url(#beam)"/>
+          <rect x="356" y="266" width="96" height="30" rx="10" fill="#5B6878" stroke="#FFFFFF" stroke-width="2"/>
+          <rect x="436" y="258" width="34" height="46" rx="8" fill="#16202E" stroke="#FFFFFF" stroke-width="2"/>
+          <circle cx="470" cy="281" r="12" fill="#FFB347" stroke="#FFFFFF" stroke-width="2"/>
+          <rect x="372" y="272" width="22" height="18" rx="4" fill="#0F1B2D" stroke="#FFFFFF" stroke-width="2"/>
+        </g>
+        <!-- glow + rings around the phone -->
+        <circle class="glow" cx="280" cy="170" r="170" fill="url(#glowO)"/>
+        <g class="rings rings--frost">
+          <circle class="ring r1" cx="280" cy="170" r="90" fill="none" stroke="#EAF2F8" stroke-width="2"/>
+          <circle class="ring r2" cx="280" cy="170" r="90" fill="none" stroke="#EAF2F8" stroke-width="2"/>
+          <circle class="ring r3" cx="280" cy="170" r="90" fill="none" stroke="#EAF2F8" stroke-width="2"/>
+        </g>
+        <g class="rings rings--furnace">
+          <circle class="ring r1" cx="280" cy="170" r="90" fill="none" stroke="#FF6A2B" stroke-width="3"/>
+          <circle class="ring r2" cx="280" cy="170" r="90" fill="none" stroke="#FF6A2B" stroke-width="3"/>
+          <circle class="ring r3" cx="280" cy="170" r="90" fill="none" stroke="#FFB347" stroke-width="2"/>
+        </g>
+        <!-- phone -->
+        <g class="phone">
+          <rect x="216" y="56" width="128" height="236" rx="20" fill="#16202E" stroke="#FFFFFF" stroke-width="2"/>
+          <rect x="226" y="72" width="108" height="204" rx="12" fill="#0F1B2D"/>
+          <rect x="262" y="62" width="36" height="5" rx="2.5" fill="#5B6878"/>
+          <rect x="348" y="110" width="4" height="30" rx="2" fill="#FFFFFF"/>
+        </g>
+      </svg>
+      <!-- phone screen overlay -->
+      <div class="screen" aria-hidden="true">
+        <div class="screen__state screen__state--incoming"><span class="mono screen__time">7:42 PM</span><b>Incoming call</b><span class="screen__sub">Unknown caller</span><span class="screen__dots"><i></i><i></i><i></i></span></div>
+        <div class="screen__state screen__state--missed"><span class="mono screen__time">7:42 PM</span><b class="screen__missed">Missed call</b><span class="screen__sub mono">7:42 PM</span></div>
+        <div class="screen__state screen__state--second"><span class="mono screen__time">7:43 PM</span><b class="screen__sr">Second Ring</b><span class="screen__sub">answering…</span></div>
+      </div>
+      <div class="bubble" aria-hidden="true">
+        <span class="bubble__who mono">Second Ring · 7:43 PM</span>
+        <p>Hi, this is Second Ring answering for Miller Heating. I'm an automated assistant. Can I book you a visit?</p>
+      </div>
+      <div class="cal" aria-hidden="true">
+        <span class="cal__tick"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div><b>Booked: Furnace check</b><span class="mono">Tue 9:00 AM · Miller Heating</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- 2. The problem -->
-<section class="section" id="problem">
+<!-- 2. PROBLEM (Frost) -->
+<section class="sec sec--problem" id="problem">
+  <video class="sec__video" id="problemVideo" muted loop playsinline preload="none" poster="media/problem-poster.jpg" aria-hidden="true" tabindex="-1" data-webm="media/problem.webm" data-mp4="media/problem.mp4"></video>
   <div class="wrap">
-    <h2>Every call you miss is a job someone else gets.</h2>
-    <div class="cards">
-      <div class="card">
+    <div class="sec__head" data-reveal>
+      <h2>Every call you miss is a job the next shop gets.</h2>
+      <p class="sec__p">You can't answer while you're working. Nobody can. But the caller doesn't wait.</p>
+    </div>
+    <div class="cards" data-reveal data-stagger>
+      <article class="card">
+        <svg class="ill" viewBox="0 0 240 160" aria-hidden="true">
+          <rect x="20" y="18" width="150" height="124" rx="10" fill="#5B6878" stroke="#16202E" stroke-width="2"/>
+          <rect x="34" y="32" width="122" height="96" rx="6" fill="#16202E"/>
+          <path d="M46 44h98M46 56h98M46 68h98" stroke="#5B6878" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="146" cy="118" r="5" fill="#FF6A2B"/>
+          <path d="M62 160V118c0-9 6-15 15-15h2c8 0 13 6 13 14v9l4-12c2-5 9-5 10 1l-3 15v30" fill="#EAF2F8" stroke="#16202E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="M70 118l-3-18c-1-6 7-7 8-1l3 16" fill="#EAF2F8" stroke="#16202E" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M106 160v-36c0-8 6-14 14-14h4c8 0 13 6 13 14v6l6-12c2-5 9-4 9 2l-5 16v24" fill="#EAF2F8" stroke="#16202E" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="M62 150h36M106 150h40" stroke="#16202E" stroke-width="2" stroke-linecap="round"/>
+          <rect x="188" y="88" width="34" height="58" rx="7" fill="#16202E" stroke="#16202E" stroke-width="2"/>
+          <rect x="192" y="94" width="26" height="44" rx="4" fill="#FFB347"/>
+          <path d="M205 102v10M205 118v3" stroke="#16202E" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M184 80a26 26 0 0 0-8 20M178 66a40 40 0 0 0-12 34" fill="none" stroke="#FF6A2B" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
         <h3>Hands full</h3>
-        <p>You're under a furnace with a flashlight in your teeth. The phone rings twice and stops.</p>
-      </div>
-      <div class="card">
+        <p>You're inside a furnace panel with both hands busy. The phone lights up on the floor. It rings twice and stops.</p>
+      </article>
+      <article class="card">
+        <svg class="ill" viewBox="0 0 240 160" aria-hidden="true">
+          <rect x="22" y="22" width="68" height="118" rx="10" fill="#16202E"/>
+          <rect x="28" y="30" width="56" height="100" rx="6" fill="#EAF2F8"/>
+          <circle cx="56" cy="62" r="13" fill="#E5484D"/>
+          <path d="M50 56l12 12M62 56L50 68" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M40 90h32M40 102h22" stroke="#5B6878" stroke-width="2" stroke-linecap="round"/>
+          <rect x="38" y="112" width="36" height="8" rx="4" fill="#E5484D"/>
+          <path d="M100 80c24 0 30-30 58-30" fill="none" stroke="#16202E" stroke-width="2" stroke-dasharray="5 6" stroke-linecap="round"/>
+          <path d="M150 42l12 8-12 8" fill="none" stroke="#16202E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M160 72h58v62h-58z" fill="#FBF7F2" stroke="#16202E" stroke-width="2"/>
+          <path d="M152 74l10-18h54l10 18z" fill="#5B6878" stroke="#16202E" stroke-width="2" stroke-linejoin="round"/>
+          <rect x="178" y="98" width="22" height="36" fill="#EAF2F8" stroke="#16202E" stroke-width="2"/>
+          <rect x="166" y="82" width="46" height="10" rx="2" fill="#FFB347" stroke="#16202E" stroke-width="2"/>
+          <circle cx="206" cy="118" r="2" fill="#16202E"/>
+        </svg>
         <h3>No voicemail</h3>
-        <p>The caller doesn't leave a message. They go back to the search results and call the next shop.</p>
-      </div>
-      <div class="card">
+        <p>The caller doesn't leave a message. They go back to the search results and ring the next shop on the list.</p>
+      </article>
+      <article class="card">
+        <svg class="ill" viewBox="0 0 240 160" aria-hidden="true">
+          <path d="M40 106h132v12a6 6 0 0 1-6 6H46a6 6 0 0 1-6-6z" fill="#5B6878" stroke="#16202E" stroke-width="2"/>
+          <rect x="52" y="36" width="108" height="70" rx="6" fill="#16202E" stroke="#16202E" stroke-width="2"/>
+          <rect x="58" y="42" width="96" height="58" rx="3" fill="#EAF2F8"/>
+          <rect x="68" y="52" width="76" height="8" rx="3" fill="#fff" stroke="#5B6878" stroke-width="1.5"/>
+          <rect x="68" y="66" width="76" height="8" rx="3" fill="#fff" stroke="#5B6878" stroke-width="1.5"/>
+          <rect x="68" y="80" width="40" height="10" rx="5" fill="#FF6A2B"/>
+          <path d="M202 36a22 22 0 1 0 14 38 18 18 0 0 1-14-38z" fill="#FFB347" stroke="#16202E" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="206" cy="112" r="22" fill="#FBF7F2" stroke="#16202E" stroke-width="2"/>
+          <path d="M206 112V98M206 112l9 5" stroke="#16202E" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="206" cy="112" r="2.5" fill="#16202E"/>
+          <path d="M22 54l3 3M20 76l4-1M32 40l1 4" stroke="#EAF2F8" stroke-width="2" stroke-linecap="round"/>
+        </svg>
         <h3>The late web form</h3>
         <p>A request comes in at 9 pm. You see it at 7 the next morning. They booked with someone else at 9:15.</p>
-      </div>
+      </article>
     </div>
-    <p class="lead lead--tight">Nobody can answer every call. But every one of them should still turn into a booked visit.</p>
   </div>
 </section>
 
-<!-- 3. How it works -->
-<section class="section section--tint" id="how">
+<!-- 3. HOW IT WORKS (Paper) -->
+<section class="sec" id="how">
   <div class="wrap">
-    <h2>How it works</h2>
-    <ol class="steps">
-      <li class="step">
-        <span class="step__n" aria-hidden="true">1</span>
-        <div>
-          <h3>We measure what you're missing</h3>
-          <p>For two weeks we count the calls and web leads your shop doesn't get to. Free. That number is your baseline, and it's what you judge us against later.</p>
-        </div>
-      </li>
-      <li class="step">
-        <span class="step__n" aria-hidden="true">2</span>
-        <div>
-          <h3>We set up the desk</h3>
-          <p>Scripts written for heating and cooling work, not generic ones. Connected to your Jobber or Housecall Pro. You don't configure anything.</p>
-        </div>
-      </li>
-      <li class="step">
-        <span class="step__n" aria-hidden="true">3</span>
-        <div>
-          <h3>We answer within a minute and book the visit</h3>
-          <p>Missed calls and web forms get a reply within a minute. The visit goes onto your calendar. Emergency calls are transferred to your own on-call tech, and if nobody picks up, the tech gets a text.</p>
-        </div>
-      </li>
-      <li class="step">
-        <span class="step__n" aria-hidden="true">4</span>
-        <div>
-          <h3>A person checks every morning</h3>
-          <p>Someone on our team reads the previous day's calls and fixes any wrong answers within 24 hours. You get a report every week.</p>
-        </div>
-      </li>
-    </ol>
+    <div class="sec__head" data-reveal>
+      <h2>How it works</h2>
+      <p class="sec__p">Four things happen, and you don't touch any of them.</p>
+    </div>
+    <div class="how" id="howTrack">
+      <div class="how__line" aria-hidden="true"><i id="howFill"></i></div>
+      <ol class="how__steps" data-reveal data-stagger>
+        <li class="how__step" data-step>
+          <div class="how__ico">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <rect x="42" y="22" width="36" height="76" rx="8" fill="#16202E"/>
+              <rect x="46" y="28" width="28" height="60" rx="4" fill="#EAF2F8"/>
+              <path class="how__ring" d="M30 40a30 30 0 0 0 0 40M22 32a42 42 0 0 0 0 56M90 40a30 30 0 0 1 0 40M98 32a42 42 0 0 1 0 56" fill="none" stroke="#5B6878" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Your phone rings. Nobody can get it.</h3>
+          <p>Missed call or web form, it comes to us within a minute.</p>
+        </li>
+        <li class="how__step" data-step>
+          <div class="how__ico">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <rect x="24" y="40" width="72" height="44" rx="12" fill="#FBF7F2" stroke="#16202E" stroke-width="2.5"/>
+              <path d="M36 84l-6 12 18-12" fill="#FBF7F2" stroke="#16202E" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M38 54h44M38 64h30" stroke="#5B6878" stroke-width="2.5" stroke-linecap="round"/>
+              <path class="how__ring" d="M58 24a14 14 0 0 1 14 14" fill="none" stroke="#FF6A2B" stroke-width="3" stroke-linecap="round"/>
+              <path class="how__ring" d="M62 12a26 26 0 0 1 26 26" fill="none" stroke="#FF6A2B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Second Ring answers</h3>
+          <p>Scripts written for heating and cooling work. It says it's an assistant, asks what's wrong, and offers a person.</p>
+        </li>
+        <li class="how__step" data-step>
+          <div class="how__ico">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <rect x="22" y="28" width="76" height="68" rx="10" fill="#FBF7F2" stroke="#16202E" stroke-width="2.5"/>
+              <path d="M22 46h76" stroke="#16202E" stroke-width="2.5"/>
+              <path d="M38 22v12M82 22v12" stroke="#16202E" stroke-width="2.5" stroke-linecap="round"/>
+              <rect x="34" y="56" width="12" height="10" rx="2" fill="#EAF2F8"/><rect x="54" y="56" width="12" height="10" rx="2" fill="#EAF2F8"/><rect x="74" y="56" width="12" height="10" rx="2" fill="#EAF2F8"/>
+              <rect x="34" y="72" width="12" height="10" rx="2" fill="#EAF2F8"/>
+              <rect class="how__ring" x="54" y="72" width="32" height="12" rx="3" fill="#1FA971"/>
+            </svg>
+          </div>
+          <h3>The job lands on your calendar</h3>
+          <p>Straight into Jobber or Housecall Pro, with the caller's details and the problem.</p>
+        </li>
+        <li class="how__step" data-step>
+          <div class="how__ico">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <path d="M30 20h44l16 16v64H30z" fill="#FBF7F2" stroke="#16202E" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M74 20v16h16" fill="none" stroke="#16202E" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M40 50h40M40 62h40" stroke="#5B6878" stroke-width="2.5" stroke-linecap="round"/>
+              <rect class="how__ring" x="40" y="72" width="12" height="18" fill="#FF6A2B"/><rect class="how__ring" x="56" y="66" width="12" height="24" fill="#FF6A2B"/><rect class="how__ring" x="72" y="76" width="12" height="14" fill="#FFB347"/>
+            </svg>
+          </div>
+          <h3>Every Monday, a report</h3>
+          <p>Jobs booked, money recovered, emergencies passed on, and whether the desk stayed up. A person checks every call the morning after.</p>
+        </li>
+      </ol>
+    </div>
   </div>
 </section>
 
-<!-- 4. The weekly report -->
-<section class="section" id="report">
+<!-- 4. WEEKLY REPORT -->
+<section class="sec" id="report">
   <div class="wrap report__grid">
-    <div>
+    <div class="sec__head sec__head--left" data-reveal>
       <h2>What you get each week</h2>
-      <p class="lead lead--tight">One short report, every Monday. Jobs booked, money recovered, and whether the desk stayed up. No dashboard to log into.</p>
+      <p class="sec__p">One short email, every Monday. No dashboard to log into.</p>
       <ul class="ticks">
         <li>Calls and web leads we handled for you</li>
-        <li>Visits booked into your calendar, with names and times</li>
-        <li>Money recovered, worked out from your average job value</li>
+        <li>Visits booked, with names and times</li>
+        <li>Money recovered, from your own average job value</li>
         <li>Emergencies passed to your on-call tech</li>
-        <li>Fixes we made after the daily review</li>
-        <li>Uptime, including any time we fell back to voicemail</li>
+        <li>Fixes made after the daily review</li>
+        <li>Uptime, including any fallback to voicemail</li>
       </ul>
     </div>
-    <figure class="report" aria-label="Sample weekly report">
-      <figcaption class="report__tag">Sample report · made-up numbers to show the layout</figcaption>
-      <div class="report__head">
-        <div><strong>Weekly report</strong><span>Sample Heating &amp; Air · Week of Mon 3 Nov</span></div>
-        <span class="report__up">Desk up all week</span>
-      </div>
-      <dl class="report__stats">
-        <div><dt>Calls answered for you</dt><dd>14</dd></div>
-        <div><dt>Web leads handled</dt><dd>5</dd></div>
-        <div><dt>Visits booked</dt><dd>7</dd></div>
-        <div><dt>Money recovered</dt><dd>$2,660 <small>7 visits × your $380 average</small></dd></div>
+    <figure class="rep" data-reveal id="rep">
+      <figcaption class="rep__tag mono">Sample report · made-up numbers</figcaption>
+      <div class="rep__head"><div><b>Weekly report</b><span>Miller Heating · week of Nov 3</span></div><span class="rep__up"><i></i>Desk up all week</span></div>
+      <dl class="rep__stats">
+        <div><dt>Calls answered</dt><dd class="mono" data-count="14">0</dd></div>
+        <div><dt>Web leads</dt><dd class="mono" data-count="5">0</dd></div>
+        <div><dt>Visits booked</dt><dd class="mono rep__booked" data-count="7">0</dd></div>
+        <div><dt>Recovered</dt><dd><span class="mono" data-count="2660" data-prefix="$">$0</span><small>7 visits × $380 avg</small></dd></div>
       </dl>
-      <table class="report__table">
+      <table class="rep__table">
         <caption class="sr-only">Sample booked visits</caption>
-        <thead><tr><th scope="col">Booked</th><th scope="col">Job</th><th scope="col">When</th></tr></thead>
+        <thead><tr><th scope="col">Call</th><th scope="col">Job</th><th scope="col">Booked for</th></tr></thead>
         <tbody>
-          <tr><td>Mon 6:40 pm</td><td>No heat, upstairs</td><td>Tue 8:00 am</td></tr>
-          <tr><td>Wed 12:10 pm</td><td>Furnace tune-up</td><td>Thu 1:00 pm</td></tr>
-          <tr><td>Sat 9:05 am</td><td>Thermostat replace</td><td>Mon 10:30 am</td></tr>
+          <tr><td class="mono">Mon 6:40 PM</td><td>No heat, upstairs</td><td class="mono">Tue 8:00 AM</td></tr>
+          <tr><td class="mono">Wed 12:10 PM</td><td>Furnace tune-up</td><td class="mono">Thu 1:00 PM</td></tr>
+          <tr><td class="mono">Sat 9:05 AM</td><td>Thermostat replace</td><td class="mono">Mon 10:30 AM</td></tr>
         </tbody>
       </table>
-      <ul class="report__foot">
-        <li>Emergencies passed to on-call tech: 1</li>
-        <li>Fixes after daily review: 2 (pricing question re-routed to you)</li>
-        <li>Fell back to voicemail: 0 minutes</li>
-      </ul>
+      <ul class="rep__foot"><li>Emergencies passed to on-call tech: <b class="mono">1</b></li><li>Fixes after daily review: <b class="mono">2</b></li><li>Fallback to voicemail: <b class="mono">0 min</b></li></ul>
     </figure>
   </div>
 </section>
 
-<!-- 5. Promises -->
-<section class="section section--tint" id="promises">
+<!-- 5. EMERGENCIES -->
+<section class="sec" id="emergency">
   <div class="wrap">
-    <h2>Our promises</h2>
-    <ul class="promises">
-      <li><strong>It never pretends to be a person.</strong> Callers are told they're talking to an assistant.</li>
-      <li><strong>It never quotes prices.</strong> It books the visit. Pricing stays with you.</li>
-      <li><strong>Every caller can reach a person.</strong> They're offered a transfer to someone on your team or a text to you.</li>
-      <li><strong>If something breaks, you hear it from us first.</strong> Calls fall back to your voicemail, you get an instant text, and we tell you before you find out yourself.</li>
-      <li><strong>Wrong answers get fixed within 24 hours.</strong> A person reviews the previous day's calls every morning.</li>
+    <div class="sec__head" data-reveal>
+      <h2>Emergencies go to your tech, not to a queue.</h2>
+      <p class="sec__p">A no-heat call at midnight is transferred to your own on-call tech. If nobody picks up, the tech gets a text with the caller's number and the problem.</p>
+    </div>
+    <figure class="emg" id="emg" data-reveal aria-label="Diagram: caller, then Second Ring, then the on-call tech's phone">
+      <svg class="emg__svg" viewBox="0 0 720 220" aria-hidden="true">
+        <path id="emgPath" class="emg__path" d="M120 110 C 220 110, 260 110, 360 110 S 500 110, 600 110" fill="none" stroke="#5B6878" stroke-width="2.5" stroke-dasharray="8 10" stroke-linecap="round"/>
+        <circle class="emg__dot" r="7" fill="#FF6A2B"/>
+        <!-- caller -->
+        <g class="emg__node">
+          <circle cx="120" cy="110" r="46" fill="#FBF7F2" stroke="#16202E" stroke-width="2.5"/>
+          <rect x="104" y="84" width="32" height="56" rx="7" fill="#16202E"/>
+          <rect x="108" y="90" width="24" height="40" rx="3" fill="#EAF2F8"/>
+          <path d="M114 100l12 12M126 100l-12 12" stroke="#E5484D" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="120" y="186" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#16202E">Caller, 11:52 PM</text>
+        </g>
+        <!-- second ring -->
+        <g class="emg__node">
+          <circle cx="360" cy="110" r="46" fill="#FBF7F2" stroke="#16202E" stroke-width="2.5"/>
+          <rect x="344" y="112" width="10" height="18" rx="3" fill="#16202E"/>
+          <path d="M358 116a9 9 0 0 0-9-9" fill="none" stroke="#16202E" stroke-width="3" stroke-linecap="round"/>
+          <path d="M370 116a21 21 0 0 0-21-21" fill="none" stroke="#FF6A2B" stroke-width="3.5" stroke-linecap="round"/>
+          <text x="360" y="186" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#16202E">Second Ring</text>
+        </g>
+        <!-- tech -->
+        <g class="emg__node emg__tech">
+          <circle cx="600" cy="110" r="46" fill="#FBF7F2" stroke="#16202E" stroke-width="2.5"/>
+          <g class="emg__phone">
+            <rect x="584" y="84" width="32" height="56" rx="7" fill="#16202E"/>
+            <rect x="588" y="90" width="24" height="40" rx="3" fill="#EAF2F8"/>
+            <circle cx="600" cy="110" r="7" fill="#1FA971"/>
+          </g>
+          <path class="emg__ringline" d="M640 90a30 30 0 0 1 0 40M560 90a30 30 0 0 0 0 40" fill="none" stroke="#FF6A2B" stroke-width="3" stroke-linecap="round"/>
+          <text x="600" y="186" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#16202E">Your on-call tech</text>
+        </g>
+      </svg>
+      <figcaption class="emg__cap">If the tech doesn't pick up: a text with the caller's number and the problem.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 6. PROMISES -->
+<section class="sec" id="promises">
+  <div class="wrap">
+    <div class="sec__head" data-reveal>
+      <h2>Our promises</h2>
+    </div>
+    <ul class="prom" data-reveal data-stagger>
+      <li class="prom__item">
+        <svg class="prom__ico" viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="10" width="28" height="44" rx="6" fill="#FBF7F2" stroke="#16202E" stroke-width="2"/><rect x="22" y="16" width="20" height="30" rx="3" fill="#EAF2F8"/><path d="M26 26h12M26 32h8" stroke="#5B6878" stroke-width="2" stroke-linecap="round"/><rect x="26" y="38" width="12" height="4" rx="2" fill="#FF6A2B"/><path d="M50 20a10 10 0 0 1 0 14" fill="none" stroke="#FF6A2B" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>Never pretends to be a person</h3><p>Callers are told it's an assistant. Every time.</p>
+      </li>
+      <li class="prom__item">
+        <svg class="prom__ico" viewBox="0 0 64 64" aria-hidden="true"><rect x="14" y="18" width="36" height="28" rx="6" fill="#FBF7F2" stroke="#16202E" stroke-width="2"/><text x="32" y="38" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="18" fill="#5B6878">$</text><path d="M12 50L52 14" stroke="#E5484D" stroke-width="3" stroke-linecap="round"/></svg>
+        <h3>Never quotes prices</h3><p>It books the visit. Pricing stays with you.</p>
+      </li>
+      <li class="prom__item">
+        <svg class="prom__ico" viewBox="0 0 64 64" aria-hidden="true"><circle cx="24" cy="24" r="9" fill="#FBF7F2" stroke="#16202E" stroke-width="2"/><path d="M8 50c2-10 8-15 16-15s14 5 16 15" fill="#FBF7F2" stroke="#16202E" stroke-width="2" stroke-linejoin="round"/><rect x="40" y="22" width="14" height="24" rx="4" fill="#16202E"/><rect x="42" y="25" width="10" height="16" rx="2" fill="#FFB347"/><path d="M34 30l6 0" stroke="#FF6A2B" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>Always offers a real person</h3><p>A transfer to your team, or a text to you. Caller's choice.</p>
+      </li>
+      <li class="prom__item">
+        <svg class="prom__ico" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 10l22 38H10z" fill="#FFB347" stroke="#16202E" stroke-width="2" stroke-linejoin="round"/><path d="M32 24v12" stroke="#16202E" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="42" r="2" fill="#16202E"/><path d="M44 14a8 8 0 0 1 8 8" fill="none" stroke="#FF6A2B" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>Tells you first if something breaks</h3><p>Calls fall back to voicemail, you get an instant text, and you hear it from us before anyone else.</p>
+      </li>
     </ul>
   </div>
 </section>
 
-<!-- 6. Pricing — this whole section can be edited or removed on its own -->
+<!-- 7. PRICING -->
 <!-- PRICING START -->
-<section class="section" id="pricing">
-  <div class="wrap">
-    <h2>Pricing</h2>
-    <div class="price">
-      <div class="price__main">
-        <p class="price__amount">$249<span>/month</span></p>
-        <p class="price__what">Base fee. Covers the desk, the HVAC scripts, the daily review and the weekly report.</p>
-      </div>
-      <div class="price__plus">
-        <p class="price__amount price__amount--small">+ per booked job</p>
-        <p class="price__what">A fee for each job booked above the baseline we measured in your free audit. Per-job fee agreed after your audit.</p>
-      </div>
+<section class="sec" id="pricing">
+  <div class="wrap wrap--narrow">
+    <div class="sec__head" data-reveal>
+      <h2>Pricing</h2>
     </div>
-    <p class="note">The audit is free and comes first. You see your own numbers before you decide.</p>
+    <div class="price" data-reveal>
+      <p class="price__big"><span class="mono price__num">$249</span><span class="price__per">a month, base</span></p>
+      <p class="price__plus">plus a per-job fee for each job booked above your audited baseline. <b>Per-job fee agreed after your audit.</b></p>
+      <ul class="price__inc">
+        <li>The desk, set up and run for you</li>
+        <li>HVAC call scripts</li>
+        <li>Daily human review</li>
+        <li>Weekly report</li>
+      </ul>
+      <p class="price__note">The audit comes first and costs nothing. You see your own missed-call numbers before you decide.</p>
+    </div>
   </div>
 </section>
 <!-- PRICING END -->
 
-<!-- 7. FAQ -->
-<section class="section section--tint" id="faq">
+<!-- 8. FAQ -->
+<section class="sec" id="faq">
   <div class="wrap wrap--narrow">
-    <h2>Questions owners ask</h2>
-    <div class="faq">
-      <details class="faq__item">
-        <summary>Is this a robot answering my phone?</summary>
-        <div class="faq__body"><p>Yes, and it says so. The assistant tells callers it's an assistant for your shop. It asks the few questions needed to book a visit, and every caller is offered a transfer to a person or a text to you. The next morning, a person on our team reads the calls and fixes anything it got wrong.</p></div>
-      </details>
-      <details class="faq__item">
-        <summary>Does it work with Jobber or Housecall Pro?</summary>
-        <div class="faq__body"><p>Yes. Visits are booked straight into your Jobber or Housecall Pro calendar, so your schedule stays in one place. If you use something else, say so on the audit form and we'll tell you honestly whether we can connect to it.</p></div>
-      </details>
-      <details class="faq__item">
-        <summary>What happens in an emergency?</summary>
-        <div class="faq__body"><p>Emergency calls are transferred to your own on-call tech. If nobody picks up, the tech gets a text with the caller's name, number and the problem, so nothing waits until morning.</p></div>
-      </details>
-      <details class="faq__item">
-        <summary>What if it goes down?</summary>
-        <div class="faq__body"><p>Calls fall back to your normal voicemail and you get an instant text. We tell you before you find out yourself, and any downtime shows on your weekly report.</p></div>
-      </details>
-      <details class="faq__item">
-        <summary>Is there a contract?</summary>
-        <div class="faq__body"><p>No long-term contract. It runs month to month after the free audit, and you can stop at any time. We'll ask what we could have done better, that's all.</p></div>
-      </details>
-      <details class="faq__item">
-        <summary>Where are you based?</summary>
-        <div class="faq__body"><p>We're a small team in Hyderabad, India, working with heating and cooling shops in the US, starting with Columbus, Ohio. You'll deal with the same people throughout, and you can email the founder directly at shakil@dexraflow.in.</p></div>
-      </details>
+    <div class="sec__head" data-reveal><h2>Questions owners ask</h2></div>
+    <div class="faq" data-reveal>
+      <details class="faq__i"><summary>Is this a robot answering my phone?</summary><div class="faq__a"><p>Yes, and it says so. The assistant tells callers it's an assistant for your shop. It asks the few questions needed to book a visit, and every caller is offered a transfer to a person or a text to you. The next morning, a person on our team reads the calls and fixes anything it got wrong.</p></div></details>
+      <details class="faq__i"><summary>Does it work with Jobber or Housecall Pro?</summary><div class="faq__a"><p>Yes. Visits are booked straight into your Jobber or Housecall Pro calendar, so your schedule stays in one place. If you use something else, say so on the audit form and we'll tell you honestly whether we can connect to it.</p></div></details>
+      <details class="faq__i"><summary>What happens in an emergency?</summary><div class="faq__a"><p>Emergency calls are transferred to your own on-call tech. If nobody picks up, the tech gets a text with the caller's name, number and the problem, so nothing waits until morning.</p></div></details>
+      <details class="faq__i"><summary>What if it goes down?</summary><div class="faq__a"><p>Calls fall back to your normal voicemail and you get an instant text. We tell you before you find out yourself, and any downtime shows on your weekly report.</p></div></details>
+      <details class="faq__i"><summary>Is there a contract?</summary><div class="faq__a"><p>No long-term contract. It runs month to month after the free audit, and you can stop at any time.</p></div></details>
+      <details class="faq__i"><summary>Where are you based?</summary><div class="faq__a"><p>We're a small team in Hyderabad, India, working with heating and cooling shops in the US, starting with Columbus, Ohio. You'll deal with the same people throughout, and you can email the founder directly at shakil@dexraflow.in.</p></div></details>
     </div>
   </div>
 </section>
 
-<!-- 8. Audit request form -->
-<section class="section" id="audit">
+<!-- 9. AUDIT FORM -->
+<section class="sec sec--form" id="audit">
   <div class="wrap wrap--narrow">
-    <h2>Get a free missed-call audit</h2>
-    <p class="lead lead--tight">Tell us about your shop. We'll email you within one business day to set up the two-week audit. Nothing to install, and nothing to pay.</p>
-    <form class="form" id="auditForm" novalidate>
+    <div class="sec__head" data-reveal>
+      <h2>Get a free missed-call audit</h2>
+      <p class="sec__p">Tell us about your shop. We'll email you within one business day to set up the two-week audit. Nothing to install, nothing to pay.</p>
+    </div>
+    <form class="form" id="auditForm" novalidate data-reveal>
       <div class="form__row">
         <label for="f-name">Your name<input id="f-name" name="name" type="text" required autocomplete="name"></label>
         <label for="f-shop">Shop name<input id="f-shop" name="shop" type="text" required autocomplete="organization"></label>
@@ -249,14 +433,14 @@
       </label>
       <label class="hp" aria-hidden="true">Leave this empty<input name="botcheck" type="text" tabindex="-1" autocomplete="off"></label>
       <p class="form__msg" id="formMsg" role="status" hidden></p>
-      <button class="btn btn--big" type="submit" id="formSubmit">Request my free audit</button>
-      <p class="note">We use these details only to reply and run your audit. <a href="/privacy">Privacy policy</a>.</p>
+      <button class="btn btn--lg" type="submit" id="formSubmit">Request my free audit</button>
+      <p class="form__note">We use these details only to reply and run your audit. <a href="/privacy">Privacy policy</a>.</p>
     </form>
     <div class="form__done" id="formDone" hidden tabindex="-1">
       <h3>Got it. Thanks.</h3>
-      <p>We'll email you within one business day to set up the audit. If you'd rather talk first, call or text is fine too: reply to our email with a time.</p>
+      <p>We'll email you within one business day to set up the audit.</p>
     </div>
-    <div class="form__fallback" id="formFallback" hidden>
+    <div class="form__done" id="formFallback" hidden>
       <h3>We couldn't send that automatically.</h3>
       <p>Your request is ready below. Open it in your mail app, or copy it and send it to <strong>shakil@dexraflow.in</strong>.</p>
       <textarea id="fbText" rows="8" readonly aria-label="Your request, ready to email"></textarea>
@@ -270,21 +454,25 @@
 
 </main>
 
-<!-- 9. Footer -->
-<footer class="footer">
-  <div class="wrap footer__grid">
+<!-- 10. FOOTER (Night) -->
+<footer class="ftr grain" id="ftr">
+  <svg class="ftr__sky" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 160V120h60V90h30V120h50V70h40V120h30V100h40V40h20V20h20V40h20V100h40V120h50V80h40V120h40V60h30V120h60V95h40V120h50V50h20V30h20V50h20V120h50V100h40V120h60V85h30V120h50V70h40V120h40V95h40V120h60V160z" fill="#16202E"/>
+    <g class="ftr__win" fill="#FFB347">
+      <rect x="70" y="100" width="6" height="8"/><rect x="100" y="100" width="6" height="8"/><rect x="150" y="80" width="6" height="8"/><rect x="170" y="95" width="6" height="8"/><rect x="258" y="60" width="6" height="8"/><rect x="258" y="80" width="6" height="8"/><rect x="330" y="95" width="6" height="8"/><rect x="420" y="90" width="6" height="8"/><rect x="465" y="75" width="6" height="8"/><rect x="560" y="105" width="6" height="8"/><rect x="618" y="70" width="6" height="8"/><rect x="618" y="90" width="6" height="8"/><rect x="705" y="110" width="6" height="8"/><rect x="800" y="95" width="6" height="8"/><rect x="865" y="85" width="6" height="8"/><rect x="960" y="100" width="6" height="8"/><rect x="1045" y="105" width="6" height="8"/><rect x="1120" y="100" width="6" height="8"/>
+    </g>
+  </svg>
+  <div class="wrap ftr__grid">
     <div>
-      <p class="footer__brand">Dexraflow</p>
-      <p>Missed-call and web-lead booking desk for heating and cooling shops.</p>
+      <p class="ftr__brand"><svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><rect x="9" y="26" width="10" height="16" rx="3" fill="#fff"/><path d="M22 30a8 8 0 0 0-8-8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M32 30a18 18 0 0 0-18-18" fill="none" stroke="#FF6A2B" stroke-width="3.5" stroke-linecap="round"/></svg>Second Ring</p>
+      <p class="ftr__p">A missed-call and web-lead booking desk for heating and cooling shops in Columbus, Ohio.</p>
     </div>
-    <address class="footer__contact">
-      <strong>Sayyad Shakil, Dexraflow</strong><br>
+    <address class="ftr__contact">
+      <strong>Sayyad Shakil</strong><br>
       <a href="mailto:shakil@dexraflow.in">shakil@dexraflow.in</a><br>
-      1-25-104, Santoshpuri Colony, Sitarampuram,<br>
-      Bowenpally, Tirumalagiri,<br>
-      Hyderabad 500011, India
+      1-25-104, Santoshpuri Colony, Sitarampuram,<br>Bowenpally, Tirumalagiri, Hyderabad 500011, India
     </address>
-    <nav class="footer__links" aria-label="Footer">
+    <nav class="ftr__links" aria-label="Footer">
       <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
@@ -292,11 +480,9 @@
       <a href="/privacy">Privacy policy</a>
     </nav>
   </div>
-  <div class="wrap"><p class="footer__copy">© <span id="year">2026</span> Dexraflow</p></div>
+  <div class="wrap"><p class="ftr__copy">Second Ring, by Dexraflow · © <span id="year">2026</span></p></div>
 </footer>
 
-<div class="stickycta" id="stickyCta" aria-hidden="true"><a class="btn btn--big" href="#audit" tabindex="-1">Get a free missed-call audit</a></div>
-
-<script src="site.js"></script>
+<script src="site.js" defer></script>
 </body>
 </html>
