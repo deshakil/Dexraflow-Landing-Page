@@ -3,585 +3,300 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Dexraflow — Catch the deals your GTM tools silently dropped</title>
-  <meta name="description" content="Dexraflow connects to the tools you already use, catches the leads and deals that slip between them, and tells the right rep in Slack before they go cold." />
-  <meta name="theme-color" content="#0c1315" />
+  <title>Dexraflow — Missed-call booking desk for HVAC shops</title>
+  <meta name="description" content="When your HVAC shop can't pick up, Dexraflow answers the call or web lead within a minute and books the visit into your Jobber or Housecall Pro calendar. Starts with a free two-week audit." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dexraflow — Missed-call booking desk for HVAC shops" />
+  <meta property="og:description" content="We answer the calls and web leads you can't get to and book the visit into Jobber or Housecall Pro. Free two-week audit first." />
+  <meta property="og:url" content="https://dexraflow.in/" />
+  <meta property="og:site_name" content="Dexraflow" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="theme-color" content="#f5f7f6" />
+  <link rel="canonical" href="https://dexraflow.in/" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-<!-- Intro curtain -->
-<div class="intro" id="intro" aria-hidden="true">
-  <div class="intro__mark">
-    <svg class="intro__logo" viewBox="0 0 48 48" width="56" height="56" aria-hidden="true">
-      <rect class="intro__tile" width="48" height="48" rx="11" fill="#0b6e69"></rect>
-      <g transform="translate(7 7) scale(0.708)">
-        <rect class="intro__bar" x="6" y="6" width="8" height="36" rx="2" fill="#fff"></rect>
-        <path class="intro__d" fill="#fff" fill-rule="evenodd" d="M18 6H24A18 18 0 0 1 24 42H18Z M18 14H24A10 10 0 0 1 24 34H18Z"></path>
-        <rect class="intro__bridge" x="14" y="21.5" width="10" height="5" fill="#fff"></rect>
-        <circle class="intro__dot" cx="27.5" cy="24" r="4" fill="#e8962e"></circle>
-      </g>
-    </svg>
-    <div class="intro__word"><span>Dexraflow</span></div>
-  </div>
-  <div class="intro__panel intro__panel--a"></div>
-  <div class="intro__panel intro__panel--b"></div>
-</div>
-
-<div class="cursor" id="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"></div></div>
-<div class="progress" id="progress" aria-hidden="true"><span></span></div>
-
 <a class="skip" href="#main">Skip to content</a>
 
-<!-- Nav -->
-<header class="nav" id="nav">
-  <div class="nav__inner">
-    <a class="lockup" href="#top" aria-label="Dexraflow home">
-      <svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true">
-        <rect width="48" height="48" rx="11" fill="#0b6e69"></rect>
-        <g transform="translate(7 7) scale(0.708)" fill="#fff">
-          <rect x="6" y="6" width="8" height="36" rx="2"></rect>
-          <path fill-rule="evenodd" d="M18 6H24A18 18 0 0 1 24 42H18Z M18 14H24A10 10 0 0 1 24 34H18Z"></path>
-          <rect x="14" y="21.5" width="10" height="5"></rect>
-          <circle cx="27.5" cy="24" r="4" fill="#e8962e"></circle>
-        </g>
-      </svg>
-      <span class="lockup__word">Dexraflow</span>
+<header class="top">
+  <div class="wrap top__row">
+    <a class="brand" href="/" aria-label="Dexraflow home">
+      <svg viewBox="0 0 48 48" width="32" height="32" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#0b6e69"></rect><g transform="translate(7 7) scale(0.708)" fill="#fff"><rect x="6" y="6" width="8" height="36" rx="2"></rect><path fill-rule="evenodd" d="M18 6H24A18 18 0 0 1 24 42H18Z M18 14H24A10 10 0 0 1 24 34H18Z"></path><rect x="14" y="21.5" width="10" height="5"></rect><circle cx="27.5" cy="24" r="4" fill="#e8962e"></circle></g></svg>
+      <span>Dexraflow</span>
     </a>
-    <nav class="nav__links" aria-label="Primary">
-      <a href="#slips" data-nav>Problem</a>
-      <a href="#catch" data-nav>How it works</a>
-      <a href="#mcp" data-nav>MCP</a>
-      <a href="#audit" data-nav>Audit</a>
-      <a href="#faq" data-nav>FAQ</a>
+    <nav class="top__nav" aria-label="Page sections">
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
     </nav>
-    <div class="nav__cta">
-      <button class="btn btn--ghost btn--sm hide-sm" data-open="founder-conversation">Get a demo</button>
-      <button class="btn btn--brand btn--sm" data-open="early-access"><span class="only-sm">Early access</span><span class="hide-sm">Get early access</span></button>
-      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
-    </div>
-  </div>
-  <div class="nav__sheet" id="sheet">
-    <a href="#slips">Problem</a>
-    <a href="#catch">How it works</a>
-    <a href="#mcp">MCP</a>
-    <a href="#audit">Audit</a>
-    <a href="#faq">FAQ</a>
-    <button class="btn btn--ghost" data-open="founder-conversation">Get a demo</button>
+    <a class="btn btn--small" href="#audit">Free audit</a>
   </div>
 </header>
 
 <main id="main">
 
-<!-- ================= HERO ================= -->
-<section class="hero band band--night" id="top" aria-labelledby="hero-title">
-  <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
-  <div class="band__inner hero__inner">
-    <div class="hero__grid">
-      <div class="hero__copy">
-        <p class="eyebrow eyebrow--night hero__eyebrow" data-hero="0"><span class="pulse"></span>Early access · B2B SaaS revenue teams</p>
-        <h1 class="hero__title" id="hero-title">
-          <span class="hero__line" data-hero="1"><span class="w">Catch</span> <span class="w">the</span> <span class="w">deals</span></span>
-          <span class="hero__line" data-hero="2"><span class="w">your</span> <span class="w">GTM</span> <span class="w">tools</span></span>
-          <span class="hero__line" data-hero="7"><span class="rotator" id="rotator" aria-live="polite"><span class="rotator__word is-in">drop silently</span></span></span>
-        </h1>
-        <p class="hero__sub" data-hero="3">Dexraflow connects to the tools you already use, catches the leads and deals that slip between them, and tells the right rep in Slack before they go cold.</p>
-        <div class="hero__cta" data-hero="4">
-          <button class="btn btn--light btn--lg magnetic" data-open="founder-conversation">Book a 14-day audit</button>
-          <button class="btn btn--ghost-night btn--lg magnetic" data-open="early-access">Get early access</button>
-        </div>
-      </div>
-      <div class="hero__visual" id="heroVisual" data-hero="6" role="img" aria-label="A stack of GTM tool layers with gaps between them. Leads roll across the layers, slip through the gaps, and a glowing Dexraflow net at the bottom catches them and routes them to Slack.">
-        <canvas class="hero__fallback" id="heroFallback"></canvas>
-        <div class="hero__legend mono" aria-hidden="true"><span><i class="lg lg--lead"></i>lead</span><span><i class="lg lg--gap"></i>gap between tools</span><span><i class="lg lg--net"></i>Dexraflow</span></div>
-      </div>
+<!-- 1. Hero -->
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Missed-call booking desk for HVAC shops · Columbus, Ohio</p>
+    <h1>You're on a job. The phone rings. The caller tries the next shop.</h1>
+    <p class="lead">When your shop can't pick up, or a web form comes in, Dexraflow answers within a minute and books the visit straight into your Jobber or Housecall Pro calendar. We set it up, and we run it.</p>
+    <div class="hero__cta">
+      <a class="btn btn--big" href="#audit">Get a free missed-call audit</a>
+      <a class="textlink" href="#how">See how it works</a>
     </div>
-    <div class="hero__stack" data-hero="5">
-      <p class="eyebrow eyebrow--night center">Works with your stack →</p>
-      <div class="marquee" id="marquee">
-        <ul class="marquee__track">
-          <li><span class="logo"><img src="brand/hubspot.svg" alt="" loading="lazy" decoding="async"></span>HubSpot</li><li><span class="logo"><img src="brand/salesforce.png" alt="" loading="lazy" decoding="async"></span>Salesforce</li><li><span class="logo"><img src="brand/clay.png" alt="" loading="lazy" decoding="async"></span>Clay</li><li><span class="logo"><img src="brand/apollo.png" alt="" loading="lazy" decoding="async"></span>Apollo</li><li><span class="logo"><img src="brand/outreach.png" alt="" loading="lazy" decoding="async"></span>Outreach</li><li><span class="logo"><img src="brand/gong.png" alt="" loading="lazy" decoding="async"></span>Gong</li><li><span class="logo"><img src="brand/slack.png" alt="" loading="lazy" decoding="async"></span>Slack</li><li><span class="logo"><img src="brand/salesloft.png" alt="" loading="lazy" decoding="async"></span>Salesloft</li><li><span class="logo"><img src="brand/zoominfo.png" alt="" loading="lazy" decoding="async"></span>ZoomInfo</li><li><span class="logo"><img src="brand/attio.png" alt="" loading="lazy" decoding="async"></span>Attio</li><li><span class="logo"><img src="brand/intercom.svg" alt="" loading="lazy" decoding="async"></span>Intercom</li><li><span class="logo"><img src="brand/zendesk.svg" alt="" loading="lazy" decoding="async"></span>Zendesk</li><li><span class="logo"><img src="brand/calendly.svg" alt="" loading="lazy" decoding="async"></span>Calendly</li><li><span class="logo"><img src="brand/googlecalendar.svg" alt="" loading="lazy" decoding="async"></span>Google Calendar</li><li><span class="logo"><img src="brand/zoom.svg" alt="" loading="lazy" decoding="async"></span>Zoom</li><li><span class="logo"><img src="brand/gmail.svg" alt="" loading="lazy" decoding="async"></span>Gmail</li><li><span class="logo"><img src="brand/linkedin.svg" alt="" loading="lazy" decoding="async"></span>LinkedIn</li><li><span class="logo"><img src="brand/zapier.svg" alt="" loading="lazy" decoding="async"></span>Zapier</li><li><span class="logo"><img src="brand/n8n.svg" alt="" loading="lazy" decoding="async"></span>n8n</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="hero__fade" aria-hidden="true"></div>
-</section>
-
-<!-- ================= WHAT ================= -->
-<section class="band" id="what" aria-labelledby="what-title">
-  <div class="band__inner">
-    <div class="sec-head">
-      <div>
-        <p class="eyebrow" data-reveal>What Dexraflow does</p>
-        <h2 class="h2" id="what-title" data-split><span class="line">Every tool says success.</span><span class="line accent">Your pipeline says otherwise.</span></h2>
-      </div>
-      <div class="sec-head__side" data-reveal>
-        <p class="sub">Your CRM, enrichment, intent and outreach tools each keep their own version of the customer. Dexraflow reads all of them, catches what falls in between, and tells a rep.</p>
-        <a class="btn btn--ghost" href="#slips">See where leads slip →</a>
-      </div>
-    </div>
-
-    <div class="flow card" id="flow" data-reveal role="img" aria-label="A lead moves from your tools through Dexraflow, which matches, catches, alerts, proves and logs, to a rep in Slack.">
-      <svg class="flow__wires" id="flowWires" aria-hidden="true"></svg>
-      <div class="flow__col">
-        <p class="eyebrow">Your tools</p>
-        <ul class="flow__tools">
-          <li data-flow-src><span class="logo"><img src="brand/hubspot.svg" alt="" loading="lazy" decoding="async"></span>HubSpot</li>
-          <li data-flow-src><span class="logo"><img src="brand/clay.png" alt="" loading="lazy" decoding="async"></span>Clay</li>
-          <li data-flow-src><span class="logo"><img src="brand/apollo.png" alt="" loading="lazy" decoding="async"></span>Apollo</li>
-          <li data-flow-src><span class="logo"><img src="brand/outreach.png" alt="" loading="lazy" decoding="async"></span>Outreach</li>
-          <li data-flow-src><span class="logo"><img src="brand/gong.png" alt="" loading="lazy" decoding="async"></span>Gong</li>
-        </ul>
-      </div>
-      <div class="flow__col flow__col--mid">
-        <div class="flow__engine" data-flow-engine>
-          <div class="flow__engine-head">
-            <svg viewBox="0 0 48 48" width="20" height="20" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#0b6e69"></rect><g transform="translate(7 7) scale(0.708)" fill="#fff"><rect x="6" y="6" width="8" height="36" rx="2"></rect><path fill-rule="evenodd" d="M18 6H24A18 18 0 0 1 24 42H18Z M18 14H24A10 10 0 0 1 24 34H18Z"></path><rect x="14" y="21.5" width="10" height="5"></rect><circle cx="27.5" cy="24" r="4" fill="#e8962e"></circle></g></svg>
-            <span>Dexraflow</span>
-            <span class="tag tag--mono">read-only</span>
-          </div>
-          <ol class="flow__stages">
-            <li data-stage><b>Match</b><span>One record per account</span></li>
-            <li data-stage><b>Catch</b><span>No owner · silent failure · missed signal</span></li>
-            <li data-stage><b>Alert</b><span>Slack, with a deadline</span></li>
-            <li data-stage><b>Prove</b><span>Weekly pipeline recovered</span></li>
-            <li data-stage><b>Log</b><span>Every change</span></li>
-          </ol>
-        </div>
-      </div>
-      <div class="flow__col">
-        <p class="eyebrow">The rep</p>
-        <div class="slack" data-flow-dst>
-          <div class="slack__head"><span class="logo logo--sm"><img src="brand/slack.png" alt=""></span><b>Dexraflow</b><span class="mono">APP · 9:41</span></div>
-          <p><b>Raj</b>, Acme hit pricing 3× this week and has no owner. Worth ~$48K. Take it by <b>5:00 pm</b>?</p>
-          <div class="slack__actions"><span>Take it</span><span>Reassign</span><span>Why?</span></div>
-        </div>
-        <p class="flow__note mono">1 touch · owner informed · logged</p>
-      </div>
-    </div>
+    <p class="note">Two weeks, free. You see how many calls you actually miss before you pay anything.</p>
   </div>
 </section>
 
-<!-- ================= SLIPS ================= -->
-<section class="band band--wide" id="slips" aria-labelledby="slips-title">
-  <div class="band__inner">
-    <div class="sec-head">
-      <div>
-        <p class="eyebrow" data-reveal>Where leads slip</p>
-        <h2 class="h2" id="slips-title" data-split><span class="line">Three failures every stack has.</span><span class="line accent">They never throw an error.</span></h2>
+<!-- 2. The problem -->
+<section class="section" id="problem">
+  <div class="wrap">
+    <h2>Every call you miss is a job someone else gets.</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Hands full</h3>
+        <p>You're under a furnace with a flashlight in your teeth. The phone rings twice and stops.</p>
+      </div>
+      <div class="card">
+        <h3>No voicemail</h3>
+        <p>The caller doesn't leave a message. They go back to the search results and call the next shop.</p>
+      </div>
+      <div class="card">
+        <h3>The late web form</h3>
+        <p>A request comes in at 9 pm. You see it at 7 the next morning. They booked with someone else at 9:15.</p>
       </div>
     </div>
-
-    <div class="slips">
-      <article class="card slip tilt" data-reveal data-scene="owner">
-        <span class="tag">No owner</span>
-        <div class="scene scene--owner" aria-hidden="true">
-          <div class="scene__card">
-            <div class="scene__row"><span class="mono muted">LEAD</span><b>Jane Park · Acme</b></div>
-            <div class="scene__row"><span class="mono muted">SOURCE</span><span>Pricing page</span></div>
-            <div class="scene__row scene__row--hot"><span class="mono muted">OWNER</span><span class="scene__empty"><span class="caret"></span></span></div>
-            <div class="scene__row"><span class="mono muted">TASK</span><span class="muted">none</span></div>
-          </div>
-          <div class="scene__clock mono"><span>waiting</span><b data-clock>00:00</b></div>
-        </div>
-        <h3>A hot lead nobody owns</h3>
-        <p>Routing waits on a field that never filled. The lead sits with no owner, no task, no follow-up.</p>
-      </article>
-
-      <article class="card slip tilt" data-reveal data-scene="silent">
-        <span class="tag">Silent failure</span>
-        <div class="scene scene--silent" aria-hidden="true">
-          <div class="scene__term mono">
-            <div class="t-line"><span class="muted">$</span> run enrich→crm-sync</div>
-            <div class="t-line" data-t="1"><span class="muted">#4821</span> scheduled 02:00</div>
-            <div class="t-line" data-t="2">status <b class="ok">✓ success</b></div>
-            <div class="t-line" data-t="3">rows written <b class="zero" data-rows>14</b></div>
-            <div class="t-line" data-t="4">dashboard <span class="dot dot--ok"></span> green</div>
-          </div>
-        </div>
-        <h3>A workflow that says “success”</h3>
-        <p>The run completes on schedule and the dashboard stays green. Rows written: zero.</p>
-      </article>
-
-      <article class="card slip tilt" data-reveal data-scene="signal">
-        <span class="tag">Missed signal</span>
-        <div class="scene scene--signal" aria-hidden="true">
-          <div class="scene__days mono">
-            <div class="day" data-day><span>Mon</span><i class="ping"></i></div>
-            <div class="day" data-day><span>Tue</span></div>
-            <div class="day" data-day><span>Wed</span><i class="ping"></i></div>
-            <div class="day" data-day><span>Thu</span><i class="ping"></i></div>
-            <div class="day" data-day><span>Fri</span></div>
-          </div>
-          <div class="scene__meta">
-            <span class="chip chip--signal">Owner · out of office</span>
-            <span class="mono muted">no touch · <b data-days>0</b>d</span>
-          </div>
-        </div>
-        <h3>A buying signal nobody acted on</h3>
-        <p>Three pricing visits in a week. The owner is out of office. Five days pass with no touch.</p>
-      </article>
-    </div>
+    <p class="lead lead--tight">Nobody can answer every call. But every one of them should still turn into a booked visit.</p>
   </div>
 </section>
 
-<!-- ================= COST ================= -->
-<section class="band band--night" id="cost" aria-labelledby="cost-title">
-  <div class="band__inner">
-    <div class="sec-head">
-      <div>
-        <p class="eyebrow eyebrow--night" data-reveal>The cost</p>
-        <h2 class="h2" id="cost-title" data-split><span class="line">Every hour a lead waits,</span><span class="line accent">the deal gets colder.</span></h2>
-      </div>
-    </div>
-    <div class="card card--night curve" id="curve" data-reveal>
-      <div class="curve__text">
-        <p class="eyebrow eyebrow--night">Lead temperature</p>
-        <h3 class="h4">Chance to qualify, by hours since the lead arrived.</h3>
-        <p>Reach out inside the first hour and you're 7× more likely to qualify the lead. The average company takes 42 hours.<a class="cite" href="#sources">[4]</a></p>
-      </div>
-      <div class="curve__chart" id="curveChart"></div>
-    </div>
-    <div class="stats" id="stats">
-      <div class="stat" data-reveal data-stat>
-        <p class="stat__value"><span data-count="42">0</span><span class="stat__unit"> hrs</span></p>
-        <p class="stat__text">average time for a company to first respond to an inbound lead<a class="cite" href="#sources">[4]</a></p>
-        <span class="stat__bar"><i></i></span>
-      </div>
-      <div class="stat" data-reveal data-stat>
-        <p class="stat__value"><span data-count="7">0</span><span class="stat__unit">×</span></p>
-        <p class="stat__text">more likely to qualify a lead when you reach out within the hour<a class="cite" href="#sources">[4]</a></p>
-        <span class="stat__bar"><i></i></span>
-      </div>
-      <div class="stat" data-reveal data-stat>
-        <p class="stat__value"><span data-count="23">0</span><span class="stat__unit">%</span></p>
-        <p class="stat__text">of companies never responded to the lead at all<a class="cite" href="#sources">[4]</a></p>
-        <span class="stat__bar"><i></i></span>
-      </div>
-    </div>
-    <dl class="stats-sm" data-reveal>
-      <div><dt>80%</dt><dd>of RevOps leaders don't feel they have clean, actionable data.<a class="cite" href="#sources">[1]</a></dd></div>
-      <div><dt>37%</dt><dd>of CRM users lost revenue as a direct result of poor data quality.<a class="cite" href="#sources">[2]</a></dd></div>
-      <div><dt>10</dt><dd>tools used, on average, to close a deal.<a class="cite" href="#sources">[3]</a></dd></div>
-      <div><dt>10:1</dt><dd>AI agents to sellers by 2028, Gartner predicts.<a class="cite" href="#sources">[5]</a></dd></div>
-      <div><dt>&lt;40%</dt><dd>of sellers will say those agents improved productivity.<a class="cite" href="#sources">[5]</a></dd></div>
-    </dl>
+<!-- 3. How it works -->
+<section class="section section--tint" id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li class="step">
+        <span class="step__n" aria-hidden="true">1</span>
+        <div>
+          <h3>We measure what you're missing</h3>
+          <p>For two weeks we count the calls and web leads your shop doesn't get to. Free. That number is your baseline, and it's what you judge us against later.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step__n" aria-hidden="true">2</span>
+        <div>
+          <h3>We set up the desk</h3>
+          <p>Scripts written for heating and cooling work, not generic ones. Connected to your Jobber or Housecall Pro. You don't configure anything.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step__n" aria-hidden="true">3</span>
+        <div>
+          <h3>We answer within a minute and book the visit</h3>
+          <p>Missed calls and web forms get a reply within a minute. The visit goes onto your calendar. Emergency calls are transferred to your own on-call tech, and if nobody picks up, the tech gets a text.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step__n" aria-hidden="true">4</span>
+        <div>
+          <h3>A person checks every morning</h3>
+          <p>Someone on our team reads the previous day's calls and fixes any wrong answers within 24 hours. You get a report every week.</p>
+        </div>
+      </li>
+    </ol>
   </div>
 </section>
 
-<!-- ================= HOW IT WORKS ================= -->
-<section class="band" id="catch" aria-labelledby="catch-title">
-  <div class="band__inner">
-    <div class="sec-head">
-      <div>
-        <p class="eyebrow" data-reveal>How it works</p>
-        <h2 class="h2" id="catch-title" data-split><span class="line">Connect your tools.</span><span class="line accent">We catch what slips.</span></h2>
+<!-- 4. The weekly report -->
+<section class="section" id="report">
+  <div class="wrap report__grid">
+    <div>
+      <h2>What you get each week</h2>
+      <p class="lead lead--tight">One short report, every Monday. Jobs booked, money recovered, and whether the desk stayed up. No dashboard to log into.</p>
+      <ul class="ticks">
+        <li>Calls and web leads we handled for you</li>
+        <li>Visits booked into your calendar, with names and times</li>
+        <li>Money recovered, worked out from your average job value</li>
+        <li>Emergencies passed to your on-call tech</li>
+        <li>Fixes we made after the daily review</li>
+        <li>Uptime, including any time we fell back to voicemail</li>
+      </ul>
+    </div>
+    <figure class="report" aria-label="Sample weekly report">
+      <figcaption class="report__tag">Sample report · made-up numbers to show the layout</figcaption>
+      <div class="report__head">
+        <div><strong>Weekly report</strong><span>Sample Heating &amp; Air · Week of Mon 3 Nov</span></div>
+        <span class="report__up">Desk up all week</span>
       </div>
-      <div class="sec-head__side" data-reveal>
-        <p class="sub">No new tool to learn and nothing to replace. Read-only by default, and alerts arrive where your team already works: Slack.</p>
-        <button class="btn btn--brand" data-open="founder-conversation">Book an audit →</button>
+      <dl class="report__stats">
+        <div><dt>Calls answered for you</dt><dd>14</dd></div>
+        <div><dt>Web leads handled</dt><dd>5</dd></div>
+        <div><dt>Visits booked</dt><dd>7</dd></div>
+        <div><dt>Money recovered</dt><dd>$2,660 <small>7 visits × your $380 average</small></dd></div>
+      </dl>
+      <table class="report__table">
+        <caption class="sr-only">Sample booked visits</caption>
+        <thead><tr><th scope="col">Booked</th><th scope="col">Job</th><th scope="col">When</th></tr></thead>
+        <tbody>
+          <tr><td>Mon 6:40 pm</td><td>No heat, upstairs</td><td>Tue 8:00 am</td></tr>
+          <tr><td>Wed 12:10 pm</td><td>Furnace tune-up</td><td>Thu 1:00 pm</td></tr>
+          <tr><td>Sat 9:05 am</td><td>Thermostat replace</td><td>Mon 10:30 am</td></tr>
+        </tbody>
+      </table>
+      <ul class="report__foot">
+        <li>Emergencies passed to on-call tech: 1</li>
+        <li>Fixes after daily review: 2 (pricing question re-routed to you)</li>
+        <li>Fell back to voicemail: 0 minutes</li>
+      </ul>
+    </figure>
+  </div>
+</section>
+
+<!-- 5. Promises -->
+<section class="section section--tint" id="promises">
+  <div class="wrap">
+    <h2>Our promises</h2>
+    <ul class="promises">
+      <li><strong>It never pretends to be a person.</strong> Callers are told they're talking to an assistant.</li>
+      <li><strong>It never quotes prices.</strong> It books the visit. Pricing stays with you.</li>
+      <li><strong>Every caller can reach a person.</strong> They're offered a transfer to someone on your team or a text to you.</li>
+      <li><strong>If something breaks, you hear it from us first.</strong> Calls fall back to your voicemail, you get an instant text, and we tell you before you find out yourself.</li>
+      <li><strong>Wrong answers get fixed within 24 hours.</strong> A person reviews the previous day's calls every morning.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 6. Pricing — this whole section can be edited or removed on its own -->
+<!-- PRICING START -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <h2>Pricing</h2>
+    <div class="price">
+      <div class="price__main">
+        <p class="price__amount">$249<span>/month</span></p>
+        <p class="price__what">Base fee. Covers the desk, the HVAC scripts, the daily review and the weekly report.</p>
+      </div>
+      <div class="price__plus">
+        <p class="price__amount price__amount--small">+ per booked job</p>
+        <p class="price__what">A fee for each job booked above the baseline we measured in your free audit. Per-job fee agreed after your audit.</p>
       </div>
     </div>
+    <p class="note">The audit is free and comes first. You see your own numbers before you decide.</p>
+  </div>
+</section>
+<!-- PRICING END -->
 
-    <div class="steps" id="steps">
-      <div class="steps__rail" aria-hidden="true"><i id="stepsFill"></i></div>
-      <article class="card step" data-step>
-        <div class="step__pict" data-pict="connect" aria-hidden="true"></div>
-        <span class="step__n mono">01</span>
-        <h3>Connect</h3>
-        <p>Read-only access to your CRM and GTM tools. Setup takes minutes, not a project.</p>
-      </article>
-      <article class="card step" data-step>
-        <div class="step__pict" data-pict="match" aria-hidden="true"></div>
-        <span class="step__n mono">02</span>
-        <h3>Match</h3>
-        <p>One record per account and contact across every tool, so signals and owners line up.</p>
-      </article>
-      <article class="card step" data-step>
-        <div class="step__pict" data-pict="catch" aria-hidden="true"></div>
-        <span class="step__n mono">03</span>
-        <h3>Catch</h3>
-        <p>Leads with no owner, workflows that say success but wrote nothing, and buying signals nobody acted on.</p>
-      </article>
-      <article class="card step" data-step>
-        <div class="step__pict" data-pict="alert" aria-hidden="true"></div>
-        <span class="step__n mono">04</span>
-        <h3>Alert &amp; prove</h3>
-        <p>The right rep gets it in Slack with the reason and a deadline. You get a weekly report of pipeline recovered.</p>
-      </article>
+<!-- 7. FAQ -->
+<section class="section section--tint" id="faq">
+  <div class="wrap wrap--narrow">
+    <h2>Questions owners ask</h2>
+    <div class="faq">
+      <details class="faq__item">
+        <summary>Is this a robot answering my phone?</summary>
+        <div class="faq__body"><p>Yes, and it says so. The assistant tells callers it's an assistant for your shop. It asks the few questions needed to book a visit, and every caller is offered a transfer to a person or a text to you. The next morning, a person on our team reads the calls and fixes anything it got wrong.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>Does it work with Jobber or Housecall Pro?</summary>
+        <div class="faq__body"><p>Yes. Visits are booked straight into your Jobber or Housecall Pro calendar, so your schedule stays in one place. If you use something else, say so on the audit form and we'll tell you honestly whether we can connect to it.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>What happens in an emergency?</summary>
+        <div class="faq__body"><p>Emergency calls are transferred to your own on-call tech. If nobody picks up, the tech gets a text with the caller's name, number and the problem, so nothing waits until morning.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>What if it goes down?</summary>
+        <div class="faq__body"><p>Calls fall back to your normal voicemail and you get an instant text. We tell you before you find out yourself, and any downtime shows on your weekly report.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>Is there a contract?</summary>
+        <div class="faq__body"><p>No long-term contract. It runs month to month after the free audit, and you can stop at any time. We'll ask what we could have done better, that's all.</p></div>
+      </details>
+      <details class="faq__item">
+        <summary>Where are you based?</summary>
+        <div class="faq__body"><p>We're a small team in Hyderabad, India, working with heating and cooling shops in the US, starting with Columbus, Ohio. You'll deal with the same people throughout, and you can email the founder directly at shakil@dexraflow.in.</p></div>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- ================= MCP ================= -->
-<section class="band band--night" id="mcp" aria-labelledby="mcp-title">
-  <div class="band__inner">
-    <div class="sec-head">
-      <div>
-        <p class="eyebrow eyebrow--night" data-reveal>Dexraflow MCP · Early access</p>
-        <h2 class="h2" id="mcp-title" data-split><span class="line">Let AI agents into your CRM,</span><span class="line accent">without the chaos.</span></h2>
+<!-- 8. Audit request form -->
+<section class="section" id="audit">
+  <div class="wrap wrap--narrow">
+    <h2>Get a free missed-call audit</h2>
+    <p class="lead lead--tight">Tell us about your shop. We'll email you within one business day to set up the two-week audit. Nothing to install, and nothing to pay.</p>
+    <form class="form" id="auditForm" novalidate>
+      <div class="form__row">
+        <label for="f-name">Your name<input id="f-name" name="name" type="text" required autocomplete="name"></label>
+        <label for="f-shop">Shop name<input id="f-shop" name="shop" type="text" required autocomplete="organization"></label>
       </div>
-      <div class="sec-head__side" data-reveal>
-        <p class="sub">Any agent asks Dexraflow before it acts. Dexraflow checks every tool, then says go, hold, or stop. It never sends anything itself.</p>
+      <div class="form__row">
+        <label for="f-email">Email<input id="f-email" name="email" type="email" required autocomplete="email" inputmode="email"></label>
+        <label for="f-phone">Phone<input id="f-phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel"></label>
       </div>
+      <label for="f-tool">Which booking tool do you use?
+        <select id="f-tool" name="tool" required>
+          <option value="">Choose one</option>
+          <option>Jobber</option>
+          <option>Housecall Pro</option>
+          <option>Something else</option>
+          <option>None yet</option>
+        </select>
+      </label>
+      <label class="hp" aria-hidden="true">Leave this empty<input name="botcheck" type="text" tabindex="-1" autocomplete="off"></label>
+      <p class="form__msg" id="formMsg" role="status" hidden></p>
+      <button class="btn btn--big" type="submit" id="formSubmit">Request my free audit</button>
+      <p class="note">We use these details only to reply and run your audit. <a href="/privacy">Privacy policy</a>.</p>
+    </form>
+    <div class="form__done" id="formDone" hidden tabindex="-1">
+      <h3>Got it. Thanks.</h3>
+      <p>We'll email you within one business day to set up the audit. If you'd rather talk first, call or text is fine too: reply to our email with a time.</p>
     </div>
-
-    <div class="card card--night mcp" id="mcpDemo" data-reveal>
-      <div class="mcp__tabs" role="tablist" aria-label="Without or with Dexraflow">
-        <button class="mcp__tab" role="tab" data-mode="without" aria-selected="false">Without Dexraflow<i class="mcp__bar"></i></button>
-        <button class="mcp__tab is-on" role="tab" data-mode="with" aria-selected="true">With Dexraflow<i class="mcp__bar"></i></button>
+    <div class="form__fallback" id="formFallback" hidden>
+      <h3>We couldn't send that automatically.</h3>
+      <p>Your request is ready below. Open it in your mail app, or copy it and send it to <strong>shakil@dexraflow.in</strong>.</p>
+      <textarea id="fbText" rows="8" readonly aria-label="Your request, ready to email"></textarea>
+      <div class="form__fbactions">
+        <a class="btn" id="fbMail" href="mailto:shakil@dexraflow.in">Open in mail app</a>
+        <button class="btn btn--ghost" type="button" id="fbCopy">Copy request</button>
       </div>
-      <div class="mcp__stage dots" id="mcpStage" role="img" aria-label="The same three agents ask Dexraflow first; it holds one, allows one and tells one to wait, so the contact gets a single touch.">
-        <svg class="mcp__wires" id="mcpWires" aria-hidden="true"></svg>
-        <div class="mcp__agents">
-          <div class="agent" data-agent><i data-mono="⌘"></i>AI SDR</div>
-          <div class="agent" data-agent><span class="logo"><img src="brand/clay.png" alt="" loading="lazy" decoding="async"></span>Clay agent</div>
-          <div class="agent" data-agent><span class="logo"><img src="brand/claude.svg" alt="" loading="lazy" decoding="async"></span>Your Claude agent</div>
-        </div>
-        <div class="mcp__mid">
-          <div class="mcp__engine" data-mcp-engine>
-            <div class="mcp__engine-head"><span class="lockup lockup--xs"><svg viewBox="0 0 48 48" width="16" height="16" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#3bbfaf"></rect><g transform="translate(7 7) scale(0.708)" fill="#0c1315"><rect x="6" y="6" width="8" height="36" rx="2"></rect><path fill-rule="evenodd" d="M18 6H24A18 18 0 0 1 24 42H18Z M18 14H24A10 10 0 0 1 24 34H18Z"></path><rect x="14" y="21.5" width="10" height="5"></rect></g></svg>Dexraflow</span><span class="tag tag--mono tag--night">MCP</span></div>
-            <ul class="mcp__rows">
-              <li data-row><span><span class="muted">AI SDR</span><b class="d d--hold">HOLD</b></span><p>Open deal, Raj owns it</p></li>
-              <li data-row><span><span class="muted">Clay agent</span><b class="d d--allow">ALLOW</b></span><p>Title updated, logged</p></li>
-              <li data-row><span><span class="muted">Claude agent</span><b class="d d--wait">WAIT</b></span><p>Emailed 1h ago by AI SDR</p></li>
-            </ul>
-          </div>
-          <div class="mcp__contact" data-mcp-contact>
-            <div class="contact__head"><span class="avatar">JA</span><div><b>Jane Park</b><span class="mono muted">VP Sales · Acme</span></div></div>
-            <div class="contact__field"><span class="mono muted">Title</span><span data-title>VP Sales</span></div>
-            <div class="contact__field"><span class="mono muted">Open deal</span><span>$80K · Raj</span></div>
-          </div>
-        </div>
-        <div class="mcp__out">
-          <div class="slack slack--sm" data-mcp-slack><div class="slack__head"><span class="logo logo--sm"><img src="brand/slack.png" alt=""></span><b>Dexraflow</b></div><p><b>Raj</b>, approve email to Jane?</p></div>
-          <div class="chip chip--ok" data-mcp-ok>✓ 1 touch, owner informed</div>
-          <div class="mcp__errors" data-mcp-errors>
-            <span class="chip chip--danger">2 emails in 1 hour</span>
-            <span class="chip chip--danger">Job title overwritten</span>
-            <span class="chip chip--danger">Emailed during an open $80K deal</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="sec-head sec-head--tight">
-      <div>
-        <p class="eyebrow eyebrow--night" data-reveal>Works with any agent</p>
-        <h2 class="h2" id="agents-title" data-split><span class="line">Connect yours</span><span class="line accent">in a minute.</span></h2>
-      </div>
-      <div class="sec-head__side" data-reveal>
-        <p class="sub">Pick your agent. Every snippet is a preview; the API may change before launch.</p>
-      </div>
-    </div>
-
-    <div class="agents" id="agents">
-      <button class="card card--night agentcard" data-reveal data-tab="claude-code"><span><span class="logo"><img src="brand/claude.svg" alt="" loading="lazy" decoding="async"></span>Claude Code</span><em>Install</em></button>
-      <button class="card card--night agentcard" data-reveal data-tab="claude-desktop"><span><span class="logo"><img src="brand/claude.svg" alt="" loading="lazy" decoding="async"></span>Claude Desktop</span><em>Add connector</em></button>
-      <button class="card card--night agentcard" data-reveal data-tab="cursor"><span><span class="logo"><img src="brand/cursor.svg" alt="" loading="lazy" decoding="async"></span>Cursor</span><em>Install</em></button>
-      <button class="card card--night agentcard" data-reveal data-tab="openai"><span><span class="logo"><img src="brand/openai.svg" alt="" loading="lazy" decoding="async"></span>OpenAI Agents SDK</span><em>Copy snippet</em></button>
-      <button class="card card--night agentcard" data-reveal data-tab="langchain"><span><span class="logo"><img src="brand/langchain.svg" alt="" loading="lazy" decoding="async"></span>LangChain</span><em>Copy snippet</em></button>
-      <button class="card card--night agentcard" data-reveal data-tab="n8n"><span><span class="logo"><img src="brand/n8n.svg" alt="" loading="lazy" decoding="async"></span>n8n</span><em>Add node</em></button>
-      <button class="card card--night agentcard" data-reveal data-tab="any"><span><span class="logo"><img src="brand/make.svg" alt="" loading="lazy" decoding="async"></span>Make / Zapier</span><em>Use MCP URL</em></button>
-      <button class="card card--night agentcard" data-reveal data-tab="any"><span><i data-mono="⟡"></i>Any MCP client</span><em>Copy MCP URL</em></button>
-    </div>
-
-    <div class="card card--night codepanel" id="codepanel" data-reveal>
-      <div class="codepanel__tabs" role="tablist">
-        <button role="tab" data-tab="claude-code" aria-selected="true">Claude Code</button>
-        <button role="tab" data-tab="claude-desktop">Claude Desktop</button>
-        <button role="tab" data-tab="cursor">Cursor</button>
-        <button role="tab" data-tab="openai">OpenAI Agents SDK</button>
-        <button role="tab" data-tab="langchain">LangChain / LangGraph</button>
-        <button role="tab" data-tab="n8n">n8n</button>
-        <button role="tab" data-tab="any">Any MCP client</button>
-      </div>
-      <div class="codepanel__body">
-        <div class="codepanel__meta"><span class="mono muted" id="codeLang">bash</span><span class="tag tag--mono tag--night">Preview: API may change</span><button class="copy" id="copyBtn" type="button">Copy</button></div>
-        <pre class="code" id="codeBlock" tabindex="0"><code></code></pre>
-        <ol class="codepanel__steps" id="codeSteps" hidden></ol>
-      </div>
-    </div>
-    <p class="fine center">Product names identify tools we connect to; trademarks belong to their owners.</p>
-  </div>
-</section>
-
-<!-- ================= TRUST ================= -->
-<section class="band" id="trust" aria-labelledby="trust-title">
-  <div class="band__inner">
-    <div class="sec-head">
-      <div>
-        <p class="eyebrow" data-reveal>Safe by default</p>
-        <h2 class="h2" id="trust-title" data-split><span class="line">Your tools, your rules.</span><span class="line accent">Dexraflow stays in its lane.</span></h2>
-      </div>
-    </div>
-    <div class="trust">
-      <article class="card trust__item" data-reveal>
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v3"/></svg>
-        <h3>Read-only by default</h3><p>Connect with read access. Writes are opt-in and limited to 10 essential fields.</p>
-      </article>
-      <article class="card trust__item" data-reveal>
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12l18-9-6 18-3-7z"/><path d="M4 4l16 16"/></svg>
-        <h3>Never sends anything itself</h3><p>Dexraflow informs, allows, holds or logs. It never emails or contacts a prospect.</p>
-      </article>
-      <article class="card trust__item" data-reveal>
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-3 7a3.5 3.5 0 0 0 7 0z"/><path d="M19 7l-3 7a3.5 3.5 0 0 0 7 0z"/></svg>
-        <h3>Neutral across vendors</h3><p>No tool to replace and nothing to migrate. Every vendor gets the same treatment.</p>
-      </article>
-      <article class="card trust__item" data-reveal>
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h12"/><path d="M8 12h12"/><path d="M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>
-        <h3>Every change logged</h3><p>Each alert, hold and write is recorded with the reason, so you can see what happened.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ================= AUDIT ================= -->
-<section class="band band--tight" id="audit" aria-labelledby="audit-title">
-  <div class="band__inner">
-    <div class="audit">
-      <div class="card card--night audit__main" data-reveal>
-        <div class="audit__glow" aria-hidden="true"></div>
-        <p class="eyebrow eyebrow--night">The 14-day Missed Pipeline Audit</p>
-        <h2 class="h3" id="audit-title">Find <span class="shimmer">$10K</span> of missed pipeline, <span class="accent-night">or you don't pay.</span></h2>
-        <p class="sub sub--night">Connect your tools read-only. We look back 90 days and show you the high-intent accounts nobody worked, leads routed to the wrong owner or no owner, and workflows that failed silently, with what each one was worth.</p>
-        <div class="audit__strip" id="auditStrip" aria-hidden="true"></div>
-        <button class="btn btn--light magnetic" data-open="founder-conversation">Book my audit →</button>
-      </div>
-      <div class="card audit__side" data-reveal>
-        <p class="eyebrow">Built from conversations</p>
-        <h3 class="h4">Tell us what slipped, and we'll show you where else it's happening.</h3>
-        <p>We're working with a small group of B2B SaaS revenue teams running five or more GTM tools.</p>
-        <button class="btn btn--ghost" data-open="founder-conversation">Talk to the founder</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FAQ ================= -->
-<section class="band" id="faq" aria-labelledby="faq-title">
-  <div class="band__inner band__inner--narrow">
-    <div class="sec-head sec-head--single">
-      <div>
-        <p class="eyebrow" data-reveal>FAQ</p>
-        <h2 class="h2" id="faq-title" data-split><span class="line">Frequently asked</span><span class="line accent">questions.</span></h2>
-      </div>
-    </div>
-    <div class="faq card" data-reveal>
-      <details class="faq__item" name="faq"><summary>Do I have to replace any of my tools?<i></i></summary><div class="faq__a"><p>No. Dexraflow connects to the CRM and GTM tools you already use, read-only by default, and catches what slips between them. Nothing is migrated.</p></div></details>
-      <details class="faq__item" name="faq"><summary>Does Dexraflow email or contact my prospects?<i></i></summary><div class="faq__a"><p>Never. It tells the right rep in Slack, with the reason and a deadline. People act; Dexraflow informs, allows, holds or logs.</p></div></details>
-      <details class="faq__item" name="faq"><summary>What does the 14-day audit involve?<i></i></summary><div class="faq__a"><p>You connect your tools read-only. We look back 90 days and show you the high-intent accounts nobody worked, leads routed to the wrong owner or no owner, and workflows that failed silently, with what each one was worth. If we don't find at least $10K of missed pipeline, you don't pay.</p></div></details>
-      <details class="faq__item" name="faq"><summary>Which tools does it work with?<i></i></summary><div class="faq__a"><p>CRMs like HubSpot, Salesforce and Attio; enrichment and data from Clay, Apollo and ZoomInfo; sequencing in Outreach and Salesloft; calls in Gong and Zoom; support in Intercom and Zendesk; plus Slack, Gmail, Google Calendar, Calendly, LinkedIn, Zapier and n8n. More on request. Product names identify the tools we connect to; trademarks belong to their owners.</p></div></details>
-      <details class="faq__item" name="faq"><summary>What is the Dexraflow MCP?<i></i></summary><div class="faq__a"><p>An early-access way for AI agents to ask Dexraflow before they act in your CRM. It checks every tool, applies your rules, then answers allow, hold or wait, and logs the decision. It works with any client that supports remote MCP.</p></div></details>
-      <details class="faq__item" name="faq"><summary>Who is this for?<i></i></summary><div class="faq__a"><p>Heads of RevOps at B2B SaaS companies running a CRM plus five or more GTM tools. We're working with a small group of early-access teams.</p></div></details>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CLOSING ================= -->
-<section class="band band--night closing" id="closing" aria-labelledby="closing-title">
-  <div class="closing__orb" aria-hidden="true"></div>
-  <div class="band__inner center">
-    <p class="eyebrow eyebrow--night" data-reveal>Start here</p>
-    <h2 class="h1 center" id="closing-title" data-split><span class="line">Seen a deal slip</span><span class="line accent">through your stack?</span></h2>
-    <p class="sub sub--night center" data-reveal>Free to start the conversation. Early access for a small group of revenue teams.</p>
-    <div class="closing__cta" data-reveal>
-      <button class="btn btn--light btn--lg magnetic" data-open="early-access">Get early access</button>
-      <button class="btn btn--ghost-night btn--lg magnetic" data-open="founder-conversation">Book a 14-day audit</button>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- ================= FOOTER ================= -->
+<!-- 9. Footer -->
 <footer class="footer">
-  <div class="band__inner">
-    <div class="footer__top">
-      <div>
-        <a class="lockup" href="#top"><svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#0b6e69"></rect><g transform="translate(7 7) scale(0.708)" fill="#fff"><rect x="6" y="6" width="8" height="36" rx="2"></rect><path fill-rule="evenodd" d="M18 6H24A18 18 0 0 1 24 42H18Z M18 14H24A10 10 0 0 1 24 34H18Z"></path><rect x="14" y="21.5" width="10" height="5"></rect><circle cx="27.5" cy="24" r="4" fill="#e8962e"></circle></g></svg><span class="lockup__word">Dexraflow</span></a>
-        <p class="footer__tag">Catch the deals your GTM tools silently dropped.</p>
-      </div>
-      <nav class="footer__nav" aria-label="Footer">
-        <a href="mailto:support@dexraflow.com" class="footer__mail">support@dexraflow.com</a>
-        <a href="inventory.html">Free tool</a>
-        <a href="#privacy">Privacy</a>
-        <a href="#terms">Terms</a>
-        <a href="#data-deletion">Data deletion</a>
-      </nav>
+  <div class="wrap footer__grid">
+    <div>
+      <p class="footer__brand">Dexraflow</p>
+      <p>Missed-call and web-lead booking desk for heating and cooling shops.</p>
     </div>
-    <div class="footer__sources" id="sources">
-      <p class="eyebrow">Sources</p>
-      <ol>
-        <li>[1] <a href="https://tractioncomplete.com/guide/cro-survey-nrr-retention-expansion/" target="_blank" rel="noopener noreferrer">Traction Complete, 2025 CRO Survey</a></li>
-        <li>[2] <a href="https://validity.com/resource-center/the-state-of-crm-data-management-in-2025" target="_blank" rel="noopener noreferrer">Validity, The State of CRM Data Management in 2025</a></li>
-        <li>[3] <a href="https://www.salesforce.com/news/stories/sales-research-2023/" target="_blank" rel="noopener noreferrer">Salesforce, State of Sales report (2022)</a></li>
-        <li>[4] <a href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads" target="_blank" rel="noopener noreferrer">Harvard Business Review, The Short Life of Online Sales Leads (2011), audit of 2,241 US companies</a></li>
-        <li>[5] <a href="https://www.gartner.com/en/newsroom/press-releases/2026-07-28-gartner-predicts-ai-agents-will-outnumber-sellers-10-to-1-by-2028-yet-fewer-than-40-percent-of-sellers-will-say-agents-improved-productivity" target="_blank" rel="noopener noreferrer">Gartner, AI agents will outnumber sellers 10 to 1 by 2028 (press release, July 2026)</a></li>
-      </ol>
-      <p class="fine">Scenes are illustrative, built from failures RevOps teams have described to us. Product names identify tools we connect to; trademarks belong to their owners.</p>
-    </div>
-    <p class="footer__copy fine">© <span id="year">2026</span> Dexraflow Inc.</p>
+    <address class="footer__contact">
+      <strong>Sayyad Shakil, Dexraflow</strong><br>
+      <a href="mailto:shakil@dexraflow.in">shakil@dexraflow.in</a><br>
+      1-25-104, Santoshpuri Colony, Sitarampuram,<br>
+      Bowenpally, Tirumalagiri,<br>
+      Hyderabad 500011, India
+    </address>
+    <nav class="footer__links" aria-label="Footer">
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#audit">Free audit</a>
+      <a href="/privacy">Privacy policy</a>
+    </nav>
   </div>
+  <div class="wrap"><p class="footer__copy">© <span id="year">2026</span> Dexraflow</p></div>
 </footer>
 
-<!-- ================= MODAL ================= -->
-<div class="modal" id="modal" hidden>
-  <div class="modal__backdrop" data-close></div>
-  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <button class="modal__x" data-close aria-label="Close">×</button>
-    <form class="form" id="leadForm" novalidate>
-      <p class="eyebrow" id="modalEyebrow">Early access</p>
-      <h2 class="h3" id="modalTitle">Request early access</h2>
-      <p class="sub" id="modalDesc">We're working with a small group of revenue teams. Tell us a little about yours.</p>
-      <div class="form__grid">
-        <label><span>Name</span><input id="f-name" name="name" type="text" placeholder="Your name" required autocomplete="name"></label>
-        <label><span>Work email</span><input id="f-email" name="email" type="email" placeholder="you@company.com" required autocomplete="email"></label>
-        <label><span>Company</span><input id="f-company" name="company" type="text" placeholder="Acme" required autocomplete="organization"></label>
-        <label><span>Role</span><input id="f-role" name="role" type="text" placeholder="Head of RevOps" required autocomplete="organization-title"></label>
-        <label class="span2"><span>LinkedIn <em>optional</em></span><input id="f-linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/…"></label>
-        <label class="span2"><span id="modalNoteLabel">What are you hoping to solve? <em>optional</em></span><textarea id="f-note" name="note" rows="3" placeholder="Optional"></textarea></label>
-      </div>
-      <label class="hp" aria-hidden="true"><input id="f-botcheck" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off"></label>
-      <p class="form__err" id="formErr" hidden></p>
-      <div class="form__foot">
-        <p class="fine">Prefer email? Write to <a class="form__mail" href="mailto:shakil@dexraflow.com">shakil@dexraflow.com</a>.</p>
-        <button class="btn btn--brand" type="submit" id="formSubmit">Request access</button>
-      </div>
-    </form>
-    <div class="form__fallback" id="formFallback" hidden>
-      <p class="eyebrow">Send it by email instead</p>
-      <h2 class="h3">We couldn't send that automatically.</h2>
-      <p class="sub"><span id="fbWhy">Our form service didn't respond.</span> Your request is ready below, addressed to <b>shakil@dexraflow.com</b>. Open it in your mail app, or copy it.</p>
-      <textarea class="form__fbtext" id="fbText" rows="9" readonly></textarea>
-      <div class="form__foot">
-        <button class="btn btn--ghost" type="button" id="fbBack">Back</button>
-        <div class="form__fbactions">
-          <button class="btn btn--ghost" type="button" id="fbCopy">Copy request</button>
-          <a class="btn btn--brand" id="fbMail" href="mailto:shakil@dexraflow.com">Open in mail app</a>
-        </div>
-      </div>
-    </div>
-    <div class="form__done" id="formDone" hidden>
-      <div class="form__check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></div>
-      <h2 class="h3">Got it.</h2>
-      <p class="sub">We read every request ourselves and reply within two working days.</p>
-      <button class="btn btn--ghost" data-close>Close</button>
-    </div>
-  </div>
-</div>
+<div class="stickycta" id="stickyCta" aria-hidden="true"><a class="btn btn--big" href="#audit" tabindex="-1">Get a free missed-call audit</a></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.149.0/three.min.js"></script>
-<script src="main.js"></script>
-<script src="scene.js"></script>
-<script src="illustrations.js"></script>
+<script src="site.js"></script>
 </body>
 </html>
